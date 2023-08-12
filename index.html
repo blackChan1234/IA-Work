@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="style\menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        function HamburgerMenu() {
+            var x = document.getElementById("Links");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+
+        var app = angular.module("myApp", []);
+
+        app.controller("LinkController", function($scope) {
+            $scope.links = [
+                {
+                    "text": "News",
+                    "href": "#news"
+                },
+                {
+                    "text": "Contact",
+                    "href": "#contact"
+                },
+                {
+                    "text": "About",
+                    "href": "#about"
+                }
+            ];
+        });
+    </script>
+</head>
+<body ng-app="myApp">
+    
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+        <a href="#home" class="active">Logo</a>
+        <!-- Navigation links (hidden by default) -->
+        <div ng-controller="LinkController">
+            <div id="Links">
+                <a ng-repeat="link in links" ng-href="{{link.href}}">{{link.text}}</a>
+            </div>
+        </div>
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="HamburgerMenu()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+</body>
+</html>
