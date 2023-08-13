@@ -10,5 +10,9 @@
     {
         "text": "About",
         "href": "#about"
+    },
+    {
+        "text": "Login",
+        "href": "#login"
     }
 ]
