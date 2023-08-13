@@ -8,26 +8,7 @@
     <link rel="stylesheet" href="style\menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="js\HamburgerMenu.js"></script>
-    <script>
-        var app = angular.module("myApp", []);
-
-        app.controller("LinkController", function($scope) {
-            $scope.links = [
-                {
-                    "text": "News",
-                    "href": "#news"
-                },
-                {
-                    "text": "Contact",
-                    "href": "#contact"
-                },
-                {
-                    "text": "About",
-                    "href": "#about"
-                }
-            ];
-        });
-    </script>
+    <script src="js\LinkController.js"></script>
 </head>
 <body ng-app="myApp">
     
