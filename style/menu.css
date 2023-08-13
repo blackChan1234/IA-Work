@@ -22,9 +22,9 @@
           /* Style the hamburger menu */
           .topnav a.icon {
             background: black;
-            display: block;
+            display: fixed;
             position: absolute;
-            right: 0;
+            left: 0;
             top: 0;
           }
           
