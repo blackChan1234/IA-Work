@@ -55,6 +55,7 @@
         header("Location: index.html"); // redirect to dashboard if user is already logged in
         exit;
     }
+
     $host = "localhost"; /* Host name */
     $user = "root"; /* User */
     $password = ""; /* Password */
@@ -65,35 +66,36 @@
     if(isset($_POST['email']) && isset($_POST['password'])) {
 
         $email = mysqli_real_escape_string($conn, $_POST['email']);
-        $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-        // PurchaseManager login
-        $query = "SELECT * FROM user WHERE email='$email' AND password='$password'";
-        $result = mysqli_query($conn, $query);
+        // Use prepared statement
+        $stmt = $conn->prepare("SELECT email, password, `group`, Name FROM user WHERE email = ?");
+        $stmt->bind_param("s", $email);
 
-        if(mysqli_num_rows($result) == 1){
-            $row = mysqli_fetch_assoc($result);
-            $email = $row['email'];
-            $group = $row['group'];
-            $Name = $row['Name']; // Retrieve managerName from the query result
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-            $_SESSION['group'] = $group;
-            $_SESSION['email'] = $email;
-            $_SESSION['Name'] = $Name;
+        if($row = $result->fetch_assoc()){
+            // Use password_verify to compare passwords
+            if(password_verify($_POST['password'], $row['password'])) {
+                $_SESSION['group'] = $row['group'];
+                $_SESSION['email'] = $row['email'];
+                $_SESSION['Name'] = $row['Name'];
 
-
-            setcookie("user_logged_in", "true", time() + (5 * 60));
-            header("Location: index.php"); // redirect to dashboard
-            exit;
+                setcookie("user_logged_in", "true", time() + (5 * 60));
+                header("Location: index.html"); // redirect to dashboard
+                exit;
+            }
         }
+
         // If reached this point, login has failed
         echo '<div id="error-message" class="text-center alert alert-danger" role="alert">Invalid login information.</div>';
         echo '<script>setTimeout(function(){ document.getElementById("error-message").style.display = "none"; }, 5000);</script>';
 
-        mysqli_free_result($result);
+        $stmt->close();
         mysqli_close($conn);
     }
     ?>
+
 
 
 
