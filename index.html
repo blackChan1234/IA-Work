@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style\menu.css">
     <link rel="stylesheet" href="style\btnGroup.css">
     <link rel="stylesheet" href="style\logo.css">
+    <link rel="stylesheet" href="style\menuPicFrame.css">
     <script src="js\HamburgerMenu.js"></script>
     <script src="js\LinkController.js"></script>
     
@@ -33,23 +34,14 @@
         </a>
     </div>
 
-    <div ng-controller="SliderController" id="slider" class="slider" >
+    <div id="slider" class="slider">
         <div id="sliderScroll" class="sliderScroll">
-            <div id="sliderMain" class="sliderMain">
-                <div class="item" ng-repeat="image in images">
-                    <a href="#">
-                        <img ng-src="{{image.src}}" alt="{{image.alt}}">
-                    </a>
-                </div>
-            </div>
+            <div id="sliderMain" class="sliderMain"></div>
             <span id="prev" class="prev">&#10094;</span>
             <span id="next" class="next">&#10095;</span>
         </div>
-        <div id="sliderIndex" class="sliderIndex">
-            <div class="index" ng-repeat="(index, image) in images" ng-class="{ 'currentIndex': index === currentIndex }" ng-click="slideTo(index)"></div>
-        </div>
+        <div id="sliderIndex" class="sliderIndex"></div>
     </div>
-
     <script src="js\script.js"></script>
 
     <div class="button-block">

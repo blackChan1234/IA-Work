@@ -1,0 +1,79 @@
+.slider{
+    width: 80%;
+    height: 230px;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+    background-color: chocolate;
+}
+.sliderScroll{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.sliderMain{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.sliderMain .item{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: left 1s ease-in-out;
+}
+.sliderMain .item img{
+    width: auto;
+    height: auto;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+}
+.sliderScroll span{
+    position: absolute;
+    cursor: pointer;
+    top: 55%;
+    transform: translateY(-50%);
+    padding: 130px 10px 155px 10px;
+    font-size: 30px;
+    color: #888;
+}
+.sliderScroll span.next{
+    right: 0;
+    padding-left: 48%;
+    background-position: -46px 0;
+}
+.sliderScroll span.prev{
+    left: 0;
+    padding-right: 50%;
+    background-position: 0 0;
+}
+.sliderIndex{
+    width: 100%;
+    height: 24px;
+    text-align: center;
+    font-weight: 700;
+    z-index: 20;
+    position: absolute;
+    bottom: 0;
+}
+.sliderIndex .index{
+    display: inline-block;
+    width: 3%;
+    height: 3px;
+    margin: 0 6px;
+    cursor: pointer;
+    background: #ccc;
+}
+.sliderIndex .currentIndex{
+    display: inline-block;
+    width: 5%;
+    height: 3px;
+    margin: 0 6px;
+    cursor: pointer;
+    background: #888;
+}
