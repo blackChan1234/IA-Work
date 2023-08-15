@@ -51,3 +51,19 @@
 .ui-helper-hidden-accessible {
     display: none;
 }
+
+#result{
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 10px;
+}
+
+#result h2,p,div{
+    margin-left: 15px;
+}
+
+#result div{
+    font-size: 10px;
+}

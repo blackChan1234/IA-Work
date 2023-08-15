@@ -1,10 +1,10 @@
 <?php
 header('Content-Type: Application/json');
-$sql = "SELECT date,filename,uploader FROM `pdf`"; 
+$sql = "SELECT fileName,userName FROM `pdf`"; 
 $hostname = "127.0.0.1"; 
 $username = "root";
 $pwd = ""; 
-$db = "text2";
+$db = "iadb";
 $conn = mysqli_connect($hostname, $username, $pwd, $db)
 or die(mysqli_connect_error());
 
