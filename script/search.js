@@ -6,8 +6,11 @@ $(document).ready(function () {
         success: function (obj) {
             var key = [];
             obj.forEach(function (file) {
-                key.push(file.filename);
-                key.push(file.uploader);
+                key.push(file.fileName);
+                key.push(file.userName);
+            });
+            key = key.filter(function(value, index, self) {
+                return self.indexOf(value) === index;
             });
             console.log(key);
 
