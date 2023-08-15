@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style\menu.css">
     <link rel="stylesheet" href="style\btnGroup.css">
     <link rel="stylesheet" href="style\logo.css">
+    <link rel="stylesheet" href="style\avatar.css">
     <link rel="stylesheet" href="style\menuPicFrame.css">
     <script src="js\HamburgerMenu.js"></script>
     <script src="js\LinkController.js"></script>
@@ -20,7 +21,10 @@
     
     <!-- Menu -->
     <div ng-app="myApp" class="topnav">
-        <a href="#home" class="active"><img src="img\Hong_Kong_Shue_Yan_University_logo.svg" id="logo"></a>
+        <span class="active">
+        <a href="#home"><img src="img\Hong_Kong_Shue_Yan_University_logo.svg" id="logo"></a>
+        <img src="img\Hong_Kong_Shue_Yan_University_logo.svg" id="avatar">
+    </span>
         <!-- <input type="text" placeholder="Search.."> -->
         <!-- Navigation links (hidden by default) -->
         <div ng-controller="LinkController">
