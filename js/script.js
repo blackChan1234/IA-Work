@@ -1,79 +1,85 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const sliderMain = document.getElementById('sliderMain');
-    const prevBtn = document.getElementById('prev');
-    const nextBtn = document.getElementById('next');
-    const sliderIndex = document.getElementById('sliderIndex');
+const sliderMain = document.querySelector('.sliderMain');
+const items = document.querySelectorAll('.item');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+const sliderIndex = document.querySelector('.sliderIndex');
 
-    const images = [
-        "img/examplePic/image1.png",
-        "img/examplePic/image2.png",
-        "img/examplePic/image3.png",
-        "img/examplePic/image4.png",
-        "img/examplePic/image5.png",
-        "img/examplePic/image6.png"
-    ];
+let currentIndex = 0;
+let isDragging = false;
+let startPosX = 0;
+let currentTranslate = 0;
 
-    let currentIndex = 0;
-    
-    function createImageElement(src, alt) {
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = alt;
-        return img;
-    }
-
-    function updateIndexIndicator() {
-        const indexIndicators = sliderIndex.querySelectorAll('.index');
-        indexIndicators.forEach((indicator, index) => {
-            indicator.classList.toggle('currentIndex', index === currentIndex);
-        });
-    }
-
-    function slideTo(index) {
-        currentIndex = (index + images.length) % images.length;
-        sliderMain.style.transform = `translateX(${-currentIndex * 100}%)`;
-        updateIndexIndicator();
-    }
-
-    prevBtn.addEventListener('click', () => {
-        slideTo(currentIndex - 1);
+function updateIndexIndicator() {
+    const indexIndicators = document.querySelectorAll('.sliderIndex .index');
+    indexIndicators.forEach((indicator, index) => {
+        if (index === currentIndex) {
+            indicator.classList.add('currentIndex');
+        } else {
+            indicator.classList.remove('currentIndex');
+        }
     });
+}
 
-    nextBtn.addEventListener('click', () => {
-        slideTo(currentIndex + 1);
-    });
-
-    images.forEach((imageSrc, index) => {
-        const imageElement = createImageElement(imageSrc, `Image ${index + 1}`);
-        const item = document.createElement('div');
-        item.className = 'item';
-        const link = document.createElement('a');
-        link.href = '#';
-        link.appendChild(imageElement);
-        item.appendChild(link);
-        sliderMain.appendChild(item);
-
-        const indexIndicator = document.createElement('div');
-        indexIndicator.className = 'index';
-        indexIndicator.addEventListener('click', () => slideTo(index));
-        sliderIndex.appendChild(indexIndicator);
-    });
-
+function slideTo(index) {
+    currentIndex = index;
+    const offset = currentIndex * -100;
+    currentTranslate = offset;
+    sliderMain.style.transition = 'left 0.5s ease-in-out';
+    sliderMain.style.left = currentTranslate + '%';
     updateIndexIndicator();
+}
 
-    let autoLoopInterval = startAutoLoopInterval();
-
-    function startAutoLoopInterval() {
-        return setInterval(() => {
-            slideTo(currentIndex + 1);
-        }, 3000);
+function loopSlide(direction) {
+    if (direction === 'next') {
+        currentIndex = (currentIndex + 1) % items.length;
+    } else if (direction === 'prev') {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
     }
+    slideTo(currentIndex);
+}
 
-    function resetAutoLoopInterval() {
-        clearInterval(autoLoopInterval);
-        autoLoopInterval = startAutoLoopInterval();
-    }
+prevBtn.addEventListener('click', () => {
+    loopSlide('prev');
+    resetAutoLoopInterval();
+});
 
-    sliderMain.addEventListener('mouseenter', resetAutoLoopInterval);
-    sliderMain.addEventListener('mouseleave', resetAutoLoopInterval);
+nextBtn.addEventListener('click', () => {
+    loopSlide('next');
+    resetAutoLoopInterval();
+});
+
+// Rest of your touch event code
+
+// Initialize index indicators and set initial positions
+for (let i = 0; i < items.length; i++) {
+    const indexIndicator = document.createElement('div');
+    indexIndicator.classList.add('index');
+    indexIndicator.addEventListener('click', () => slideTo(i));
+    sliderIndex.appendChild(indexIndicator);
+    
+    // Set initial position of each item
+    items[i].style.left = i * 100 + '%';
+}
+updateIndexIndicator();
+
+// Auto loop through images
+let autoLoopInterval = startAutoLoopInterval();
+
+function startAutoLoopInterval() {
+    return setInterval(() => {
+        loopSlide('next');
+    }, 3000); // Change the interval duration as needed
+}
+
+function resetAutoLoopInterval() {
+    clearInterval(autoLoopInterval);
+    autoLoopInterval = startAutoLoopInterval();
+}
+
+sliderMain.addEventListener('touchstart', () => {
+    clearInterval(autoLoopInterval);
+});
+
+sliderMain.addEventListener('touchend', () => {
+    resetAutoLoopInterval();
 });
