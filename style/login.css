@@ -1,0 +1,47 @@
+
+    /* Background gradient */
+body {
+    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+}
+
+/* Card enhancements */
+.card {
+    border-radius: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Button enhancements */
+.btn-primary {
+    background-color: #4C5B5C;
+    border: none;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #3A4648;
+    transform: translateY(-2px);
+}
+
+/* Link style */
+.card-footer a {
+    color: #4C5B5C;
+    transition: all 0.3s;
+}
+
+.card-footer a:hover {
+    text-decoration: underline;
+    color: #3A4648;
+    text-decoration:none
+}
+    .signup-link {
+        color: #4C5B5C;
+        transition: all 0.3s;
+        font-weight: bold;
+        border-bottom: 2px solid transparent;
+    }
+
+    .signup-link:hover {
+        color: #3A4648;
+    }

@@ -5,7 +5,7 @@
 <head>
     <link rel="stylesheet" href=
     "https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/uploadStyle.css">
+    <link rel="stylesheet" href="style/uploadStyle.css">
 </head>
 <body>
 <div class="container" style="margin-top:30px">

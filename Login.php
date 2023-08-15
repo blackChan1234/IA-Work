@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/login.css">
     <title>Login Page</title>
+
 
 </head>
 
@@ -37,9 +39,13 @@
                         </form>
                     </div>
                     <div class="card-footer text-center">
-                        <a href="#">Forgot password?</a>
+                        <a href="Forgot%20Password.php">Forgot password?</a>
+                        <div class="sign-up mt-2">
+                            <p>Don't have an account? <a href="SingUp.php" class="signup-link">Sign up</a></p>
+                        </div>
                     </div>
                 </div>
+
 
             </div>
         </div>
