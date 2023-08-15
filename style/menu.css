@@ -1,9 +1,12 @@
         /* Style the navigation menu */
         .topnav {
-            overflow: hidden;
-            background-color: #333;
-            position: relative;
-          }
+          overflow: hidden;
+          background-color: #333;
+          position: relative;
+          background-image: url('../img/menuBar.png'); 
+          background-repeat: no-repeat;
+          background-size: cover;
+      }
           
           /* Hide the links inside the navigation menu (except for logo/home) */
           .topnav #Links {
@@ -37,6 +40,5 @@
           /* Style the active link (or home/logo) */
           .active {
             background-color: #c2c810;
-            background-image: url('../img/menuBar.png');
             color: white;
           }

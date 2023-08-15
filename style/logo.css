@@ -1,7 +1,8 @@
-.logo{
+#logo{
     position:relative;
-    left: 40px;
+    background-image: url('../img/Hong_Kong_Shue_Yan_University_logo.svg'); 
+    left: 55px;
     width: 25px;
     height: 25px;
-
+    background-size: cover;
 }

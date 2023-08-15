@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
     <link rel="stylesheet" href="style\menu.css">
     <link rel="stylesheet" href="style\btnGroup.css">
     <link rel="stylesheet" href="style\logo.css">
@@ -15,24 +16,20 @@
     <link rel="stylesheet" href="style\menuPicFrame.css">
     <script src="js\HamburgerMenu.js"></script>
     <script src="js\LinkController.js"></script>
-    
+
 </head>
+
 <body>
-    
+
     <!-- Menu -->
     <div ng-app="myApp" class="topnav">
-        <span class="active">
-        <a href="#home" class="logo"><img src="img\Hong_Kong_Shue_Yan_University_logo.svg" class="logo"></a>
-        <img src="img\Hong_Kong_Shue_Yan_University_logo.svg" id="avatar">
-    </span>
-        <!-- <input type="text" placeholder="Search.."> -->
-        <!-- Navigation links (hidden by default) -->
+            <a href="#home" id="logo"></a>
+
         <div ng-controller="LinkController">
             <div id="Links">
                 <a ng-repeat="link in links" ng-href="{{link.href}}">{{link.text}}</a>
             </div>
         </div>
-        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
         <a href="javascript:void(0);" class="icon" onclick="HamburgerMenu()">
             <i class="fa fa-bars"></i>
         </a>
@@ -64,4 +61,5 @@
     </div>
 
 </body>
+
 </html>
