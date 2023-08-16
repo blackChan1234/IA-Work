@@ -1,0 +1,14 @@
+[
+    {
+        "text": "News",
+        "href": "#news"
+    },
+    {
+        "text": "Contact",
+        "href": "#contact"
+    },
+    {
+        "text": "About",
+        "href": "#about"
+    }
+]

@@ -49,7 +49,7 @@
 </div>
 <?php
 // Read the JSON file
-$jsonData = file_get_contents('data\file.json');
+$jsonData = file_get_contents('data\menu_bar_Item.json');
 
 // Decode the JSON data into an array
 $data = json_decode($jsonData, true);
