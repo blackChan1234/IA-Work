@@ -5,43 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style/bootstrap.min.css" />
-    <link rel="stylesheet" href="style\menu.css">
-    <link rel="stylesheet" href="style\btnGroup.css">
-    <link rel="stylesheet" href="style\logo.css">
-    <link rel="stylesheet" href="style\avatar.css">
+
+
     <link rel="stylesheet" href="style\menuPicFrame.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="style/dataTables.bootstrap5.min.css" />
-    <script src="js\HamburgerMenu.js"></script>
-    <script src="js\LinkController.js"></script>
+    
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
     <script src="js/jquery-3.5.1.js"></script>
     <script src="./js/jquery.dataTables.min.js"></script>
     <script src="./js/dataTables.bootstrap5.min.js"></script>
 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+    <link rel="stylesheet" href="style\btnGroup.css">    
+    
+
+    <link rel="stylesheet" href="style\logo.css">
+    <link rel="stylesheet" href="style\avatar.css">
 </head>
 
 <body>
+    <!-- w3 mobile_sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-card" id="mySidebar">
+<div class="w3-container w3-theme-d2">
+<span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
+  <br>
+  <div class="w3-padding w3-center">
+    <img class="w3-circle" src="img_avatar.jpg" alt="avatar" style="width:75%">
+  </div>
+</div>
+<a class="w3-bar-item w3-button" href="#">Movies</a>
+<a class="w3-bar-item w3-button" href="#">Friends</a>
+<a class="w3-bar-item w3-button" href="#">Messages</a>
+</nav>
 
-    <!-- Menu -->
-    <div ng-app="myApp" class="topnav">
-            <a href="#home" id="logo"></a>
+<header class="w3-bar w3-card w3-theme">
+  <button class="w3-bar-item w3-button w3-xxxlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
+  <h1 class="w3-bar-item">Movies</h1>
+</header>
 
-        <div ng-controller="LinkController">
-            <div id="Links">
-                <a ng-repeat="link in links" ng-href="{{link.href}}">{{link.text}}</a>
-            </div>
-        </div>
-        <a href="javascript:void(0);" class="icon" onclick="HamburgerMenu()">
-            <i class="fa fa-bars"></i>
-        </a>
-    </div>
+<script>
+closeSidebar();
+function openSidebar() {
+  document.getElementById("mySidebar").style.display = "block";
+}
 
+function closeSidebar() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+<!-- /w3 mobile_sidebar -->
+    
 
     <div id="slider" class="slider">
         <div id="sliderScroll" class="sliderScroll">
