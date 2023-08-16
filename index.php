@@ -47,9 +47,24 @@
     <img class="w3-circle" src="img_avatar.jpg" alt="avatar" style="width:75%">
   </div>
 </div>
-<a class="w3-bar-item w3-button" href="#">Movies</a>
-<a class="w3-bar-item w3-button" href="#">Friends</a>
-<a class="w3-bar-item w3-button" href="#">Messages</a>
+<?php
+// Read the JSON file
+$jsonData = file_get_contents('data\file.json');
+
+// Decode the JSON data into an array
+$data = json_decode($jsonData, true);
+
+// Check if decoding was successful
+if ($data === null) {
+    echo "Error decoding JSON data.";
+} else {
+    foreach ($data as $item) {
+        echo <<<HTML
+                <a class="w3-bar-item w3-button" href="{$item['href']}">{$item['text']}</a>
+        HTML;
+    }
+}
+?>
 </nav>
 
 <header class="w3-bar w3-card w3-theme">
