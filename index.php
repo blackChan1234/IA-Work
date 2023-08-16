@@ -22,15 +22,29 @@
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+<<<<<<< HEAD
+    <link rel="stylesheet" href="style\btnGroup.css">
+
+    <link rel="stylesheet" href="style\menu.css">
+=======
     <link rel="stylesheet" href="style\btnGroup.css">    
     
 
+>>>>>>> b47b5250049ee745d7143045807463019ae2ea3b
     <link rel="stylesheet" href="style\logo.css">
     <link rel="stylesheet" href="style\avatar.css">
 </head>
 
 <body>
+<<<<<<< HEAD
+<div id="computer_menu">
+<?php include 'menu.php'; ?>
+</div>
     <!-- w3 mobile_sidebar -->
+<div id="mobile_menu">
+=======
+    <!-- w3 mobile_sidebar -->
+>>>>>>> b47b5250049ee745d7143045807463019ae2ea3b
 <nav class="w3-sidebar w3-bar-block w3-card" id="mySidebar">
 <div class="w3-container w3-theme-d2">
 <span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
@@ -48,7 +62,11 @@
   <button class="w3-bar-item w3-button w3-xxxlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
   <h1 class="w3-bar-item">Movies</h1>
 </header>
+<<<<<<< HEAD
+</div>
+=======
 
+>>>>>>> b47b5250049ee745d7143045807463019ae2ea3b
 <script>
 closeSidebar();
 function openSidebar() {
