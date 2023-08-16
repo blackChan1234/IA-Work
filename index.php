@@ -51,11 +51,9 @@
                 ,"examplePic/image5.png","examplePic/image6.png"];
                 foreach($imgPaths as $path){
                 echo <<<HTML
-                    <div class="item">
-                    <a href="#">
+                    <div class="item"><a href="#">
                         <img src="img/{$path}" alt="">
-                    </a>
-                </div>
+                        </a></div>
                 HTML;
                 }
                 ?>
