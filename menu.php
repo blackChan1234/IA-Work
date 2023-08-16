@@ -10,6 +10,7 @@ session_start(); // Make sure to start the session if it's not started already
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavBar" aria-controls="topNavBar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        
         <div class="collapse navbar-collapse" id="topNavBar">
             <form class="d-flex ms-auto my-3 my-lg-0">
                 <div class="input-group">
@@ -17,6 +18,7 @@ session_start(); // Make sure to start the session if it's not started already
 
                 </div>
             </form>
+
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -25,12 +27,11 @@ session_start(); // Make sure to start the session if it's not started already
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="#">Profile</a></li>
                         <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li>
-                            <a class="dropdown-item" href="logout.php">Logout</a>
-                        </li>
+                        <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                     </ul>
                 </li>
             </ul>
+
         </div>
     </div>
 </nav>
