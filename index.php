@@ -46,38 +46,20 @@
     <div id="slider" class="slider">
         <div id="sliderScroll" class="sliderScroll">
             <div id="sliderMain" class="sliderMain">
-                <div class="item">
+                <?php
+                $imgPaths=["examplePic/image1.png","examplePic/image2.png","examplePic/image3.png","examplePic/image4.png"
+                ,"examplePic/image5.png","examplePic/image6.png"];
+                foreach($imgPaths as $path){
+                echo <<<HTML
+                    <div class="item">
                     <a href="#">
-                        <img src="img/examplePic/image1.png" alt="">
+                        <img src="img/{$path}" alt="">
                     </a>
                 </div>
-                <div class="item">
-                    <a href="#">
-                        <img src="img/examplePic/image2.png" alt="">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <img src="img/examplePic/image3.png" alt="">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <img src="img/examplePic/image4.png" alt="">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <img src="img/examplePic/image5.png" alt="">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <img src="img/examplePic/image6.png" alt="">
-                    </a>
-                </div>
+                HTML;
+                }
+                ?>
             </div>
-
             <!-- prev&next cursor -->
             <span id="next" class="next">&#10095;</span>
             <span id="prev" class="prev">&#10094;</span>
@@ -104,12 +86,12 @@
         justo dui, a euismod velit convallis nec. Suspendisse id nulla non arcu fermentum facilisis. Nulla facilisi.
         Mauris interdum ante eu luctus commodo. Fusce sed justo id justo faucibus commodo a id turpis.
         EOF;
-        echo <<<EOF
+        echo <<<HTML
         <div class="content">
         <img src="{$imgPath}" alt="Image" class="float-left">
         <p>{$text}</p>
         </div>
-        EOF;
+        HTML;
         ?>
 </body>
 
