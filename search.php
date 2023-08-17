@@ -52,7 +52,7 @@
                     <div id="result">
                         <h2>
                             <a>{$text['fileName']}</a> 
-                            <a href='./pdf/{$text['fileName']}.pdf' download>
+                            <a href='./pdf/{$text['fileName']}' download>
                                 <i class="fa-solid fa-file-pdf" style="color: #ff1a1a;"></i>
                             </a>
                         </h2>
