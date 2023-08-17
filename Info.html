@@ -61,28 +61,36 @@
 
       <fieldset class="form">
         <legend position="relative">personal information</legend>
-        Name:
-        <input type="text" name="name" required="required" /><br />
+        Full Name:
+        <input type="text" name="name" required="required" /><br/>
         Tel:
-        <input name="phoneno" type="tel" id="phoneno" maxlength="8"><br />
-
-        gender:
-        M<input type="radio" name="Gender" value="M" />
-
-        F<input type="radio" name="Gender" value="F" />
-        <br />
+        <input type="tel" name="phoneno"  id="phoneno" maxlength="8"><br/>
+        Mobile:
+        <input type="tel" name="Mobile" maxlength="8"><br/>
         Email Address:
         <input type="email" name="emailaddress" id="emailaddress" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" /><br />
-        date of birth:<input type="date" /><br />
-        upload image:
-        <input type="file" name="photo" /><br />
       </fieldset>
-      <br />
-      <button type="submit">comfirm</button>
+      <br/>
+      <button type="submit">Save Changes</button>
       <button type="reset" onclick="alert('data deleted')">clear</button>
-
     </form>
   </div>
 </div>
+<div id="cursor">
+  <div class="background">
+    <h1>Upload Data</h1>
+
+    <form action="abc.php" method="post" enctype="multipart/form-data" name="form">
+      <script language="javascript" type="text/javascript">
+        alertTest();
+      </script>
+      <fieldset class="form">
+      <button type="button">Add</button>
+      <button type="reset" onclick="alert('data deleted')">clear</button>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
 </body>
 </html>
