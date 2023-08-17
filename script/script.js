@@ -19,7 +19,11 @@ function updateIndexIndicator() {
         }
     });
 }
-
+$(document).ready(function() {
+    $(".search-icon").click(function() {
+        $(".search-input").focus();
+    });
+});
 function slideTo(index) {
     currentIndex = index;
     const offset = currentIndex * -100;

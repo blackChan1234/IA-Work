@@ -4,6 +4,13 @@ body {
     background-color: #f4f4f4;
 }
 
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -78,7 +85,8 @@ footer {
 }
 
 .read-more-btn {
-    color: rgb(44, 44, 44);
+    background-color: #c2c810;
+    color: white;
     border: none;
     padding: 6px 12px;
     cursor: pointer;

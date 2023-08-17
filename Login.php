@@ -58,7 +58,7 @@
 
     session_start();
     if (isset($_COOKIE["user_logged_in"])) {
-        header("Location: index.html"); // redirect to dashboard if user is already logged in
+        header("Location: index.php"); // redirect to dashboard if user is already logged in
         exit;
     }
 
@@ -88,7 +88,7 @@
                 $_SESSION['Name'] = $row['Name'];
 
                 setcookie("user_logged_in", "true", time() + (5 * 60));
-                header("Location: index.html"); // redirect to dashboard
+                header("Location: index.php"); // redirect to dashboard
                 exit;
             }
         }
