@@ -78,10 +78,9 @@
     </div>
     <link rel="stylesheet" href="style\indexContent.css">
 
-    <?php include 'news.php'; 
-    //addNews()
-    // addNews($imgPath,$header,$summary,$link)
-    ?>
+    <?php include 'news.php'; ?>
+    <!-- addNews() -->
+    <!-- addNews($imgPath,$header,$summary,$link) -->
     <footer>
         <p>&copy; 2023 News Website. All rights reserved.</p>
     </footer>
