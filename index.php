@@ -119,6 +119,9 @@
     <?php include 'news.php'; ?>
     <!-- addNews() -->
     <!-- addNews($imgPath,$header,$summary,$moreContent) -->
+    <footer>
+        <p>&copy; 2023 News Website. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>

@@ -25,6 +25,4 @@ $html= <<<HTML
 
 ?>
 
-    <footer>
-        <p>&copy; 2023 News Website. All rights reserved.</p>
-    </footer>
+
