@@ -33,9 +33,8 @@
 </head>
 
 <body>
-    <div id="computer_menu">
+
         <?php include 'menu.php'; ?>
-    </div>
 
 
 
