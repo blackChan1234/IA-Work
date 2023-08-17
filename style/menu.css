@@ -86,3 +86,44 @@ form .btn {
 form .btn:hover {
     background-color: #0056b3;
 }
+
+/* General Button Styles */
+.nav-link.btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.nav-link.btn:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Primary Button (e.g., Sign Up) Styles */
+.nav-link.btn-primary {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+}
+
+.nav-link.btn-primary:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+}
+
+/* Secondary Button (e.g., Sign In) Styles */
+.nav-link.btn-secondary {
+    background-color: #6c757d;
+    color: #ffffff;
+    border: none;
+}
+
+.nav-link.btn-secondary:hover {
+    background-color: #565e64;
+    color: #ffffff;
+}
