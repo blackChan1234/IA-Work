@@ -1,7 +1,7 @@
-.slider{
-    width: 80%;
-    height: 230px;
-    margin: 50px auto;
+.slider {
+    width: 60%;             /* Reduced width for a smaller slider */
+    height: 350px;          /* Reduced height for a smaller slider */
+    margin: 80px auto;      /* Increased top margin for more space between nav and slider */
     position: relative;
     overflow: hidden;
     background-color: chocolate;
@@ -22,17 +22,16 @@
     position: absolute;
     transition: left 1s ease-in-out;
 }
-.sliderMain .item img{
-    width: auto;
-    height: auto;
+.sliderMain .item img {
+    width: 100%;          /* Set width to 100% of its container */
+    height: 100%;         /* Set height to 100% of its container */
+    object-fit: cover;    /* Cover the container without stretching the image */
     display: block;
-    margin: auto;
     position: absolute;
-    top: 55%;
-    transform: translateY(-50%);
+    top: 0;
     left: 0;
-    right: 0;
 }
+
 .sliderScroll span{
     position: absolute;
     cursor: pointer;
