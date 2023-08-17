@@ -24,9 +24,9 @@
         </form>
     </div>
     <?php
-    if(isset($_GET['query']) && !empty($_GET['query'])){
-        $keyword = $_GET['query'];
-            extract($_GET);
+    if(isset($_GET)){
+        $keyword="";
+        extract($_GET);
             
             $sql = "SELECT fileName, userName, pdfDescription FROM `pdf` WHERE `fileName` LIKE '%$keyword%' OR `userName` LIKE '%$keyword%'"; 
             $hostname = "127.0.0.1"; 
