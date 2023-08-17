@@ -36,44 +36,7 @@
     <div id="computer_menu">
         <?php include 'menu.php'; ?>
     </div>
-    <!-- w3 mobile_sidebar -->
-    <div id="mobile_menu">
-        <!-- w3 mobile_sidebar -->
-        <nav class="w3-sidebar w3-bar-block w3-card" id="mySidebar">
-            <div class="w3-container w3-theme-d2">
-                <span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
-                <br>
-                <div class="w3-padding w3-center">
-                    <img class="w3-circle" src="img_avatar.jpg" alt="avatar" style="width:75%">
-                </div>
-            </div>
-            <?php
-      // Read the JSON file
-      $jsonData = file_get_contents('data\menu_bar_Item.json');
 
-      // Decode the JSON data into an array
-      $data = json_decode($jsonData, true);
-
-      // Check if decoding was successful
-      if ($data === null) {
-        echo "Error decoding JSON data.";
-      } else {
-        foreach ($data as $item) {
-          echo <<<HTML
-                <a class="w3-bar-item w3-button" href="{$item['href']}">{$item['text']}</a>
-        HTML;
-        }
-      }
-      ?>
-        </nav>
-
-        <header class="w3-bar w3-card w3-theme">
-            <button class="w3-bar-item w3-button w3-xxxlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
-            <h1 class="w3-bar-item">Movies</h1>
-        </header>
-    </div>
-    <script src="script\mobile_sidebar.js"></script>
-    <!-- /w3 mobile_sidebar -->
 
 
     <div id="slider" class="slider">
