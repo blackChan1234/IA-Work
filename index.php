@@ -91,9 +91,7 @@
 ','https://www.hk01.com/%E7%A4%BE%E6%9C%83%E6%96%B0%E8%81%9E/785609/%E4%B8%8A%E7%B6%B2%E6%88%90%E7%99%AE%E5%9A%B4%E9%87%8D13-9-%E5%8F%97%E8%A8%AA%E5%AD%B8%E7%94%9F%E6%AF%8F%E6%97%A5%E4%B8%8A%E7%B6%B2%E9%80%BE7%E5%B0%8F%E6%99%82-%E9%80%BE65-%E6%9B%BE%E8%88%87%E5%AE%B6%E4%BA%BA%E8%A1%9D%E7%AA%81');
 
     ?>
-
-    <!-- addNews() -->
-    <!-- addNews($imgPath,$header,$summary,$link) -->
+        
     <footer>
         <p>&copy; 2023 News Website. All rights reserved.</p>
     </footer>
