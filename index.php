@@ -116,20 +116,9 @@
     </div>
     <link rel="stylesheet" href="style\indexContent.css">
 
-    <?php
-  $imgPath = "img/example.png";
-  $text = <<<EOF
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse auctor
-        justo dui, a euismod velit convallis nec. Suspendisse id nulla non arcu fermentum facilisis. Nulla facilisi.
-        Mauris interdum ante eu luctus commodo. Fusce sed justo id justo faucibus commodo a id turpis.
-        EOF;
-  echo <<<HTML
-        <div class="content">
-        <img src="{$imgPath}" alt="Image" class="float-left">
-        <p>{$text}</p>
-        </div>
-        HTML;
-  ?>
+    <?php include 'news.php'; ?>
+    <!-- addNews() -->
+    <!-- addNews($imgPath,$header,$summary,$moreContent) -->
 </body>
 
 </html>

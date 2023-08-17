@@ -5,7 +5,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
 
 <?php
-function familyName($imgPath,$header,$summary,$moreContent) {
+function addNews($imgPath,$header,$summary,$moreContent) {
 $html= <<<HTML
     <section class="news-list">
         <article class="news-item">
