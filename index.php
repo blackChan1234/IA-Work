@@ -77,7 +77,7 @@
         <button class="buttongroup">Button 3</button>
     </div>
     <link rel="stylesheet" href="style\indexContent.css">
-
+    <section class="news-list">
     <?php include 'news.php';
 
     addNews('./img/1.jpeg','上網成癮嚴重13.9%受訪學生每日上網逾7小時　逾65%曾與家人衝突','疫情下學童上網時間增多，路德會社會服務處學校社會工作組一項調查發現，51.8%受訪學生每日課外上網時間多達4小時或以上，當中13.9%更指多達7小時以上。調查更稱學生上網成癮情況嚴重，50.1%人會因上網被打擾表現煩躁，65.6%更因上網問題，曾與家人發生衝突，情況令人關注。
@@ -91,6 +91,7 @@
 ','https://www.hk01.com/%E7%A4%BE%E6%9C%83%E6%96%B0%E8%81%9E/785609/%E4%B8%8A%E7%B6%B2%E6%88%90%E7%99%AE%E5%9A%B4%E9%87%8D13-9-%E5%8F%97%E8%A8%AA%E5%AD%B8%E7%94%9F%E6%AF%8F%E6%97%A5%E4%B8%8A%E7%B6%B2%E9%80%BE7%E5%B0%8F%E6%99%82-%E9%80%BE65-%E6%9B%BE%E8%88%87%E5%AE%B6%E4%BA%BA%E8%A1%9D%E7%AA%81');
 
     ?>
+    </section>
         
     <footer>
         <p>&copy; 2023 News Website. All rights reserved.</p>
