@@ -7,7 +7,6 @@
 <?php
 function addNews($imgPath,$header,$summary,$link) {
 $html= <<<HTML
-    
         <article class="news-item">
         <img src="{$imgPath}" alt="News Image">
             <h2>{$header}</h2>
