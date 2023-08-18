@@ -33,7 +33,7 @@ if (isset($_POST['clear'])) {
     <link rel="stylesheet" href="style\menuPicFrame.css">
     <script src="js\HamburgerMenu.js"></script>
     <script src="js\LinkController.js"></script>
-    <link rel="stylesheet" href="info.css">
+    <link rel="stylesheet" href="style\info.css">
 </head>
 
 <body>
