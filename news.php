@@ -9,8 +9,8 @@ function addNews($imgPath,$header,$summary,$link) {
 $html= <<<HTML
         <article class="news-item">
         <img src="{$imgPath}" alt="News Image">
-            <h2>{$header}</h2>
-            <p>{$summary}</p>
+        <a href="{$link}"><h2>{$header}</h2></a>
+            <a href="{$link}"><p>{$summary}</p></a>
             <a href="{$link}"><div class="read-more-btn">Read More</div></a>
         </article>
 
