@@ -129,6 +129,7 @@ form .btn:hover {
 
 /* General Button Styles */
 .nav-link.btn {
+    width: 100px;
     padding: 10px 20px;
     border-radius: 25px;
     transition: all 0.3s ease;
@@ -208,4 +209,9 @@ form .btn:hover {
 
 .search-input:focus {
     width: 200px; /* Width after focus */
+}
+
+
+.menu-header {
+    padding-left: 30px;
 }
