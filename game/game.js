@@ -1,21 +1,25 @@
-if(checkCookie("game_data")){
 
+if(checkCookie("game_data")){
+    var expirationDate = new Date();
+    var data = {
+        game_time: [5, 10, 15, 20, 25],
+        read_time: [10, 15, 20, 25, 30],
+        start_time: expirationDate.getTime() // 假設為遊戲/閱讀的開始時間
+    };
+    
+    var jsonData = JSON.stringify(data);
+    
+    
+    expirationDate.setDate(expirationDate.getDate() + 30);
+    
+    // document.cookie = "game_data=" + jsonData + "; expires=" + expirationDate.toUTCString() + "; path=/";
+    setCookie("game_data",jsonData,expirationDate.toUTCString());
+}
+else{
+    var expirationDate = new Date();
 }
 
 
-var expirationDate = new Date();
-var data = {
-    game_time: [5, 10, 15, 20, 25],
-    read_time: [10, 15, 20, 25, 30],
-    start_time: expirationDate.getTime() // 假設為遊戲/閱讀的開始時間
-};
-
-var jsonData = JSON.stringify(data);
-
-
-expirationDate.setDate(expirationDate.getDate() + 30);
-
-document.cookie = "game_data=" + jsonData + "; expires=" + expirationDate.toUTCString() + "; path=/";
 
 
 function setCookie(cname,cvalue,exdays) {
