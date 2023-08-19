@@ -1,0 +1,86 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    background-color: black;
+}
+
+#quiz-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#disclaimer {
+    color: #33ff33;
+}
+
+#questionDisplay {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.options label {
+    color: white;
+    display: block;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #33ff33;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #28cc28;
+}
+#demon {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 150px; /* 初始大小 */
+    transition: all 0.3s; /* 平滑變化 */
+}
+
+#game-over {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem; /* 加大字體大小 */
+    color: red;
+    background-color: black;
+    padding: 20px;
+}
+
+#reason {
+    font-size: 1.5rem;
+}
+
+#quiz-container {
+    display: block; /* 一開始顯示問卷 */
+}
+#startGameBtn {
+    position: fixed; /* 使用固定位置，這樣它會相對於瀏覽器窗口定位 */
+    top: 40%; /* 例如：從頂部 20px 的位置 */
+    left: 50%; /* 例如：從左邊 20px 的位置 */
+    z-index: 9999; /* 給予非常高的 z-index 值 */
+}
+
+#dialogueBox {
+    position: relative;
+    z-index: 9998; /* 設定一個較高的z-index值 */
+
+}
+
