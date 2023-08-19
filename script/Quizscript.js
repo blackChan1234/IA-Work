@@ -18,11 +18,8 @@ document.getElementById('startGameBtn').addEventListener('click', function() {
     // 顯示小恶魔和對話框
     document.getElementById('demon').style.display = 'block';
     document.getElementById('dialogueBox').style.display = 'block';
-
-    // 啟動對話動畫
-    displayTextAnimation("歡迎來到這個遊戲！小心你的選擇…", function() {
+    alert("歡迎來到這個遊戲！小心你的選擇…");
         document.getElementById('quiz-container').style.display = 'block';  // 啟動問卷
-    });
 
     // 隱藏開始遊戲的按鈕
     this.style.display = 'none';
@@ -49,7 +46,10 @@ function displayQuestion() {
     if (currentIndex < questions.length) {
         document.getElementById("questionDisplay").innerText = questions[currentIndex];
     } else {
-        calculateResult();
+        // 暫停短時間後計算結果
+        setTimeout(() => {
+            calculateResult();
+        }, 500);
     }
 }
 
@@ -87,11 +87,19 @@ function increaseScore() {
         let currentWidth = parseInt(window.getComputedStyle(demon).width);
         demon.style.width = (currentWidth * 1.1) + "px";
 
-        if(score > 5) {
+        if (score > 5 && currentIndex == questions.length - 1) { // 修改條件，直到答完所有問題
             document.getElementById('game-over').style.display = 'block';
             document.getElementById('quiz-container').style.display = 'none'; // 隱藏問卷
-        }
 
+            // 加上返回主頁的按鈕
+            let btn = document.createElement("button");
+            btn.innerHTML = "返回主頁";
+            btn.onclick = function() {
+                location.reload();  // 重新加載頁面
+            };
+            document.body.appendChild(btn);
+        }
+    }
         // 根據選擇的答案顯示不同對話
         let dialogue = '';
         switch (selectedOption) {
@@ -106,16 +114,24 @@ function increaseScore() {
                 break;
         }
         alert(dialogue);
-    }
 }
-
+function reloadPage() {
+    location.reload();
+}
+function returnToIndex() {
+    window.location.href = "index.php";
+}
 function calculateResult() {
     let score = answers.reduce((a, b) => a + b, 0);
 
+    document.getElementById('quiz-container').style.display = 'none'; // 隱藏問卷
+
     if (score >= 5) {
-        alert("您可能有網路遊戲成癮的跡象。請尋求專業建議。");
+        document.getElementById('game-over').style.display = 'block';
     } else {
-        alert("您目前沒有網路遊戲成癮的跡象。");
+        // 如果分數低於5，則顯示 "You Win" 的訊息
+        document.getElementById('reason').textContent = "You Win! 您目前沒有網路遊戲成癮的跡象。";
+        document.getElementById('game-over').style.display = 'block';
     }
 }
 

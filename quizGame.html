@@ -16,14 +16,16 @@
 
 <!-- 用於顯示對話框的部分 -->
 <div id="dialogueBox" style="display: none;">
-    <img src="img/chatBox.png" alt="Dialogue Box">
     <p id="dialogueText"></p>
 </div>
 
 <div id="game-over" style="display: none;">
     Game Over
-    <p id="reason">死因:由於您可能有網路遊戲成癮的跡象。所以惡魔把你吞噬了請尋求專業建議。</p>
+    <p id="reason">Game Over! 您可能有網路遊戲成癮的跡象。請尋求專業建議。</p>
+    <button onclick="returnToIndex()">返回主頁</button> <!-- 新增的按鈕 -->
+    <button onclick="reloadPage()">再来一次</button>
 </div>
+
 
 <div id="score">Score: 0</div>
 
@@ -40,6 +42,7 @@
     <button onclick="nextQuestion()">下一題</button>
 </div>
 
+<script src="/script/dialogbox.js"></script>
 <script src="/script/Quizscript.js"></script>
 <script src="/script/martrix.js"></script>
 </body>
