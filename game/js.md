@@ -47,3 +47,17 @@ if (jsonData) {
 ```
 
 在這個範例中，我們從 `document.cookie` 中讀取所有的 cookie，然後找到名稱為 "game_data" 的 cookie，將其值轉換回 JSON 物件，並輸出資料。請確保您的瀏覽器設置允許 cookie，並注意在真實應用中，可能需要更多的錯誤處理。
+
+
+```javascript
+function checkCookie(cookieName) {
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.indexOf(cookieName + '=') === 0) {
+            return true; // 找到該cookie
+        }
+    }
+    return false; // 沒有找到該cookie
+}
+```
