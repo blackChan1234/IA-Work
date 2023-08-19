@@ -58,7 +58,7 @@
                 echo <<<EDR
                     <div id="result">
                         <h3>
-                        <a href='./pdf/{$text['fileName']}' target='_blank'>{$text['fileName']}</a>  
+                            <a href='./pdf/{$text['fileName']}' target='_blank'>{$text['fileName']}</a>  
                             <a href='./pdf/{$text['fileName']}' download>
                                 <i class="fa-solid fa-file-pdf" style="color: #ff1a1a;"></i>
                             </a>

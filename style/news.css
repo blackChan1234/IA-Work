@@ -90,3 +90,12 @@ footer {
     padding: 6px 12px;
     cursor: pointer;
 }
+
+@media (max-width: 920px) { /* 当宽度小于920像素时应用样式 */
+    .news-list {
+        flex-direction: column; /* 纵向排列 */
+    }
+     .news-item{
+         width:100%;
+     }
+}
