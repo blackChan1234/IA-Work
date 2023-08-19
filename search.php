@@ -10,13 +10,20 @@
     <script src="./script/jquery-ui.js"></script>
     <!-- JavaScript -->
     <script src="./script/search.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
     <!-- CSS -->
+    <link rel="stylesheet" href="style/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="style/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="./style/menu.css">
     <link rel="stylesheet" href="./style/search.css">
+
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-
+<?php include 'menu.php'; ?>
 <body>
+
     <div id="searchBox">
         <form action="" method="get">
             <input type="text" id="searchInput" name="keyword" placeholder="Search for names.." title="Type in a name">
