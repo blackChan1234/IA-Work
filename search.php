@@ -57,12 +57,12 @@
             foreach($data as $text){
                 echo <<<EDR
                     <div id="result">
-                        <h2>
-                            <a>{$text['fileName']}</a> 
+                        <h3>
+                        <a href='./pdf/{$text['fileName']}' target='_blank'>{$text['fileName']}</a>  
                             <a href='./pdf/{$text['fileName']}' download>
                                 <i class="fa-solid fa-file-pdf" style="color: #ff1a1a;"></i>
                             </a>
-                        </h2>
+                        </h3>
                         <p>{$text['pdfDescription']}</p>
                         <div>Upload by {$text['userName']}</div>
                     </div>
