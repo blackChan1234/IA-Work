@@ -2,17 +2,21 @@
 
 ```javascript
 // 創建一個包含您的資料的 JSON 物件
+var expirationDate = new Date();
 var data = {
     game_time: [5, 10, 15, 20, 25],
     read_time: [10, 15, 20, 25, 30],
-    start_time: new Date().getTime() // 假設為遊戲/閱讀的開始時間
+    start_time: expirationDate.getTime() // 假設為遊戲/閱讀的開始時間
 };
 
 // 將 JSON 物件轉換成字串
 var jsonData = JSON.stringify(data);
 
-// 將字串存儲在 cookie 中
-document.cookie = "game_data=" + jsonData + "; expires=Thu, 31 Dec 2030 23:59:59 UTC; path=/";
+
+expirationDate.setDate(expirationDate.getDate() + 30);
+
+document.cookie = "game_data=" + jsonData + "; expires=" + expirationDate.toUTCString() + "; path=/";
+
 ```
 
 在這個範例中，我們創建了一個 JSON 物件 `data` 包含了 `game_time`、`read_time` 和 `start_time` 資料。接著，我們使用 `JSON.stringify` 方法將該物件轉換成字串。最後，我們使用 `document.cookie` 將該字串存儲在 cookie 中。
