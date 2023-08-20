@@ -1,33 +1,45 @@
+function Game(gameHour,readHour){
+  if(!checkCookie("game_data")){
+    // new data
+    var expirationDate = new Date();
+    var data = {
+        gameTime: [gameHour],
+        readTime: [readHour],
+        nodata: [false],
+        startTime: expirationDate.getTime() // 假設為遊戲/閱讀的開始時間
+    };
+    
+    var jsonData = JSON.stringify(data);
+    
+    
+    expirationDate.setDate(expirationDate.getDate() + 30);
+    
+    // document.cookie = "game_data=" + jsonData + "; expires=" + expirationDate.toUTCString() + "; path=/";
+    setCookie("game_data",jsonData,expirationDate.toUTCString());
+        console.log("game_data");
+  }
+  else{
+    //read data
+    var expirationDate = new Date();
+    var jsonData = getCookie("game_data");
+    const data = JSON.parse(jsonData);
+    console.log("Game Time:", data.gameTime);
+    console.log("Read Time:", data.readTime);
+    console.log("no data:", data.nodata);
+    console.log("Start Time:", new Date(data.startTime));
+    startTime = new Date(data.startTime);
 
-if(!checkCookie("game_data")){
-  var expirationDate = new Date();
-  var data = {
-      game_time: [],
-      read_time: [],
-      start_time: expirationDate.getTime() // 假設為遊戲/閱讀的開始時間
-  };
-  
-  var jsonData = JSON.stringify(data);
-  
-  
-  expirationDate.setDate(expirationDate.getDate() + 30);
-  
-  // document.cookie = "game_data=" + jsonData + "; expires=" + expirationDate.toUTCString() + "; path=/";
-  setCookie("game_data",jsonData,expirationDate.toUTCString());
-      console.log("game_data");
-}
-else{
-  var expirationDate = new Date();
-  var jsonData = getCookie("game_data");
-  const data = JSON.parse(jsonData);
-  console.log("Game Time:", data.game_time);
-  console.log("Read Time:", data.read_time);
-  console.log("Start Time:", new Date(data.start_time));
-  expirationDate.setDate((new Date(data.start_time)).getDate() + 30);
+    numOfdays =(new Date()).getDate()-startTime.getDate();
 
-  jsonData = JSON.stringify(data);
-  setCookie("game_data",jsonData,expirationDate.toUTCString());
+    expirationDate.setDate(expirationDate.getDate() + 30);
+    
+
+    jsonData = JSON.stringify(data);
+    setCookie("game_data",jsonData,expirationDate.toUTCString());
+  }
+
 }
+
 
 
 
