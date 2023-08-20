@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7c0bb8c4-cc32-420c-bb1e-30cbc6d2dc07" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizGame.html" beforeDir="false" afterPath="$PROJECT_DIR$/quizGame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/Quizscript.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/Quizscript.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +29,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="HTML File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -50,10 +52,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/XMAPP/htdocs/IA-Work",
+    "last_opened_file_path": "D:/XMAPP/htdocs/abc",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -83,7 +86,9 @@
       <workItem from="1692256334519" duration="4862000" />
       <workItem from="1692261355851" duration="4055000" />
       <workItem from="1692267588082" duration="1028000" />
-      <workItem from="1692270998977" duration="3117000" />
+      <workItem from="1692270998977" duration="3375000" />
+      <workItem from="1692325437468" duration="2226000" />
+      <workItem from="1692434978761" duration="12113000" />
     </task>
     <servers />
   </component>

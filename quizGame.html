@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線上遊戲成癮量表 Quiz</title>
+    <link rel="stylesheet" href="style/quizGameStyles.css" />
+</head>
+<body>
+<canvas id="canvas"></canvas>
+
+<img id="demon" src="img/demo.png" alt="Little Demon" style="display: none;">
+
+<!-- 開始遊戲的按鈕 -->
+<button id="startGameBtn">開始遊戲</button>
+
+<!-- 用於顯示對話框的部分 -->
+<div id="dialogueBox" style="display: none;">
+    <p id="dialogueText"></p>
+</div>
+
+<div id="game-over" style="display: none;">
+    Game Over
+    <p id="reason">Game Over! 您可能有網路遊戲成癮的跡象。請尋求專業建議。</p>
+    <button onclick="returnToIndex()">返回主頁</button> <!-- 新增的按鈕 -->
+    <button onclick="reloadPage()">再来一次</button>
+</div>
+
+
+<div id="score">Score: 0</div>
+
+<div id="quiz-container" style="display: none;">
+    <p id="disclaimer">免責聲明：本問卷只供參考。資料來源：<a href="https://i.win.org.tw/addiction-intro.php" target="_blank">https://i.win.org.tw/addiction-intro.php</a></p>
+    <p id="questionDisplay"></p>
+
+    <div class="options">
+        <label><input type="radio" name="answer" value="0"> 0 從來沒有</label>
+        <label><input type="radio" name="answer" value="1"> 1 有時候</label>
+        <label><input type="radio" name="answer" value="2"> 2 經常</label>
+    </div>
+
+    <button onclick="nextQuestion()">下一題</button>
+</div>
+
+<script src="/script/dialogbox.js"></script>
+<script src="/script/Quizscript.js"></script>
+<script src="/script/martrix.js"></script>
+</body>
+</html>
