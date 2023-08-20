@@ -1,4 +1,4 @@
-function Game(gameHour, readHour) {
+function saveAndNewData(gameHour, readHour) {
   if (!checkCookie("game_data")) {
     // create new game data
     var expirationDate = new Date();
