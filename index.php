@@ -115,10 +115,20 @@
             ?>
             </section>
 
+            <h2 class="index-header" name="title" >待添加</h2>
+            <div>
+                <iframe width="auto" height="auto" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
+
         </div>
         <div class="index-column-right">
-            <div class="films-player" >
-                <h1>影片播放器</h1>
+            <h1>影片播放器</h1>
+            <div class="video-player" >
+                <iframe width="auto" height="auto" src="https://www.youtube.com/embed/9kNYFzAjSzQ" title="[毒不添下]網路成癮教學動畫" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="auto" height="auto" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="auto" height="auto" src="https://www.youtube.com/embed/n6GAreWxq5I" title="就是要&quot;滑&quot;! 中小學生網路遊戲成癮│中視新聞20170117" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="auto" height="auto" src="https://www.youtube.com/embed/La4qVvfMqAg" title="小偉的故事_那段網路成癮的歲月" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </div>
     </div>

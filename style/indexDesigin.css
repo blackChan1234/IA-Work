@@ -31,6 +31,10 @@ body {
     box-sizing: border-box;
 }
 
+.index-column-right, h1{
+    color: azure;
+}
+
 .intro-container{
     padding-left: 70px;
 }
@@ -48,4 +52,12 @@ body {
 .intro-paragraph{
     padding-right: 70px;
     color: antiquewhite;
+}
+
+.video-player {
+    padding: 10px 0px;
+}
+
+.video-player, iframe {
+    padding: 10px 0px;
 }
