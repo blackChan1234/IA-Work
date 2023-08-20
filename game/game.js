@@ -26,7 +26,7 @@ function saveAndNewData(gameHour, readHour) {
 
     expirationDate.setDate(expirationDate.getDate() + 30);
     day= numOfdays(data);
-    
+
     //full null data
     for (var i = (data.readTime).length; i < day;) {
       data.gameTime.push("null");
@@ -53,11 +53,19 @@ function readGameData() {
   var jsonData = getCookie("game_data");
   return JSON.parse(jsonData);
 }
-function printCookie() {
-  var data = readGameData()
+function printGameCookie() {
+  var data = readGameData();
   console.log("Game Time:", data.gameTime);
   console.log("Read Time:", data.readTime);
   console.log("Start Time:", new Date(data.startTime));
+}
+
+function showPage(page) {
+  var data = readGameData();
+  if (page<data.gameTime.length) {
+    console.log("Game Time:", data.gameTime[page]);
+    console.log("Read Time:", data.readTime[page]);
+  }
 }
 
 
