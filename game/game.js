@@ -24,24 +24,29 @@ function saveAndNewData(gameHour, readHour) {
     var data = readGameData();
     printCookie();
 
-    startTime = new Date(data.startTime);
-    numOfdays = (new Date()).getDate() - startTime.getDate();
     expirationDate.setDate(expirationDate.getDate() + 30);
-
+    day= numOfdays(data);
+    
     //full null data
-    for (var i = (data.readTime).length; i < numOfdays;) {
+    for (var i = (data.readTime).length; i < day;) {
       data.gameTime.push("null");
       data.readTime.push("null");
     }
 
-    data.gameTime[numOfdays] = gameHour;
-    data.readTime[numOfdays] = readHour;
+    data.gameTime[day] = gameHour;
+    data.readTime[day] = readHour;
 
 
-    jsonData = JSON.stringify(data);
+    var jsonData = JSON.stringify(data);
     setCookie("game_data", jsonData, expirationDate.toUTCString());
   }
 
+}
+
+function numOfdays(data){
+  //data = readGameData();
+  startTime = new Date(data.startTime);
+  return (new Date()).getDate() - startTime.getDate();
 }
 
 function readGameData() {
