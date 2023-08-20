@@ -16,7 +16,6 @@ function Game(gameHour,readHour){
     
     // document.cookie = "game_data=" + jsonData + "; expires=" + expirationDate.toUTCString() + "; path=/";
     setCookie("game_data",jsonData,expirationDate.toUTCString());
-    console.log("game_data");
     
     // new data
   }
@@ -32,7 +31,10 @@ function Game(gameHour,readHour){
     startTime = new Date(data.startTime);
 
     numOfdays =(new Date()).getDate()-startTime.getDate();
-
+    for (var i = (data.nodata).length; i < numOfdays-1;){
+      data.nodata.push(true);
+    }
+    data.nodata.push(false);
     expirationDate.setDate(expirationDate.getDate() + 30);
     
 
