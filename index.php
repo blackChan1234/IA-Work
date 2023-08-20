@@ -20,6 +20,9 @@
     <script src="./js/jquery.dataTables.min.js"></script>
     <script src="./js/dataTables.bootstrap5.min.js"></script>
 
+    <link rel="stylesheet" href="style\social_media_button.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
     <link rel="stylesheet" href="style\btnGroup.css">
@@ -75,6 +78,7 @@
         <button class="buttongroup">Button 2</button>
         <button class="buttongroup">Button 3</button>
     </div>
+    
 
     <!-- introduction -->
     <link rel="stylesheet" href="style/introduction.css">
@@ -101,6 +105,8 @@
         
     <footer>
         <p>&copy; 2023 Website. All rights reserved.</p>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-instagram"></a>
     </footer>
 </body>
 
