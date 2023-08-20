@@ -7,8 +7,28 @@ body {
 }
 
 .index-header {
+    padding-top: 20px;
     padding-left: 50px;
     color: azure;
+}
+
+.index-column-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.index-column-left {
+    flex: 2;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.index-column-right {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
 .intro-container{
