@@ -29,7 +29,7 @@
 
     <link rel="stylesheet" href="style\menu.css">
     <link rel="stylesheet" href="style\btnGroup.css">
-
+    <link rel="stylesheet" href="style\indexDesigin.css">
 
     <link rel="stylesheet" href="style\logo.css">
     <link rel="stylesheet" href="style\avatar.css">
@@ -81,15 +81,27 @@
     
 
     <!-- introduction -->
-    <link rel="stylesheet" href="style/introduction.css">
-    <script src="script/introduction.js"></script>
-    <h2 class="menu-header">網站介紹</h2><br>
-    <div class="intro-container">
-    </div>
+    <h2 class="index-header">網站介紹</h2>
+    <?php
+    // Read the content of the JSON file
+    $jsonFilePath = 'json/introduction.json';
+    $encodedJSON = file_get_contents($jsonFilePath);
 
+    // Decode the JSON to PHP array
+    $decodedArray = json_decode($encodedJSON, true);
+
+    // $decodedArray as a regular PHP array
+    foreach ($decodedArray as $item) {
+        echo "<div class='intro-container'>";
+        echo "<h3 class='intro-title'>" . $item['title'] . "</h3>";
+        echo "<img class='intro-img' src='" . $item['imageSrc'] . "' alt='" . $item['alt'] . "'>";
+        echo "<p class='intro-paragraph'>" . $item['paragraph'] . "</p>";
+        echo "</div>";
+    }
+    ?>
 
     <link rel="stylesheet" href="style\indexContent.css">
-    <h2 class="menu-header">相關新聞</h2>
+    <h2 class="index-header">相關新聞</h2>
     <section class="news-list">
     <?php include 'news.php';
     addNews('./img/1.jpeg','上網成癮嚴重13.9%受訪學生每日上網逾7小時　逾65%曾與家人衝突','疫情下學童上網時間增多，路德會社會服務處學校社會工作組一項調查發現，51.8%受訪學生每日課外上網時間多達4小時或以上，當中13.9%更指多達7小時以上。調查更稱學生上網成癮情況嚴重，50.1%人會因上網被打擾表現煩躁，65.6%更因上網問題，曾與家人發生衝突，情況令人關注。

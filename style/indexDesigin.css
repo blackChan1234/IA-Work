@@ -1,0 +1,31 @@
+body {
+    background-image: url('../img/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+.index-header {
+    padding-left: 50px;
+    color: azure;
+}
+
+.intro-container{
+    padding-left: 70px;
+}
+
+.intro-title{
+    padding-top: 10px;
+    color: aliceblue;
+}
+
+.intro-img{
+    width: 200px;
+    height: 80px;
+}
+
+.intro-paragraph{
+    padding-right: 70px;
+    color: antiquewhite;
+}

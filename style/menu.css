@@ -210,8 +210,3 @@ form .btn:hover {
 .search-input:focus {
     width: 200px; /* Width after focus */
 }
-
-
-.menu-header {
-    padding-left: 30px;
-}
