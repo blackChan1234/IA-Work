@@ -16,7 +16,9 @@ function Game(gameHour,readHour){
     
     // document.cookie = "game_data=" + jsonData + "; expires=" + expirationDate.toUTCString() + "; path=/";
     setCookie("game_data",jsonData,expirationDate.toUTCString());
-        console.log("game_data");
+    console.log("game_data");
+    
+    // new data
   }
   else{
     //read data
