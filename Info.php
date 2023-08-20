@@ -24,16 +24,16 @@ if (isset($_POST['clear'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="style\menu.css">
     <link rel="stylesheet" href="style\btnGroup.css">
     <link rel="stylesheet" href="style\logo.css">
     <link rel="stylesheet" href="style\menuPicFrame.css">
     <script src="js\HamburgerMenu.js"></script>
     <script src="js\LinkController.js"></script>
-    <link rel="stylesheet" href="style\info.css">
+    <link rel="stylesheet" href="info.css">
+    <link rel="stylesheet" href="nav.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 
 <body>
@@ -52,6 +52,57 @@ if (isset($_POST['clear'])) {
         <i class="fa fa-bars"></i>
     </a>
 </div>
+
+<div class="btn">
+    <span class="fas fa-bars"></span>
+</div>
+<nav class="sidebar">
+    <div class="text">
+        Side Menu
+    </div>
+    <ul>
+        <li class="active"><a href="#">Dashboard</a></li>
+        <li>
+            <a href="#" class="feat-btn">Features
+                <span class="fas fa-caret-down first"></span>
+            </a>
+            <ul class="feat-show">
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Elements</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="serv-btn">Services
+                <span class="fas fa-caret-down second"></span>
+            </a>
+            <ul class="serv-show">
+                <li><a href="#">App Design</a></li>
+                <li><a href="#">Web Design</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Overview</a></li>
+        <li><a href="#">Shortcuts</a></li>
+        <li><a href="#">Feedback</a></li>
+    </ul>
+</nav>
+<script>
+    $('.btn').click(function(){
+        $(this).toggleClass("click");
+        $('.sidebar').toggleClass("show");
+    });
+    $('.feat-btn').click(function(){
+        $('nav ul .feat-show').toggleClass("show");
+        $('nav ul .first').toggleClass("rotate");
+    });
+    $('.serv-btn').click(function(){
+        $('nav ul .serv-show').toggleClass("show1");
+        $('nav ul .second').toggleClass("rotate");
+    });
+    $('nav ul li').click(function(){
+        $(this).addClass("active").siblings().removeClass("active");
+    });
+</script>
 
 <div class="button-block">
     <button class="buttongroup">Button 1</button>
