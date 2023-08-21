@@ -5,7 +5,7 @@ function saveAndNewData(gameHour, readHour) {
     var data = {
       gameTime: [gameHour],
       readTime: [readHour],
-      startTime: expirationDate.getTime() // 假設為遊戲/閱讀的開始時間
+      startTime: expirationDate.getTime() // 閱讀的開始時間
     };
 
     var jsonData = JSON.stringify(data);
@@ -68,6 +68,49 @@ function showPage(page) {
   }
 }
 
+function rule(readTime,gameTime){
+  if(gameTime+readTime>=24*30){
+    //別騙了
+    return img[0];
+  }
+  else if(gameTime+readTime>19*30){
+    //你差不多死
+    return img[1];
+  }
+  else if(gameTime+readTime>16*30){
+    //休息點
+    return img[10];
+  }
+  else if(readTime>10*30){
+    //書呆子
+    return img[7];
+  }
+  else if(readTime>16*30){
+    //你也讀太多
+    return img[8];
+  }
+  else if(readTime>gameTime+3){
+    return img[9];
+  }
+  else if(gameTime<5*30){
+    return img[2];
+  }
+  else if(gameTime>6*30){
+    return img[3];
+  }
+  else if(gameTime>8*30){
+    return img[4];
+  }
+  else if(gameTime>12*30){
+    return img[5];
+  }
+  else if(gameTime>16*30){
+    return img[6];
+  }
+  
+
+
+}
 
 function setCookie(cname, cvalue, expires) {
   document.cookie = cname + "=" + cvalue + ";" + "expires=" + expires + ";path=/";

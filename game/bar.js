@@ -1,7 +1,12 @@
-const resizableBar = document.getElementById('resizable-bar');
-const barSlider = document.getElementById('bar-slider');
+const progressBar = document.getElementById('progress-bar');
+const progressValue = document.getElementById('progress-value');
 
-barSlider.addEventListener('input', () => {
-    const sliderValue = barSlider.value;
-    resizableBar.style.width = sliderValue + '%';
-});
+let clickCount = 0;
+const maxClicks = 30;
+
+function updateProgressBar() {
+    progressBar.style.width = (clickCount / maxClicks) * 100 + '%';
+    progressValue.textContent = `${clickCount} / ${maxClicks}`;
+}
+
+updateProgressBar();
