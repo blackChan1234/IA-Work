@@ -20,6 +20,12 @@ class ProgressBar {
             this.updateProgressBar();
         }
     }
+    setClickCount(clicks){
+        if (this.clicks < this.maxClicks) {
+            this.clickCount=clicks;
+            this.updateProgressBar();
+        }
+    }
 }
 
 
