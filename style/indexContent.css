@@ -16,3 +16,32 @@
     max-height: 200px; 
     
 }
+
+.news-list {
+    height: 660px;
+    overflow: hidden;
+}
+
+.news-item {
+    height: 300px;
+    position: relative;
+}
+
+.news-item h2 {
+    font-size: 20px;
+}
+
+.news-item p {
+    overflow: hidden;
+}
+
+.read-more-btn {
+    position: absolute; /* Set the position of the button as absolute */
+    bottom: 10px; /* Adjust the distance from the bottom */
+    right: 10px; /* Adjust the distance from the right */
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
