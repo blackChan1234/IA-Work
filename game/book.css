@@ -1,0 +1,5 @@
+#flipbook {
+    position: absolute;
+    top: 50px; /* 設置上方偏移量 */
+    left: 500px; /* 設置左側偏移量 */
+}

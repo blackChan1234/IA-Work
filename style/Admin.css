@@ -1,0 +1,121 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+
+.sidebar {
+  width: 200px;
+  height: 100%;
+  background-color: #000092;
+  color: #fff;
+  position: fixed;
+}
+
+.sidebar-brand {
+  padding: 20px;
+  text-align: center;
+}
+
+.sidebar h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 10px;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu a span {
+  margin-left: 10px;
+}
+
+.content {
+  margin-left: 200px;
+  padding: 20px;
+}
+
+.table {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table h1 {
+  font-size: 24px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.New-Data {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.New-Data button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.Manager {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.Manager th,
+.Manager td {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+.Manager th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+}
+
+.Manager tr:last-child td {
+  border-bottom: none;
+}
+
+.view,
+.delete {
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.menu a:hover {
+  background-color: aliceblue;
+}
+
+.view {
+  background-color: #4caf50;
+}
+
+.delete {
+  background-color: #f44336;
+}

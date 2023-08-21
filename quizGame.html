@@ -21,16 +21,17 @@
 
 <div id="game-over" style="display: none;">
     Game Over
-    <p id="reason">Game Over! 您可能有網路遊戲成癮的跡象。請尋求專業建議。</p>
+    <p id="reason">您可能有網路遊戲成癮的跡象。請尋求專業建議。</p>
     <button onclick="returnToIndex()">返回主頁</button> <!-- 新增的按鈕 -->
     <button onclick="reloadPage()">再来一次</button>
 </div>
 
-
+<audio id="demonLaugh" src="sounds/evilLaugh.mp3" preload="auto"></audio>
 <div id="score">Score: 0</div>
 
 <div id="quiz-container" style="display: none;">
     <p id="disclaimer">免責聲明：本問卷只供參考。資料來源：<a href="https://i.win.org.tw/addiction-intro.php" target="_blank">https://i.win.org.tw/addiction-intro.php</a></p>
+    <div id="timer">Remaining Time: 120s</div>
     <p id="questionDisplay"></p>
 
     <div class="options">

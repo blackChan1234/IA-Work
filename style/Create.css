@@ -1,0 +1,53 @@
+body {
+  background-color: #eaf2f8;
+
+}
+
+.table {
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 100px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Table h1 {
+
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.Order label {
+
+  display: block;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.Order input[type="text"],
+.Order input[type="datetime-local"],
+.Order input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.Order button[type="submit"] {
+
+  width: 100%;
+  padding: 10px;
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.Order button[type="submit"]:hover {
+  background-color: #2575c3;
+}
