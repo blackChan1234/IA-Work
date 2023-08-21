@@ -18,9 +18,26 @@ body, html {
 }
 
 #disclaimer {
-    color: #33ff33;
+    font-size: 18px;
+    color: red;
+    font-family: "Arial", sans-serif;
+}
+#timer {
+    font-size: 18px;
+    color: Green;
+    font-family: "Arial", sans-serif;
+}
+#questionDisplay {
+    font-size: 18px;
+    color: #333;
+    font-family: "Arial", sans-serif;
 }
 
+.options label {
+    font-size: 16px; /* 调整字体大小 */
+    color: #444; /* 字体颜色 */
+    font-family: "Arial", sans-serif; /* 选择易读的字体 */
+}
 #questionDisplay {
     color: white;
     margin-bottom: 20px;
@@ -69,18 +86,18 @@ button:hover {
 }
 
 #quiz-container {
-    display: block; /* 一開始顯示問卷 */
+    display: block;
 }
 #startGameBtn {
-    position: fixed; /* 使用固定位置，這樣它會相對於瀏覽器窗口定位 */
-    top: 40%; /* 例如：從頂部 20px 的位置 */
-    left: 50%; /* 例如：從左邊 20px 的位置 */
-    z-index: 9999; /* 給予非常高的 z-index 值 */
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    z-index: 9999;
 }
 
 #dialogueBox {
     position: relative;
-    z-index: 9998; /* 設定一個較高的z-index值 */
+    z-index: 9998;
 
 }
 

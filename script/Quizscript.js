@@ -53,6 +53,26 @@ function displayQuestion() {
     }
 }
 
+
+let timer = 120; // 120秒
+
+let timerInterval = setInterval(function() {
+    timer--;
+    document.getElementById('timer').textContent = "Remaining Time: " + timer + "s";
+
+    if (timer <= 0) {
+        clearInterval(timerInterval);
+        endGame("時間到了!");
+    }
+}, 1000);
+
+function endGame(reason) {
+    document.getElementById('game-over').style.display = 'block';
+    document.getElementById('reason').textContent = reason;
+    document.getElementById('quiz-container').style.display = 'none';
+}
+
+
 function nextQuestion() {
     let selectedOption = document.querySelector('input[name="answer"]:checked');
 
@@ -111,6 +131,8 @@ function increaseScore() {
                 break;
             case "2":
                 dialogue = "我將更強大！";
+                let demonLaughSound = document.getElementById('demonLaugh');
+                demonLaughSound.play();
                 break;
         }
         alert(dialogue);
