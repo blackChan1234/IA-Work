@@ -1,24 +1,23 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 50px;
-}
 
-.bar-container {
+
+.progress-bar {
     width: 200px;
     margin: 0 auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
 }
 
 .bar {
+    width: 100%;
     height: 20px;
     background-color: #ccc;
     border-radius: 10px;
-    margin-top: 10px;
-    width: 50%;
-    transition: width 0.3s;
+    margin-top: 5px;
+    overflow: hidden;
 }
 
-#bar-slider {
-    width: 100%;
-    margin-top: 10px;
+.bar-value {
+    padding: 2px 0;
+    font-size: 14px;
+    font-weight: bold;
 }

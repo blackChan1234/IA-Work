@@ -5,7 +5,7 @@ function saveAndNewData(gameHour, readHour) {
     var data = {
       gameTime: [gameHour],
       readTime: [readHour],
-      startTime: expirationDate.getTime() // 假設為遊戲/閱讀的開始時間
+      startTime: expirationDate.getTime() // 閱讀的開始時間
     };
 
     var jsonData = JSON.stringify(data);
