@@ -19,6 +19,7 @@
     <script src="js/jquery-3.5.1.js"></script>
     <script src="./js/jquery.dataTables.min.js"></script>
     <script src="./js/dataTables.bootstrap5.min.js"></script>
+    <script src="script/functions.js"></script>
 
     <link rel="stylesheet" href="style\social_media_button.css">
 
@@ -106,7 +107,7 @@
             <section class="news-list">
                 <?php include 'news.php';?>
             </section>
-            <p><a href="#" class="expand">展開更多</a></p>
+            <p><a href="#" class="expand" onclick="expandNews(event)">展開更多</a></p>
 
             <!-- Games -->
             <h2 class="index-header" name="title" >主題小遊戲</h2>
