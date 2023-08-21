@@ -57,6 +57,35 @@
         <div class="hard"></div>
         <div class="hard"></div>
     </div>
+
+
+
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        
+        /* Firefox */
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+        </style>
+        
+        
+        
+
+    <div>
+        <form action="" onsubmit="startGame()">
+            <label for="game_time">Game time</label>
+            <input type="number" max="24" min="0" id="game_time">
+
+            <label for="read_time"> time</label>
+            <input type="number" max="24" min="0" id="read_time">
+        </form>
+    </div>
 </body>
 <script>
     const progressBar1 = new ProgressBar('progress-bar', 'progress-value', 30);
