@@ -43,6 +43,15 @@ function saveAndNewData(gameHour, readHour) {
 
 }
 
+function calculateArraySum(array) {
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+      sum += array[i];
+  }
+  return sum;
+}
+
+
 function numOfdays(data){
   //data = readGameData();
   startTime = new Date(data.startTime);
@@ -66,6 +75,13 @@ function showPage(page) {
     console.log("Game Time:", data.gameTime[page]);
     console.log("Read Time:", data.readTime[page]);
   }
+}
+function updateBar(){
+  var data = readGameData();
+  totalGameTime=calculateArraySum(data.gameTime)/(16*30);
+    totalReadTime=calculateArraySum(data.readTime)/(16*30);
+    progressBar1.setClickCount(Math.round(totalGameTime));
+    progressBar2.setClickCount(Math.round(totalReadTime));
 }
 
 function rule(readTime,gameTime){
