@@ -75,7 +75,7 @@ session_start(); // Make sure to start the session if it's not started already
                 <li>
                         <a href="Supplier.php" class="nav-link px-3" id="CONTRACT">
                             <span class="me-2"><i class="bi bi-telephone-fill"></i></span>
-                            <span>CONTRACT</span>
+                            <span>CONTACT</span>
 
                         </a>
                 </li>
@@ -103,7 +103,7 @@ session_start(); // Make sure to start the session if it's not started already
                             <i class="bi bi-person-fill"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="AdminIndex.php">Profile</a></li>
                             <li><a class="dropdown-item" href="#">Settings</a></li>
                             <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                         </ul>
