@@ -21,7 +21,7 @@ class ProgressBar {
         }
     }
     setClickCount(clicks){
-        if (this.clicks < this.maxClicks) {
+        if (clicks < this.maxClicks) {
             this.clickCount=clicks;
             this.updateProgressBar();
         }
