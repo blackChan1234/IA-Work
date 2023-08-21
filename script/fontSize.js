@@ -2,15 +2,24 @@ function changeFontSize(child){
     switch(child){
         case 1:
             document.body.style.fontSize = "10px";
-            document.getElementsByClassName('read-more-btn').style.fontSize = "15px";
+            var elements = document.getElementsByClassName('read-more-btn');
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.fontSize = "15px";
+            }
             break;
         case 2:
             document.body.style.fontSize = "15px";
-            document.getElementsByClassName('read-more-btn').style.fontSize = "15px";
+            var elements = document.getElementsByClassName('read-more-btn');
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.fontSize = "15px";
+            }
             break;
         case 3:
             document.body.style.fontSize = "20px";
-            document.getElementsByClassName('read-more-btn').style.fontSize = "15px";
+            var elements = document.getElementsByClassName('read-more-btn');
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.fontSize = "15px";
+            }
             break;
         default:
             break;
