@@ -43,6 +43,14 @@ function saveAndNewData(gameHour, readHour) {
 
 }
 
+function startGame() {
+  if (!checkCookie("game_data")) {
+    var data = readGameData();
+    $("#flipbook").turn("page", numOfdays(data));
+  }
+  
+}
+
 function calculateArraySum(array) {
   let sum = 0;
   for (let i = 0; i < array.length; i++) {
