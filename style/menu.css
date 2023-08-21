@@ -215,3 +215,34 @@ form .btn:hover {
 .menu-header {
     padding-left: 30px;
 }
+
+/* font size */
+.fontSizebtn:nth-child(1) {
+    font-size: 14px;
+}
+
+.fontSizebtn:nth-child(2) {
+    font-size: 20px;
+}
+
+.fontSizebtn:nth-child(3) {
+    font-size: 27px;
+}
+
+.fontSizebtn {
+    padding: 0 10px;
+    display: inline-flex;
+    background: #ddd;
+    color: #fff;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius:5px;
+}
+
+.fontSizebtn:hover {
+    color: red;
+}
+
+.fontSizebtn.active{
+    color: red;
+}

@@ -10,6 +10,11 @@ session_start(); // Make sure to start the session if it's not started already
         <button class="btn btn-outline-light borderless">POST</button>
         <button class="btn btn-outline-light borderless">CONTRACT</button>
         <button class="btn btn-outline-light borderless">ABOUT</button>
+        <div class="change-fontsize">
+            <span class="fontSizebtn" title="Font Size: Smaller" onclick="changeFontSize(1);">A</span>
+            <span class="fontSizebtn active" title="Font Size: Normal" onclick="changeFontSize(2);">A</span>
+            <span class="fontSizebtn" title="Font Size: Larger" onclick="changeFontSize(3);">A</span>
+        </div>
 
 
 
