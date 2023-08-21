@@ -67,23 +67,23 @@
           -webkit-appearance: none;
           margin: 0;
         }
-        
+        #lab_game_time,#lab_read_time{
+            color: white;
+        }
         /* Firefox */
         input[type=number] {
           -moz-appearance: textfield;
         }
         </style>
         
-        
-        
-
     <div>
         <form action="" onsubmit="startGame()">
-            <label for="game_time">Game time</label>
+            <label for="game_time" id="lab_game_time">Game time</label>
             <input type="number" max="24" min="0" id="game_time">
 
-            <label for="read_time"> time</label>
+            <label for="read_time" id="lab_read_time"> time</label>
             <input type="number" max="24" min="0" id="read_time">
+            <input type="submit">
         </form>
     </div>
 </body>
