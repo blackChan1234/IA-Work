@@ -1,3 +1,35 @@
+class ProgressBar {
+    clickCount = 0;
+    constructor(barId, valueId, maxClicks) {
+        this.progressBar = document.getElementById(barId);
+        this.progressValue = document.getElementById(valueId);
+        this.maxClicks = maxClicks;
+        this.updateProgressBar();
+    }
+
+    updateProgressBar() {
+        if (this.progressBar && this.progressValue) { // Check if elements are found
+            this.progressBar.style.width = (this.clickCount / this.maxClicks) * 100 + '%';
+            this.progressValue.textContent = `${this.clickCount} / ${this.maxClicks}`;
+        }
+    }
+
+    increaseClickCount() {
+        if (this.clickCount < this.maxClicks) {
+            this.clickCount++;
+            this.updateProgressBar();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+/*
 const progressBar = document.getElementById('progress-bar');
 const progressValue = document.getElementById('progress-value');
 
@@ -10,3 +42,8 @@ function updateProgressBar() {
 }
 
 updateProgressBar();
+
+
+*/
+
+
