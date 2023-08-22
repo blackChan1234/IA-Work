@@ -22,8 +22,7 @@ function setPageData(page,date){
     
         // document.cookie = "game_data=" + jsonData + "; expires=" + expirationDate.toUTCString() + "; path=/";
         setCookie("Book", jsonData, expirationDate.toUTCString());
-    
-        // create new game data
+
       }
 }
 
