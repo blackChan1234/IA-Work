@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style/bootstrap.min.css" />
 
-
     <link rel="stylesheet" href="style\menuPicFrame.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="style/dataTables.bootstrap5.min.css" />
@@ -33,7 +32,6 @@
 
     <link rel="stylesheet" href="style\logo.css">
     <link rel="stylesheet" href="style\avatar.css">
-
 </head>
 
 <body>

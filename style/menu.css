@@ -1,17 +1,18 @@
-
-
-
 @media (max-width: 767px) {
     /* Hide the three buttons */
+    /* Hide font size buttons */
     .btn-outline-light.borderless {
         display: none;
     }
-#top{
-    display: none;
-}
-#small-search:focus {
-        width: 150px; /* Width after focus */
-}
+
+    #top{
+        display: none;
+    }
+
+    #small-search:focus {
+            width: 150px; /* Width after focus */
+    }
+    
     /* Adjust navbar brand for better fit */
     .navbar-brand {
         font-size: 18px;
@@ -243,6 +244,10 @@ form .btn:hover {
     color: red;
 }
 
-.fontSizebtn.active{
+.fontSizebtn.vivid{
     color: red;
+}
+
+.change-fontsize:hover{
+    background: transparent;
 }
