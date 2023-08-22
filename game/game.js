@@ -22,7 +22,7 @@ function saveAndNewData(gameHour, readHour) {
     //read data
     var expirationDate = new Date();
     var data = readGameData();
-    printCookie();
+    printGameCookie();
 
     expirationDate.setDate(expirationDate.getDate() + 30);
     day= numOfdays(data);
@@ -44,11 +44,28 @@ function saveAndNewData(gameHour, readHour) {
 }
 
 function startGame() {
-  if (!checkCookie("game_data")) {
+    // 防止表單提交
+    event.preventDefault();
+
+    // 獲取 game_time 和 read_time 輸入元素
+    const gameInput = document.getElementById('game_time');
+    const readInput = document.getElementById('read_time');
+
+    // 獲取輸入值
+    const gameValue = gameInput.value;
+    const readValue = readInput.value;
+
+    // 輸出輸入值
+    console.log(`Game Time: ${gameValue}`);
+    console.log(`Read Time: ${readValue}`);
+
+    // 在這裡執行遊戲邏輯
+
+  if (checkCookie("game_data")) {
     var data = readGameData();
     $("#flipbook").turn("page", numOfdays(data));
   }
-  
+  saveAndNewData(gameValue,readValue);
 }
 
 function calculateArraySum(array) {

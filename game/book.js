@@ -47,7 +47,7 @@ $(document).ready
         day=0; 
         if (checkCookie("game_data")) {
         var data = readGameData();
-        printCookie();
+        printGameCookie();
         day=numOfdays(data);
         }
         
