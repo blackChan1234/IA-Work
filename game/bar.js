@@ -27,7 +27,11 @@ class ProgressBar {
         }
     }
 }
+/*
+p1= new ProgressBar ("progress-bar2","progress-value2",30)
+p1.setClickCount(29)
 
+*/
 
 
 
