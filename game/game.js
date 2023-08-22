@@ -62,8 +62,19 @@ function calculateArraySum(array) {
 
 function numOfdays(data){
   //data = readGameData();
-  startTime = new Date(data.startTime);
-  return (new Date()).getDate() - startTime.getDate();
+  const startTime = new Date(data.startTime);
+  const nowTime = new Date();
+
+  // 設定時分秒等屬性
+  startTime.setHours(0, 0, 0, 0);
+  nowTime.setHours(0, 0, 0, 0);
+
+  // 計算日期差距（以毫秒為單位）
+  const timeDiff = nowTime.getTime() - startTime.getTime();
+
+  // 轉換毫秒為天數
+  return timeDiff / (1000 * 60 * 60 * 24);
+
 }
 
 function readGameData() {
