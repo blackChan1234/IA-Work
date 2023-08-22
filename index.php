@@ -19,6 +19,7 @@
     <script src="./js/jquery.dataTables.min.js"></script>
     <script src="./js/dataTables.bootstrap5.min.js"></script>
     <script src="script/functions.js"></script>
+    <script src="script/scrollToTop.js"></script>
 
     <link rel="stylesheet" href="style\social_media_button.css">
 
