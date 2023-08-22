@@ -2,36 +2,32 @@ function changeFontSize(child){
     switch(child){
         case 1:
             document.body.style.fontSize = "10px";
-            var elements = document.getElementsByClassName('read-more-btn');
-            for (var i = 0; i < elements.length; i++) {
-                elements[i].style.fontSize = "15px";
-            }
+            changeFontSizeBtnColor(0);
             break;
         case 2:
             document.body.style.fontSize = "15px";
-            var elements = document.getElementsByClassName('read-more-btn');
-            for (var i = 0; i < elements.length; i++) {
-                elements[i].style.fontSize = "15px";
-            }
+            changeFontSizeBtnColor(1);
             break;
         case 3:
             document.body.style.fontSize = "20px";
-            var elements = document.getElementsByClassName('read-more-btn');
-            for (var i = 0; i < elements.length; i++) {
-                elements[i].style.fontSize = "15px";
-            }
+            changeFontSizeBtnColor(2);
             break;
         default:
             break;
     } 
 }
 
-let buttons = document.querySelector('.change-fontsize');
-let btn = buttons.querySelectorAll('.fontSizebtn');
-for (var i = 0; i < btn.length; i++){
-    btn[i].addEventListener('click', function(){
-        let current = document.getElementsByClassName('active');
-        current[0].className = current[0].className.replace('active', '');
-        this.className += ' active';
-    })
+function changeFontSizeBtnColor(index){
+    // Remove all elements with class 'vivid'
+    let elements = document.querySelectorAll('.vivid');
+    elements.forEach(function(element) {
+        element.classList.remove('vivid');
+    });
+
+    // Add 'vivid' class to the button at the specified index
+    let buttons = document.querySelectorAll('.change-fontsize');
+    buttons.forEach(function(button) {
+        let fontSizeBtns = button.querySelectorAll('.fontSizebtn');
+        fontSizeBtns[index].classList.add('vivid');
+    });
 }

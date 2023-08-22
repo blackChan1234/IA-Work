@@ -15,7 +15,7 @@ session_start(); // Make sure to start the session if it's not started already
         <button class="btn btn-outline-light borderless">ABOUT</button>
         <div class="change-fontsize">
             <span class="fontSizebtn" title="Font Size: Smaller" onclick="changeFontSize(1);">A</span>
-            <span class="fontSizebtn active" title="Font Size: Normal" onclick="changeFontSize(2);">A</span>
+            <span class="fontSizebtn vivid" title="Font Size: Normal" onclick="changeFontSize(2);">A</span>
             <span class="fontSizebtn" title="Font Size: Larger" onclick="changeFontSize(3);">A</span>
         </div>
 
@@ -83,15 +83,20 @@ session_start(); // Make sure to start the session if it's not started already
                         <a href="Supplier.php" class="nav-link px-3" id="CONTRACT">
                             <span class="me-2"><i class="bi bi-telephone-fill"></i></span>
                             <span>CONTACT</span>
-
                         </a>
                 </li>
                 <li>
                         <a href="Supplier.php" class="nav-link px-3" id="ABOUT">
                             <span class="me-2"><i class="bi bi-question-circle"></i></span>
                             <span>ABOUT</span>
-
                         </a>
+                </li>
+                <li>
+                    <div class="change-fontsize">
+                        <span class="fontSizebtn" title="Font Size: Smaller" onclick="changeFontSize(1);">A</span>
+                        <span class="fontSizebtn vivid" title="Font Size: Normal" onclick="changeFontSize(2);">A</span>
+                        <span class="fontSizebtn" title="Font Size: Larger" onclick="changeFontSize(3);">A</span>
+                    </div>
                 </li>
                 <li class="my-4">
                 <?php
