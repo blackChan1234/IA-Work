@@ -45,8 +45,9 @@ function aPage(){
 $(document).ready
     (function () {
         day=0; 
+        var data;
         if (checkCookie("game_data")) {
-        var data = readGameData();
+        data = readGameData();
         printGameCookie();
         day=numOfdays(data);
         }
@@ -71,7 +72,7 @@ $(document).ready
         pageFirst.textContent= bookTitle;
         $("#flipbook").append(pageFirst);
         $("#flipbook").append(aPage());
-
+        
         for (let i = 0; i < pageLen; i++) {
             const pageDiv = document.createElement('div');
             pageDiv.className = 'page';
