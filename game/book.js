@@ -1,9 +1,13 @@
 function getPageInfo(page) {
-    const pageInfo = pageData[page - 1]; // 使用頁數索引獲取對應的數據
+    try {
+    const pageInfo = pageData[page]; // 使用頁數索引獲取對應的數據
     if (pageInfo) {
         return pageInfo;
     }
-    return { color: '#f4f4f4', text: `page ${page}` }; // 默認顏色和空文字
+}
+finally{
+    return { text: `page ${page+1}` }; // 默認顏色和空文字
+}
 }
 
 function setPageData(page,date){
@@ -65,7 +69,7 @@ $(document).ready
         
         */ 
         pageLen=day;
-        //pageLen++;
+        pageLen++;
         bookTitle="T";
 
         pageFirst=aPage();
@@ -76,8 +80,14 @@ $(document).ready
         for (let i = 0; i < pageLen; i++) {
             const pageDiv = document.createElement('div');
             pageDiv.className = 'page';
-            pageDiv.style.backgroundColor = pageData[i].color;
-            pageDiv.textContent = pageData[i].text;
+            const pageDiv2 =document.createElement('div');
+            pageDiv2.textContent = "day"+i+1;
+            pageDiv.append(pageDiv2);
+
+            const pageDiv3 =document.createElement('div');
+            pageDiv2.textContent = data.gameTime[i];
+            pageDiv.append(pageDiv3);
+            pageDiv.textContent = getPageInfo(i).text;
             $("#flipbook").append(pageDiv);
         }
 
