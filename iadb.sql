@@ -20,7 +20,9 @@ SET time_zone = "+00:00";
 --
 -- 数据库： `iadb`
 --
-
+DROP DATABASE iadb;
+CREATE DATABASE IF NOT EXISTS `iadb`;
+USE `iadb`;
 -- --------------------------------------------------------
 
 --
