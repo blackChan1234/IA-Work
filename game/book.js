@@ -35,20 +35,43 @@ function readBookData() {
     var jsonData = getCookie("Book");
     return JSON.parse(jsonData);
   }
+function aPage(){
+    const pageDiv = document.createElement('div');
+        pageDiv.className = 'hard';
+    return pageDiv;
 
+}
 
 $(document).ready
     (function () {
-        $("#flipbook").turn({
-            width: 400,
-            height: 300,
-            autoCenter: true
-        });
+        day=0; 
+        if (checkCookie("game_data")) {
         var data = readGameData();
         printCookie();
-        day= numOfdays(data);
+        day=numOfdays(data);
+        }
         
-        const pageLen= day;
+        
+        /*
+        <div class="hard"> Turn.js </div> 
+        <div class="hard"></div>
+        <div> Page 1 </div>
+        <div> Page 2 </div>
+        <div> Page 3 </div>
+        <div> Page 4 </div>
+        <div class="hard"></div>
+        <div class="hard"></div>
+        
+        */ 
+        pageLen=day;
+        //pageLen++;
+        bookTitle="T";
+
+        pageFirst=aPage();
+        pageFirst.textContent= bookTitle;
+        $("#flipbook").append(pageFirst);
+        $("#flipbook").append(aPage());
+
         for (let i = 0; i < pageLen; i++) {
             const pageDiv = document.createElement('div');
             pageDiv.className = 'page';
@@ -57,6 +80,14 @@ $(document).ready
             $("#flipbook").append(pageDiv);
         }
 
+        $("#flipbook").append(aPage());
+        $("#flipbook").append(aPage());
+       
         // 根據頁面獲取背景顏色和文字
+        $("#flipbook").turn({
+            width: 400,
+            height: 300,
+            autoCenter: true
+        });
 
     });

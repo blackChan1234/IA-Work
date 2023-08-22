@@ -9,6 +9,8 @@
     <script src="bar.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js'></script>
     <script src='http://www.turnjs.com/lib/turn.min.js'></script>
+    <script src="book.js"></script>
+    <script src="game.js"></script>
     <style>
 
         body{
@@ -48,14 +50,7 @@
         </div>
     </div>
     <div id="flipbook">
-        <div class="hard"> Turn.js </div> 
-        <div class="hard"></div>
-        <div> Page 1 </div>
-        <div> Page 2 </div>
-        <div> Page 3 </div>
-        <div> Page 4 </div>
-        <div class="hard"></div>
-        <div class="hard"></div>
+
     </div>
 
 
@@ -87,13 +82,4 @@
         </form>
     </div>
 </body>
-<script>
-    const progressBar1 = new ProgressBar('progress-bar', 'progress-value', 30);
-    const progressBar2 = new ProgressBar('progress-bar2', 'progress-value2', 20);
-    $("#flipbook").turn({
-    width: 400, //翻頁檢視的寬度
-    height: 300,//翻頁檢視的高度
-    autoCenter: true // 預設false是否居中
-  });
-    </script>
 </html>
