@@ -93,7 +93,11 @@ function updateBar(){
 }
 
 function rule(readTime,gameTime){
-  if(gameTime+readTime>=24*30){
+  if (readTime+gameTime==0){
+    // 悠閒人生
+
+  }
+  else if(gameTime+readTime>=24*30){
     //別騙了
     return img[0];
   }
