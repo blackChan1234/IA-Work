@@ -14,7 +14,7 @@ if (!$conn) {
 
 if (isset($_POST['clear'])) {
     // Perform SQL query to delete all records from the admin table
-    $deleteQuery = "DELETE FROM admin";
+    $deleteQuery = "DELETE FROM post";
     $deleteResult = mysqli_query($conn, $deleteQuery);
     if ($deleteResult) {
         // Records deleted successfully
@@ -86,10 +86,10 @@ mysqli_close($conn);
 <div style="padding-left: 10%;">
     <main class="table">
         <section class="Table">
-            <h1>Admin</h1>
+            <h1>Post</h1>
             <div class="New-Data">
                 <form method="post">
-                    <button type="button" onclick="window.location.href = 'create.php';">Add</button>
+                    <button type="button" onclick="window.location.href = 'Add_Post.php';">Add</button>
                     <button type="submit" name="clear">Clear All</button>
                 </form>
             </div>
@@ -98,9 +98,13 @@ mysqli_close($conn);
             <table class="Manager">
                 <tr>
                     <th>No</th>
-                    <th>FullName</th>
-                    <th>Description</th>
-                    <th>Contact</th>
+                    <th>heading</th>
+                    <th>details</th>
+                    <th>time </th>
+                    <th>user</th>
+                    <th>description</th>
+                    <th>category</th>
+                    <th>img</th>
                     <th>Action</th>
                 </tr>
                 <?php
@@ -110,7 +114,7 @@ mysqli_close($conn);
                     die("Connection failed: " . mysqli_connect_error());
                 }
 
-                $sql = "SELECT * FROM admin";
+                $sql = "SELECT * FROM post";
 
                 $result = mysqli_query($connection, $sql);
 
@@ -120,15 +124,19 @@ mysqli_close($conn);
 
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>
-                                <td>{$row['No']}</td>
-                                <td>{$row['FullName']}</td>
-                                <td>{$row['Description']}</td>
-                                <td>{$row['ContactInformation']}</td>
-                                <td>
-                                    <a href='Edit.php?No={$row['No']}' class='view'>Edit</a>
-                                    <a href='Delete.php?No={$row['No']}' class='delete' onclick=\"return confirm('Are you sure you want to delete this record?');\">Delete</a>
-                                </td>
-                            </tr>";
+                <td>{$row['p_id']}</td>
+                <td>{$row['heading']}</td>
+                <td>{$row['details']}</td>
+                <td>{$row['p_time']}</td>
+                <td>{$row['p_category']}</td>
+                <td>{$row['p_user']}</td>
+                <td>{$row['p_description']}</td>
+                <td><img src='img/{$row['p_img']}?r=" . rand() . "' alt='Image' height='120px' width='130px'></td>
+                <td>
+                    <a href='PEdit.php?p_id={$row['p_id']}' class='view'>Edit</a>
+                    <a href='PDelete.php?p_id={$row['p_id']}' class='delete' onclick=\"return confirm('Are you sure you want to delete this record?');\">Delete</a>
+                </td>
+            </tr>";
                 }
                 mysqli_close($connection);
                 ?>
