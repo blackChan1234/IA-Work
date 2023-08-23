@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    padding: 20px;
+    margin-left: 250px; /* Sidebar width */
+}
+
+table.contact-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table.contact-table th, table.contact-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table.contact-table th {
+    background-color: #f5f5f5;
+}
+
+.Contact h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.Contact button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.Contact button:hover {
+    background-color: #0056b3;
+}
+
+.sidebar {
+    /* ... your existing sidebar styling ... */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .content {
+        margin-left: 0;
+    }
+}

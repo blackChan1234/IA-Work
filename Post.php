@@ -34,7 +34,7 @@ mysqli_close($conn);
 <head>
     <meta charset="UTF-8">
     <title>Admin</title>
-    <link rel="stylesheet" href="Admin.css" type="text/css">
+    <link rel="stylesheet" href="style/Admin.css" type="text/css">
 </head>
 
 <body>
@@ -58,14 +58,14 @@ mysqli_close($conn);
             </li>
             <li>
                 <a class="ui" href="AdminIndex.php">
-                    <img id="img" src="img/10.png" alt="" width="50" height="50">
-                    <span>teenager</span>
+                    <img id="img" src="img/50.png" alt="" width="50" height="50">
+                    <span>Person</span>
                 </a>
             </li>
             <li>
                 <a class="ui" href="About.php">
                     <img id="img" src="img/3.png" alt="" width="50" height="50">
-                    <span>About US</span>
+                    <span>PDF</span>
                 </a>
             </li>
             <li>
@@ -124,19 +124,19 @@ mysqli_close($conn);
 
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>
-                <td>{$row['p_id']}</td>
-                <td>{$row['heading']}</td>
-                <td>{$row['details']}</td>
-                <td>{$row['p_time']}</td>
-                <td>{$row['p_category']}</td>
-                <td>{$row['p_user']}</td>
-                <td>{$row['p_description']}</td>
-                <td><img src='img/{$row['p_img']}?r=" . rand() . "' alt='Image' height='120px' width='130px'></td>
-                <td>
-                    <a href='PEdit.php?p_id={$row['p_id']}' class='view'>Edit</a>
-                    <a href='PDelete.php?p_id={$row['p_id']}' class='delete' onclick=\"return confirm('Are you sure you want to delete this record?');\">Delete</a>
-                </td>
-            </tr>";
+               <td>{$row['p_id']}</td>
+        <td>{$row['heading']}</td>
+        <td>{$row['details']}</td>
+        <td>{$row['p_time']}</td>
+        <td>{$row['p_category']}</td>
+        <td>{$row['p_user']}</td>
+        <td>{$row['p_description']}</td>
+        <td>" . basename($row['p_img']) . PHP_EOL . "</td>
+        <td>
+            <a href='PEdit.php?p_id={$row['p_id']}' class='view'>Edit</a>
+            <a href='PDelete.php?p_id={$row['p_id']}' class='delete' onclick=\"return confirm('Are you sure you want to delete this record?');\">Delete</a>
+        </td>
+    </tr>";
                 }
                 mysqli_close($connection);
                 ?>
@@ -147,3 +147,4 @@ mysqli_close($conn);
 </body>
 
 </html>
+<td><img src='img/{$row['p_img']}?r=" . rand() . "' alt='Image' height='120px' width='130px'></td>

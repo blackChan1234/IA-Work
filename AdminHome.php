@@ -14,7 +14,6 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +22,7 @@ mysqli_close($conn);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <link rel="stylesheet" href="AdminHome.css" type="text/css">
+    <link rel="stylesheet" href="Admin.css" type="text/css">
 </head>
 <body>
 <div class="sidebar">
@@ -38,22 +38,32 @@ mysqli_close($conn);
                 </a>
             </li>
             <li>
+                <a class="ui" href="POST.php">
+                    <img id="img" src="img/2.png" alt="" width="50" height="50">
+                    <span>POST</span>
+                </a>
+            </li>
+            <li>
                 <a class="ui" href="AdminIndex.php">
-                    <span>teenager</span>
+                    <img id="img" src="img/50.png" alt="" width="50" height="50">
+                    <span>Person</span>
                 </a>
             </li>
             <li>
                 <a class="ui" href="About.php">
+                    <img id="img" src="img/3.png" alt="" width="50" height="50">
                     <span>About US</span>
                 </a>
             </li>
             <li>
                 <a class="ui" href="Contact.php">
+                    <img id="img" src="img/4.png" alt="" width="50" height="50">
                     <span>Contact US</span>
                 </a>
             </li>
             <li>
                 <a class="ui" href="logout.php">
+                    <img id="img" src="img/5.png" alt="" width="50" height="50">
                     <span>Log Out</span>
                 </a>
             </li>
@@ -64,69 +74,102 @@ mysqli_close($conn);
 <div style="padding-left: 10%;">
     <main class="table">
         <section class="Table">
-            <h1>Admin</h1>
+            <h1>Home</h1>
         </section>
         <section class="Order">
             <div class="grid-container">
                 <div class="grid-item">
                     <form>
-                        <label for="No">No:</label>
-                        <input type="text" name="No" value="<?php echo $nextNo; ?>" readonly><br>
-                        <label for="Full Name">Full Name:</label>
-                        <input type="text" name="FullName" required><br>
-                        <label for="Description">Description:</label>
-                        <input type="text" name="Description" required><br>
-                        <label for="ContactInformation">Contact:</label>
-                        <input type="tel" name="ContactInformation" required pattern="[2-9]{1}[0-9]{7}" title="Please enter a valid 8-digit Hong Kong phone number (starting with 2-9)"><br>
-                        <button type="submit">ADD</button>
-                    </form>
-                </div>
+                        <div id="cursor">
+                            <div class="background">
+                                <div class="table-responsive">
+                                    <table>
+                                        <thead>
+                                        <th>ID</th>
+                                        <th>UserName</th>
+                                        <th>FileName</th>
+                                        <th>FileDescription</th>
+                                        </thead>
+                                        <tbody>
+                                        <?php
+                                        $connection = mysqli_connect("127.0.0.1", "root", "", "iadb");
 
-                <div class="grid-item">
-                    <form>
-                        <tr>
-                            <th>No</th>
-                            <th>FullName</th>
-                            <th>Description</th>
-                            <th>Contact</th>
-                            <th>Action</th>
-                        </tr>
-                        <?php
-                        $connection = mysqli_connect("127.0.0.1", "root", "", "iadb");
+                                        if (!$connection) {
+                                            die("Connection failed: " . mysqli_connect_error());
+                                        }
 
-                        if (!$connection) {
-                            die("Connection failed: " . mysqli_connect_error());
-                        }
+                                        $sql = "SELECT * FROM admin";
 
-                        $sql = "SELECT * FROM admin";
+                                        $result = mysqli_query($connection, $sql);
 
-                        $result = mysqli_query($connection, $sql);
+                                        if (!$result) {
+                                            die("Invalid query: " . mysqli_error($connection));
+                                        }
 
-                        if (!$result) {
-                            die("Invalid query: " . mysqli_error($connection));
-                        }
-
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo "<tr>
+                                        while ($row = mysqli_fetch_assoc($result)) {
+                                            echo "<tr>
                                 <td>{$row['No']}</td>
                                 <td>{$row['FullName']}</td>
                                 <td>{$row['Description']}</td>
                                 <td>{$row['ContactInformation']}</td>
-                                <td>
-                                    <a href='Edit.php?No={$row['No']}' class='view'>Edit</a>
-                                    <a href='Delete.php?No={$row['No']}' class='delete' onclick=\"return confirm('Are you sure you want to delete this record?');\">Delete</a>
-                                </td>
                             </tr>";
-                        }
-                        mysqli_close($connection);
-                        ?>
+                                        }
+                                        mysqli_close($connection);
+                                        ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </form>
+                    <button type="button" onclick="window.location.href='AdminIndex.php';">View All</button>
+
                 </div>
 
                 <div class="grid-item">
                     <form>
-                        <!-- Form 3 content... -->
+                        <section class="Order">
+                            <table class="Manager">
+                                <tr>
+                                    <th>No</th>
+                                    <th>heading</th>
+                                    <th>details</th>
+                                    <th>user</th>
+                                    <th>category</th>
+                                    <th>img</th>
+                                </tr>
+                                <?php
+                                $connection = mysqli_connect("127.0.0.1", "root", "", "iadb");
+
+                                if (!$connection) {
+                                    die("Connection failed: " . mysqli_connect_error());
+                                }
+
+                                $sql = "SELECT * FROM post";
+
+                                $result = mysqli_query($connection, $sql);
+
+                                if (!$result) {
+                                    die("Invalid query: " . mysqli_error($connection));
+                                }
+
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    echo "<tr>
+                        <td>{$row['p_id']}</td>
+                        <td>{$row['heading']}</td>
+                        <td>{$row['details']}</td>
+                        <td>{$row['p_category']}</td>
+                       <td>{$row['p_user']}</td>
+                       <td><img src='img/{$row['p_img']}?r=" . rand() . "' alt='Image' height='120px' width='130px'></td>
+            </tr>";
+                                }
+                                mysqli_close($connection);
+                                ?>
+                            </table>
+                        </section>
                     </form>
+                    <button type="button" onclick="window.location.href='Post.php';">View All</button>
+
                 </div>
                 <div class="grid-item">
                     <form>
@@ -170,54 +213,30 @@ mysqli_close($conn);
                     </form>
                 </div>
                 <div class="grid-item">
-                    <form>
-                        <div id="cursor">
-                            <div class="background">
-                                <div class="table-responsive">
-                                    <table>
-                                        <thead>
-                                        <th>ID</th>
-                                        <th>UserName</th>
-                                        <th>FileName</th>
-                                        <th>FileDescription</th>
-                                        </thead>
-                                        <tbody>
-                                        <?php
-                                        $connection = mysqli_connect("127.0.0.1", "root", "", "iadb");
-
-                                        if (!$connection) {
-                                            die("Connection failed: " . mysqli_connect_error());
-                                        }
-
-                                        $sql = "SELECT * FROM admin";
-
-                                        $result = mysqli_query($connection, $sql);
-
-                                        if (!$result) {
-                                            die("Invalid query: " . mysqli_error($connection));
-                                        }
-
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            echo "<tr>
-                                <td>{$row['No']}</td>
-                                <td>{$row['FullName']}</td>
-                                <td>{$row['Description']}</td>
-                                <td>{$row['ContactInformation']}</td>
-                               
-                            </tr>";
-                                        }
-                                        mysqli_close($connection);
-                                        ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                    <section class="Order">
+                        <form class="Manager" method="post">
+                            <?php
+                            $sql = "SELECT * FROM contact";
+                            $result = mysqli_query($conn, $sql);
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                ?>
+                                <tr>
+                                    <form method='post'>
+                                        <td>Name: <input type='text' name='name' value='<?php echo $row['Name']; ?>' readonly></td>
+                                        <td>Phone: <input type='text' name='phone' value='<?php echo $row['Phone']; ?>'></td>
+                                        <td>Email: <input type='text' name='email' value='<?php echo $row['Email']; ?>'></td>
+                                        <td>Address: <input type='text' name='address' value='<?php echo $row['Address']; ?>'></td>
+                                        <td><button type='submit'>Update</button></td>
+                                    </form>
+                                </tr>
+                                <?php
+                            }
+                            ?>
+                        </form>
+                    </section>
                 </div>
             </div>
         </section>
     </main>
-</div>
 </body>
 </html>

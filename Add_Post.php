@@ -25,9 +25,6 @@ if (isset($_POST['submit'])) {
     $target_file = $target_dir . basename($_FILES["p_img"]["name"]);
     move_uploaded_file($_FILES["p_img"]["tmp_name"], $target_file);
 
-    // Modify target_file to include "img/"
-    $target_file = "img/" . basename($_FILES["p_img"]["name"]);
-
     // Perform SQL query to insert new record
     $insertQuery = "INSERT INTO post (heading, details, p_time, p_category, p_user, p_description, p_img) VALUES ('$heading', '$details', '$p_time', '$p_category', '$p_user', '$p_description', '$target_file')";
     $insertResult = mysqli_query($conn, $insertQuery);

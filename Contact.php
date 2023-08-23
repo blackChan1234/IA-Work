@@ -12,17 +12,14 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-if (isset($_POST['clear'])) {
-    // Perform SQL query to delete all records from the admin table
-    $deleteQuery = "DELETE FROM admin";
-    $deleteResult = mysqli_query($conn, $deleteQuery);
-    if ($deleteResult) {
-        // Records deleted successfully
-        echo "<script>alert('All records have been deleted.')</script>";
-    } else {
-        // Error deleting records
-        echo "<script>alert('Error deleting records.')</script>";
-    }
+// ...
+
+// Perform query to fetch contact data
+$sql = "SELECT * FROM contact";
+$result = mysqli_query($conn, $sql);
+
+if (!$result) {
+    die("Invalid query: " . mysqli_error($conn));
 }
 
 mysqli_close($conn);
@@ -35,6 +32,7 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <title>Admin</title>
     <link rel="stylesheet" href="Admin.css" type="text/css">
+    <link rel="stylesheet" href="Contact.css" type="text/css">
 </head>
 
 <body>
@@ -86,53 +84,30 @@ mysqli_close($conn);
 <div style="padding-left: 10%;">
     <main class="table">
         <section class="Table">
-            <h1>Admin</h1>
+            <h1>Contact Us</h1>
             <div class="New-Data">
-                <form method="post">
-                    <button type="button" onclick="window.location.href = 'create.php';">Add</button>
-                    <button type="submit" name="clear">Clear All</button>
-                </form>
             </div>
         </section>
         <section class="Order">
-            <table class="Manager">
-                <tr>
-                    <th>No</th>
-                    <th>FullName</th>
-                    <th>Description</th>
-                    <th>Contact</th>
-                    <th>Action</th>
-                </tr>
+            <form class="Contact" method="post" action="updateContact.php">
                 <?php
-                $connection = mysqli_connect("127.0.0.1", "root", "", "iadb");
-
-                if (!$connection) {
-                    die("Connection failed: " . mysqli_connect_error());
-                }
-
-                $sql = "SELECT * FROM admin";
-
-                $result = mysqli_query($connection, $sql);
-
-                if (!$result) {
-                    die("Invalid query: " . mysqli_error($connection));
-                }
-
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>
-                                <td>{$row['No']}</td>
-                                <td>{$row['FullName']}</td>
-                                <td>{$row['Description']}</td>
-                                <td>{$row['ContactInformation']}</td>
-                                <td>
-                                    <a href='Edit.php?No={$row['No']}' class='view'>Edit</a>
-                                    <a href='Delete.php?No={$row['No']}' class='delete' onclick=\"return confirm('Are you sure you want to delete this record?');\">Delete</a>
-                                </td>
-                            </tr>";
+                        <form method='post'>
+                           Name: <td><input type='text' name='name' value='{$row['Name']}' readonly></td>
+                           
+                           Phone: <td><input type='text' name='phone' value='{$row['Phone']}'></td>
+                           
+                            Email:<td><input type='text' name='email' value='{$row['Email']}'></td>
+                            
+                           Address: <td><input type='text' name='address' value='{$row['Address']}'></td>
+                           
+                           <button type='submit'>Update</button>
+                        </form>
+                    </tr>";
                 }
-                mysqli_close($connection);
                 ?>
-            </table>
+            </form>
         </section>
     </main>
 </div>
