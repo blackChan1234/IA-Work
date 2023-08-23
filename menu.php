@@ -11,7 +11,7 @@ session_start(); // Make sure to start the session if it's not started already
         </button>
         <a class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold" href="index.php">Game Addiction Database</a>
         <button class="btn btn-outline-light borderless">POST</button>
-        <button class="btn btn-outline-light borderless">CONTRACT</button>
+        <button class="btn btn-outline-light borderless">CONTACT</button>
         <button class="btn btn-outline-light borderless">ABOUT</button>
         <div class="change-fontsize btn-outline-light borderless">
             <span class="fontSizebtn" title="Font Size: Smaller" onclick="changeFontSize(1);">A</span>
