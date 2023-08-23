@@ -68,3 +68,9 @@
 #result div{
     font-size: 10px;
 }
+
+#tag span{
+    background-color: #54f4ff;
+    border-radius: 5px;
+    padding:0px 5px;
+}
