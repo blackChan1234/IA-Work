@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c0bb8c4-cc32-420c-bb1e-30cbc6d2dc07" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/game/game/light_sprite.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news.php" beforeDir="false" afterPath="$PROJECT_DIR$/news.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/bar.js" beforeDir="false" afterPath="$PROJECT_DIR$/game/bar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/game/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/game/game.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +70,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\XMAPP\htdocs\IA-Work\game" />
+      <recent name="D:\XMAPP\htdocs\IA-Work\img\game" />
       <recent name="D:\XMAPP\htdocs\IA-Work\sounds" />
     </key>
   </component>
@@ -95,7 +99,7 @@
       <workItem from="1692325437468" duration="2226000" />
       <workItem from="1692434978761" duration="12113000" />
       <workItem from="1692596605943" duration="7524000" />
-      <workItem from="1692667513950" duration="6666000" />
+      <workItem from="1692667513950" duration="13050000" />
     </task>
     <servers />
   </component>
@@ -107,7 +111,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/index.php</url>
-          <line>96</line>
+          <line>94</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

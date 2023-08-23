@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness & Addiction Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.24.1/dist/phaser.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <style>
+        #gameCanvas {
+            width: 50%; /* 缩小gameCanvas的宽度 */
+        }
+        .monster {
+            max-width: 80px;
+            max-height: 80px;
+            display: block; /* 讓圖片成為block級元素 */
+            margin: 0 auto 10px; /* 圖片居中，並在下方留有間距以放置名稱 */
+        }
+
+        .monster-name {
+            text-align: center; /* 名稱文字居中 */
+            font-weight: bold; /* 加粗名稱 */
+        }
+
+    </style>
+</head>
+
+
+<body>
+<div class="container mt-5">
+    <h1>身心與上癮度遊戲</h1>
+    <p>培養你的精靈，讓它健康成長！</p>
+    <div class="row">
+        <div class="col-md-6">
+    <div id="gameCanvas"></div>
+
+    <h2>今天你做了什麼?</h2>
+
+    <form id="activityForm">
+        <div class="form-group">
+            <label for="activitySelect">選擇活動</label>
+            <select class="form-control" id="activitySelect">
+                <option value="gaming">玩遊戲</option>
+                <option value="study">學習</option>
+                <option value="reading">讀書</option>
+                <option value="exercise">運動</option>
+                <option value="watchTV">看電視</option>
+                <option value="socialize">社交</option>
+                <option value="sleep">睡眠</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="hoursInput">小時</label>
+            <input type="number" class="form-control" id="hoursInput" min="1">
+        </div>
+        <ul id="activityList"></ul>
+        <button type="button" class="btn btn-primary" onclick="addToList()">新增活動</button>
+        <button type="button" class="btn btn-success" onclick="finalizeDay()">今日完成</button>
+    </form>
+
+    <h3>遊戲進度</h3>
+    <p>已過天數: <span id="days">1</span> 天</p>
+    <p>上癮度:</p>
+    <div class="progress" style="width: 50%">
+        <div id="addictionBar" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <p>身心度:</p>
+    <div class="progress" style="width: 50%">
+        <div id="wellnessBar" class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+<div class="col-md-6">
+<h2>怪獸圖鑑</h2>
+<div id="monsterPokedex">
+    <div class="monster-container">
+        <img src="img/question.png" class="monster" data-monster-id="light_sprite">
+        <div class="monster-name">光之精靈</div> <!-- 這裡是怪獸的名稱 -->
+    </div>
+    <div class="monster-container">
+        <img src="img/question.png" class="monster" data-monster-id="2">
+        <div class="monster-name">第二個怪獸名</div> <!-- 這裡是怪獸的名稱 -->
+    </div>
+    <!-- 可根據需求加入更多怪獸... -->
+</div>
+</div>
+</div>
+    </div>
+    </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        loadDataFromCookie();
+    });
+    function storeDataToCookie() {
+        let gameData = {
+            days: days,
+            addiction: addiction,
+            wellness: wellness,
+            unlockedMonsters: unlockedMonsters,
+            activities: activities
+        };
+
+        // Store the data in a cookie with a 30-day expiry
+        let date = new Date();
+        date.setTime(date.getTime() + (30*24*60*60*1000)); // Set the expiration to 7 days
+        let expires = "expires=" + date.toUTCString();
+        document.cookie = "gameData=" + JSON.stringify(gameData) + ";" + expires + ";path=/";
+    }
+    function loadDataFromCookie() {
+        try {
+            let cookieData = decodeURIComponent(document.cookie);
+            let cookieArr = cookieData.split(';');
+
+            for(let i = 0; i < cookieArr.length; i++) {
+                let cookie = cookieArr[i];
+                while (cookie.charAt(0) == ' ') {
+                    cookie = cookie.substring(1);
+                }
+                if (cookie.indexOf("gameData=") == 0) {
+                    let gameData = JSON.parse(cookie.substring(9));
+                    days = gameData.days;
+                    addiction = gameData.addiction;
+                    wellness = gameData.wellness;
+                    unlockedMonsters = gameData.unlockedMonsters;
+                    activities = gameData.activities || []; // Ensure it defaults to an empty array if not in the cookie
+                }
+            }
+        } catch (error) {
+            console.error("Error while loading data from cookie:", error);
+        }
+    }
+
+    const monsterNames = {
+        'light_sprite': '光之精靈',
+        '2': '第二個怪獸名'
+    };
+    let unlockedMonsters = [];
+    let actionCount = 0;
+    function submitActivity() {
+        if (actionCount >= 3) {
+            alert("今天的行動已達上限！");
+            return;
+        }
+
+        const activity = document.getElementById("activitySelect").value;
+        const hours = parseFloat(document.getElementById("hoursInput").value) || 0;
+
+        if (hours <= 0) {
+            alert("請輸入有效的時數！");
+            return;
+        }
+
+        addActivity(activity, hours);
+        actionCount += 1;
+    }
+    const config = {
+        type: Phaser.AUTO,
+        parent: 'gameCanvas',
+        width: 800,
+        height: 600,
+        scene: {
+            preload: preload,
+            create: create,
+            update: update
+        }
+    };
+
+    let days = 1;
+    let addiction = 0;
+    let wellness = 0;
+    let eggSprite;
+    let shakeTween;
+
+    const game = new Phaser.Game(config);
+
+    function preload() {
+        this.load.image('egg', 'img/egg.png');
+        this.load.image('light_sprite', 'img/light_sprite.png'); // 加載新的圖片
+    }
+
+    let totalHours = 0;
+    let activities = [];
+
+    function addToList() {
+        if (activities.length >= 3) {
+            alert("您只能添加最多3項活動！");
+            return;
+        }
+
+        const activity = document.getElementById("activitySelect").value;
+        const hours = parseFloat(document.getElementById("hoursInput").value) || 0;
+
+        if (hours <= 0 || totalHours + hours > 24) {
+            alert("請輸入有效的時數且總時數不能超過24小時！");
+            return;
+        }
+
+        totalHours += hours;
+
+        let existingActivity = activities.find(a => a.activity === activity);
+        if (existingActivity) {
+            existingActivity.hours += hours;
+            document.getElementById("activityList").innerHTML = ''; // 清空之前的活動列表
+            activities.forEach(act => {
+                const li = document.createElement("li");
+                li.textContent = act.activity + " " + act.hours + "小時";
+                document.getElementById("activityList").appendChild(li);
+                storeDataToCookie();
+            });
+        } else {
+            activities.push({ activity, hours });
+
+            const li = document.createElement("li");
+            li.textContent = activity + " " + hours + "小時";
+            document.getElementById("activityList").appendChild(li);
+            storeDataToCookie();
+        }
+    }
+
+
+    function finalizeDay() {
+        if (activities.length === 0) {
+            alert("請至少添加一項活動！");
+            return;
+        }
+
+        for (let { activity, hours } of activities) {
+            addActivity(activity, hours);
+        }
+
+        // Reset for next day
+        totalHours = 0;
+        activities = [];
+        document.getElementById("activityList").innerHTML = '';
+    }
+    function create() {
+        loadDataFromCookie();
+        sceneReference = this;
+        eggSprite = this.add.sprite(400, 300, 'egg').setScale(0.2);
+        shakeTween = this.tweens.add({
+            targets: eggSprite,
+            angle: { start: -5 * days, to: 5 * days }, // 根據天數改變搖晃幅度
+            ease: 'Sine.easeInOut',
+            duration: 500,
+            yoyo: true,
+            repeat: -1
+        });
+
+    }
+
+    function update() {
+    }
+
+    function addActivity(activity, hours) {
+        if (activity === 'gaming') {
+            if (hours <= 5) {
+                // No addiction for gaming less than or equal to 5 hours
+            } else if (hours > 5 && hours <= 10) {
+                addiction += (hours - 5) * 2; // 2 points for every hour after 5 hours
+            } else if (hours > 10) {
+                addiction += 10; // 4 points for every hour after 10 hours
+                wellness -= 2;
+            }
+        } else if (activity === 'study') {
+            if (hours <= 12) {
+                wellness += hours * 2;
+            } else if (hours > 12) {
+                wellness -= 2; // Deduct wellness for studying more than 12 hours
+            }
+        } else if (activity === 'reading') {
+            wellness += hours;
+        } else if (activity === 'exercise') {
+            wellness += hours * 3;
+        } else if (activity === 'watchTV') {
+            if (hours > 4) {
+                addiction += (hours - 4) * 2;
+            }
+        } else if (activity === 'socialize') {
+            wellness += hours * 2;
+        } else if (activity === 'sleep') {
+            if (hours < 5) {
+                addiction += (5 - hours) * 2;
+            } else if (hours > 8) {
+                wellness += (hours - 8);
+            } else {
+                wellness += 2;
+            }
+        }
+        storeDataToCookie();
+        updateBars();
+        checkEggStatus();
+    }
+    let sceneReference;
+    function updateBars() {
+        let addictionBar = document.getElementById("addictionBar");
+        let wellnessBar = document.getElementById("wellnessBar");
+
+        addictionBar.style.width = addiction + "%";
+        addictionBar.setAttribute("aria-valuenow", addiction);
+
+        wellnessBar.style.width = wellness + "%";
+        wellnessBar.setAttribute("aria-valuenow", wellness);
+        storeDataToCookie();
+    }
+    function checkEggStatus() {
+        if (days >= 10) {
+            shakeTween.stop();
+            let currentMonster = '1';
+            if (wellness > addiction) {
+                const hatchTween = sceneReference.tweens.add({  // 使用 sceneReference
+                    targets: eggSprite,
+                    alpha: 0,
+                    ease: 'Sine.easeInOut',
+                    duration: 500,
+                    onComplete: function() {
+                        eggSprite.setTexture('light_sprite');
+                        eggSprite.setAlpha(1);
+                        unlockMonsterInPokedex('light_sprite');
+                        storeDataToCookie();
+                    }
+                });
+            } else {
+                eggSprite.setTint(0xFF0000); // Red color for high addiction
+            }
+            days = 1;
+            addiction = 0;
+            wellness = 0;
+        } else {
+            days += 1;
+            document.getElementById("days").innerText = days;
+        }
+    }
+    function unlockMonsterInPokedex(monster) {
+        if (!unlockedMonsters.includes(monster)) {
+            unlockedMonsters.push(monster);
+            let monsterImg = document.querySelector(`[data-monster-id="${monster}"]`);
+            monsterImg.src = `img/${monster}.png`;
+            let monsterNameDiv = monsterImg.nextElementSibling; // assuming the name div is immediately after the image
+            monsterNameDiv.textContent = monsterNames[monster];
+        }
+    }
+</script>
+</body>
+</html>
