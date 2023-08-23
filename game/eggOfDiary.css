@@ -1,0 +1,25 @@
+.egg-animation-container {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.egg {
+    width: 100px;
+    height: 130px;
+    background-image: url('img/egg.png');
+    background-size: cover;
+    transform-origin: bottom center;
+    animation: shake 0.5s infinite alternate;
+}
+
+@keyframes shake {
+    from {
+        transform: rotate(-5deg);
+    }
+    to {
+        transform: rotate(5deg);
+    }
+}
+/* <div class="egg-animation-container">
+        <div class="egg"></div> */

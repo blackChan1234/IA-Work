@@ -81,14 +81,22 @@ $(document.getElementById("flipbook")).ready
         pageLen = day;
         pageLen++;
         bookTitle = "Diary";
+        eggDiv = document.createElement('div');
+        eggDiv.className = 'egg';
+        eggContainerDiv = document.createElement('div');
+        eggContainerDiv.className = 'egg-animation-container';
 
         
-        
+
         pageFirstTitle = document.createElement("h2");
         pageFirstTitle.textContent = bookTitle;
+        
 
         pageFirst = aPage();
         pageFirst.append(pageFirstTitle);
+
+        eggContainerDiv.append(eggDiv);
+        pageFirst.append(eggContainerDiv);
 
         $("#flipbook").append(pageFirst);
         $("#flipbook").append(aPage());
