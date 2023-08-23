@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- 主机： 127.0.0.1
--- 生成日期： 2023-08-22 05:14:34
--- 服务器版本： 10.4.27-MariaDB
--- PHP 版本： 8.2.0
+-- 主機： 127.0.0.1
+-- 產生時間： 2023-08-23 14:43:14
+-- 伺服器版本： 10.4.28-MariaDB
+-- PHP 版本： 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 数据库： `iadb`
+-- 資料庫： `iadb`
 --
 DROP DATABASE iadb;
 CREATE DATABASE IF NOT EXISTS `iadb`;
@@ -26,7 +26,7 @@ USE `iadb`;
 -- --------------------------------------------------------
 
 --
--- 表的结构 `admin`
+-- 資料表結構 `admin`
 --
 
 CREATE TABLE `admin` (
@@ -37,7 +37,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- 转存表中的数据 `admin`
+-- 傾印資料表的資料 `admin`
 --
 
 INSERT INTO `admin` (`No`, `FullName`, `Description`, `ContactInformation`) VALUES
@@ -47,40 +47,33 @@ INSERT INTO `admin` (`No`, `FullName`, `Description`, `ContactInformation`) VALU
 -- --------------------------------------------------------
 
 --
--- 表的结构 `pdf`
+-- 資料表結構 `pdf`
 --
 
 CREATE TABLE `pdf` (
   `pdfID` int(11) NOT NULL,
   `fileName` varchar(200) NOT NULL,
   `userName` varchar(200) NOT NULL,
-  `pdfDescription` varchar(200) NOT NULL
+  `pdfDescription` varchar(200) NOT NULL,
+  `uploadDate` date NOT NULL,
+  `type` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- 转存表中的数据 `pdf`
+-- 傾印資料表的資料 `pdf`
 --
 
-INSERT INTO `pdf` (`pdfID`, `fileName`, `userName`, `pdfDescription`) VALUES
-(12, 'IA04.pdf', 'Ca', 'sadaksdkjsa'),
-(13, 'IA04.pdf', 'Ca', 'sadaksdkjsa'),
-(14, 'IA04.pdf', 'Ca', 'sadaksdkjsa'),
-(15, 'IA04.pdf', 'Ca', 'sadaksdkjsa'),
-(16, 'IA04.pdf', 'Ca', 'sadaksdkjsa'),
-(17, 'IA04.pdf', 'Ca', 'sadaksdkjsa'),
-(18, 'IA04.pdf', 'Ca', 'sadaksdkjsa'),
-(19, 'IA04.pdf', 'Ca', 'sadaksdkjsa'),
-(20, 'IA04.pdf', 'Ca', 'sadaksdkjsa'),
-(21, 'IA04.pdf', 'Ca', 'sadaksdkjsa'),
-(22, 'IA04.pdf', 'Ca', 'sadaksdkjsa'),
-(23, 'IA04.pdf', 'Ca', 'sadaksdkjsa'),
-(24, '220042782_transcript.pdf', 'sdsa', 'sad'),
-(25, 'Preview HD300.pdf', 'sd', 'sd');
+INSERT INTO `pdf` (`pdfID`, `fileName`, `userName`, `pdfDescription`, `uploadDate`, `type`) VALUES
+(1, 'IA04-proposal.pdf', 'sea', 'IA04 proposal', '2023-08-23', 'proposal'),
+(2, 'IA04-program.pdf', 'nam', 'IA04-program', '2023-08-24', 'program'),
+(3, 'IA04-report.pdf', 'mars', 'IA04-report', '2023-08-25', 'report'),
+(4, 'IA04-minutes.pdf', 'owl', 'IA04-minutes', '2020-12-01', 'minutes'),
+(5, 'IA04-data.pdf', 'sea', 'IA04-data', '2023-08-15', 'data');
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `post`
+-- 資料表結構 `post`
 --
 
 CREATE TABLE `post` (
@@ -95,7 +88,7 @@ CREATE TABLE `post` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- 转存表中的数据 `post`
+-- 傾印資料表的資料 `post`
 --
 
 INSERT INTO `post` (`p_id`, `heading`, `details`, `p_time`, `p_img`, `p_description`, `p_category`, `p_user`) VALUES
@@ -104,7 +97,7 @@ INSERT INTO `post` (`p_id`, `heading`, `details`, `p_time`, `p_img`, `p_descript
 -- --------------------------------------------------------
 
 --
--- 表的结构 `user`
+-- 資料表結構 `user`
 --
 
 CREATE TABLE `user` (
@@ -116,7 +109,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- 转存表中的数据 `user`
+-- 傾印資料表的資料 `user`
 --
 
 INSERT INTO `user` (`userID`, `Name`, `email`, `password`, `group`) VALUES
@@ -130,45 +123,45 @@ INSERT INTO `user` (`userID`, `Name`, `email`, `password`, `group`) VALUES
 (18, 'asd', 'sad@gmail.com', '$2y$10$Hs8q6y7oO4tm8iOy7TtY5OhdBbu7jEcp1GSvtxfJ168Bd/k29n6h.', 'member');
 
 --
--- 转储表的索引
+-- 已傾印資料表的索引
 --
 
 --
--- 表的索引 `pdf`
+-- 資料表索引 `pdf`
 --
 ALTER TABLE `pdf`
   ADD PRIMARY KEY (`pdfID`);
 
 --
--- 表的索引 `post`
+-- 資料表索引 `post`
 --
 ALTER TABLE `post`
   ADD PRIMARY KEY (`p_id`);
 
 --
--- 表的索引 `user`
+-- 資料表索引 `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`userID`);
 
 --
--- 在导出的表使用AUTO_INCREMENT
+-- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
 --
 
 --
--- 使用表AUTO_INCREMENT `pdf`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `pdf`
 --
 ALTER TABLE `pdf`
-  MODIFY `pdfID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `pdfID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- 使用表AUTO_INCREMENT `post`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `post`
 --
 ALTER TABLE `post`
   MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- 使用表AUTO_INCREMENT `user`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `user`
 --
 ALTER TABLE `user`
   MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
