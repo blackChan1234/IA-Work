@@ -19,12 +19,12 @@
                     <h4>Forgot Password</h4>
                 </div>
                 <div class="card-body">
-                    <form action="forgot_password.php" method="post">
+                    <form action="Mail.php" method="post">
                         <div class="mb-3">
                             <label for="email" class="form-label">Enter your email to reset your password</label>
                             <input type="email" class="form-control" id="email" name="email" required>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">Reset Password</button>
+                        <button type="submit" name="send" class="btn btn-primary w-100">Reset Password</button>
                     </form>
                 </div>
             </div>
