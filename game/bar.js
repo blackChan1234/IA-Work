@@ -10,7 +10,7 @@ class ProgressBar {
     updateProgressBar() {
         if (this.progressBar && this.progressValue) { // Check if elements are found
             this.progressBar.style.width = (this.clickCount / this.maxClicks) * 100 + '%';
-            this.progressValue.textContent = `${this.clickCount} / ${this.maxClicks}`;
+            // this.progressValue.textContent = `${this.clickCount} / ${this.maxClicks}`;
         }
     }
 

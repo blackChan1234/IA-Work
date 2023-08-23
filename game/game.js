@@ -72,7 +72,7 @@ function startGame() {
 function calculateArraySum(array) {
   let sum = 0;
   for (let i = 0; i < array.length; i++) {
-      sum += array[i];
+      sum += parseInt(array[i]);
   }
   return sum;
 }
@@ -117,8 +117,8 @@ function updateBar(){
   var data = readGameData();
   progressBar1=new ProgressBar("progress-bar", "progress-value", 31);
   progressBar2=new ProgressBar("progress-bar2", "progress-value2", 31);
-  totalGameTime=calculateArraySum(data.gameTime)/(16*30)+1;
-    totalReadTime=calculateArraySum(data.readTime)/(16*30)+1;
+  totalGameTime=calculateArraySum(data.gameTime)/(16)+0.5;
+    totalReadTime=calculateArraySum(data.readTime)/(16)+0.5;
     progressBar1.setClickCount(Math.round(totalGameTime));
     progressBar2.setClickCount(Math.round(totalReadTime));
 }
