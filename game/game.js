@@ -66,6 +66,7 @@ function startGame() {
     $("#flipbook").turn("page", numOfdays(data));
   }
   saveAndNewData(gameValue,readValue);
+  location.reload();
 }
 
 function calculateArraySum(array) {

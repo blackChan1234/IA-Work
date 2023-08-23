@@ -27,7 +27,10 @@ class ProgressBar {
         }
     }
 }
+updateBar();
 /*
+ calculateArraySum(data.readTime);
+
 p1= new ProgressBar ("progress-bar2","progress-value2",30)
 p1.setClickCount(29)
 
