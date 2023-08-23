@@ -56,7 +56,7 @@ function addNewElement(elementOfParent, text,type) {
     elementOfParent.append(div);
 }
 
-$(document).ready
+$(document.getElementById("flipbook")).ready
     (function () {
         day = 0;
         var data;
@@ -86,7 +86,7 @@ $(document).ready
         
         pageFirstTitle = document.createElement("h2");
         pageFirstTitle.textContent = bookTitle;
-        
+
         pageFirst = aPage();
         pageFirst.append(pageFirstTitle);
 
@@ -94,7 +94,6 @@ $(document).ready
         $("#flipbook").append(aPage());
 
         for (let i = 0; i < pageLen; i++) {
-            printGameCookie();
             const pageDiv = document.createElement('div');
             pageDiv.className = 'page';
             addNewElement(pageDiv, "day" + (i + 1),"h3");
