@@ -80,7 +80,7 @@ $(document.getElementById("flipbook")).ready
         */
         pageLen = day;
         pageLen++;
-        bookTitle = "T";
+        bookTitle = "Diary";
 
         
         

@@ -27,13 +27,17 @@
         }
         
         #flipbook .odd{
-            background:-webkit-gradient(linear, right top, left top, color-stop(0.95, #f3dc91), color-stop(1, #ddc484));
-            box-shadow:inset 0 0 5px #666;
+            background:-webkit-gradient(linear, right top, left top, color-stop(0.9, #f3dc91), color-stop(1, #d0b778));
+            box-shadow:inset 0 0 5px #848484;
         }
         
         #flipbook .even{
-            background:-webkit-gradient(linear, left top, right top, color-stop(0.95, #f3dc91), color-stop(1, #ddc484));
-            box-shadow:inset 0 0 5px #666;
+            background:-webkit-gradient(linear, left top, right top, color-stop(0.9, #f3dc91), color-stop(1, #d0b778));
+            box-shadow:inset 0 0 5px #8b8b8b;
+        }
+        form{
+            margin-bottom: 50px;
+            margin-left: 50px;
         }
         </style>
 </head>
@@ -75,9 +79,10 @@
         <form action="" onsubmit="startGame()">
             <label for="game_time" id="lab_game_time">Game time</label>
             <input type="number" max="24" min="0" id="game_time">
-
-            <label for="read_time" id="lab_read_time"> time</label>
+            <br><br>
+            <label for="read_time" id="lab_read_time">Read time</label>
             <input type="number" max="24" min="0" id="read_time">
+            <br><br>
             <input type="submit">
         </form>
     </div>
