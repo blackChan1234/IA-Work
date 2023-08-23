@@ -121,5 +121,5 @@ $(document.getElementById("flipbook")).ready
             height: 300,
             autoCenter: true
         });
-
+        updateBar();
     });

@@ -115,6 +115,8 @@ function showPage(page) {
 }
 function updateBar(){
   var data = readGameData();
+  progressBar1=new ProgressBar("progress-bar", "progress-value", 30);
+  progressBar2=new ProgressBar("progress-bar2", "progress-value2", 30);
   totalGameTime=calculateArraySum(data.gameTime)/(16*30);
     totalReadTime=calculateArraySum(data.readTime)/(16*30);
     progressBar1.setClickCount(Math.round(totalGameTime));

@@ -27,7 +27,7 @@ class ProgressBar {
         }
     }
 }
-updateBar();
+
 /*
  calculateArraySum(data.readTime);
 
