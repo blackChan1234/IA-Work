@@ -143,7 +143,7 @@
     </div>
         
     <footer>
-        <p>&copy; 2023 Website. All rights reserved.</p>
+        <p>&copy; 2023 IA Group Website. All rights reserved.</p>
         <a href="https://www.facebook.com/hksyu/" class="fa fa-facebook"></a>
         <a href="https://www.instagram.com/explore/tags/樹仁大學/top/" class="fa fa-instagram"></a>
     </footer>
