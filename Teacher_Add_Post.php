@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
         // Record inserted successfully
         echo "<script>alert('Record inserted successfully.')</script>";
         // Redirect to post.php
-        header("Location: Post.php");
+        header("Location: Teacher_Post.php");
         exit();
     } else {
         // Error inserting record
