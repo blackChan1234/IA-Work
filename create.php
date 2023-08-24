@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Retrieve form data
     $Name = $_POST['Name'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
     // Insert the new data into the database
     $query = "INSERT INTO user (userID, Name, email, password, `group`) VALUES ($nextNo, '$Name', '$email', '$password', '$group')";
