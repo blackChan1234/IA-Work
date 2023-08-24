@@ -16,7 +16,6 @@ fetch('pageData.json')
 
 
 function setPageData(data) {
-    if (!checkCookie("Book")) {
         // create new game data
         var expirationDate = new Date();
         var Book = {
@@ -31,12 +30,16 @@ function setPageData(data) {
         // document.cookie = "game_data=" + jsonData + "; expires=" + expirationDate.toUTCString() + "; path=/";
         setCookie("Book", jsonData, expirationDate.toUTCString());
 
-    }
+    
 }
 
 function getExpirationDate() {
     var expirationDate = new Date();
     return expirationDate.getDate();
+}
+function getExpirationTime() {
+    var expirationDate = new Date();
+    return expirationDate.getTime();
 }
 
 function readBookData() {
@@ -61,17 +64,20 @@ function addNewElement(elementOfParent, text,type) {
 }
 
 function targetGameTimeIsEmpty(num){
-    return readGameData().gameTime.length<num;
+    return readGameData().gameTime.length<=num;
 }
 function targetReadTimeIsEmpty(num){
-    return readGameData().readTime.length<num;
+    return readGameData().readTime.length<=num;
 }
 
 function getPageInfo(page) {
     try {
         if (!targetGameTimeIsEmpty(page)||!targetReadTimeIsEmpty(page)){   
             gData=readGameData();
-            bookData=readBookData().data;
+            bookData=[];
+            if(checkCookie("Book")){ 
+                bookData=readBookData().data;
+            }
             gT=0;
             rT=0;
             eachCategoryLength =10;
@@ -82,25 +88,25 @@ function getPageInfo(page) {
             if (!targetReadTimeIsEmpty(page)){
                 rt=gData.readTime[page];
             }
-            if(gt<rT){
-                seed+=10;
-            }
-            if(gt>rT){
-                seed+=20;
-            }
-            if(gt==0 && rT==0){
-                seed+=40;
-            }
+            // if(gt<rT){
+            //     seed+=10;
+            // }
+            // if(gt>rT){
+            //     seed+=20;
+            // }
+            // if(gt==0 && rT==0){
+            //     seed+=30;
+            // }
             bookData[page]=seed;
             setPageData(bookData);
         }
         const pageInfo = allPageData[readBookData().data[page]]; // 使用頁數索引獲取對應的數據
-        if (pageInfo) {
+        
             return pageInfo;
-        }
+        
     }
-    finally {
-        return { text: `page ${page + 1}` }; // 默認顏色和空文字
+    catch (e) {
+        return  `page ${page + 1}` ; // 默認顏色和空文字
     }
 }
 
@@ -167,7 +173,7 @@ $(document.getElementById("flipbook")).ready
             }
         }
         addNewElement(pageDiv, "","br");
-            newLine(pageDiv, getPageInfo(i).text);
+            newLine(pageDiv, getPageInfo(i));
             $("#flipbook").append(pageDiv);
         }
 
