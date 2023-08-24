@@ -3,8 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href=
-    "https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/uploadStyle.css">
 </head>
 <body>
@@ -15,65 +14,51 @@
             <form method="post" enctype="multipart/form-data">
                 <?php
                 // If submit button is clicked
-                if (isset($_POST['submit']))
-                {
+                if (isset($_POST['submit'])) {
                     // get name from the form when submitted
                     $name = $_POST['name'];
                     $Description = $_POST['Description'];
 
-                    if (isset($_FILES['pdf_file']['name']))
-                    {
+                    if (isset($_FILES['pdf_file']['name'])) {
                         // If the ‘pdf_file’ field has an attachment
                         $file_name = $_FILES['pdf_file']['name'];
                         $file_tmp = $_FILES['pdf_file']['tmp_name'];
 
                         // Move the uploaded pdf file into the pdf folder
-                        move_uploaded_file($file_tmp,"./pdf/".$file_name);
+                        move_uploaded_file($file_tmp, "./pdf/" . $file_name);
                         // Insert the submitted data from the form into the table
-                        $insertquery =
-                            "INSERT INTO pdf(username,filename,pdfDescription) VALUES('$name','$file_name','$Description')";
+                        $insertquery = "INSERT INTO pdf(username,filename,pdfDescription) VALUES('$name','$file_name','$Description')";
 
                         // Execute insert query
                         $iquery = mysqli_query($con, $insertquery);
 
-                        if ($iquery)
-                        {
+                        if ($iquery) {
                             ?>
-                            <div class=
-                                 "alert alert-success alert-dismissible fade show text-center">
-                                <a class="close" data-dismiss="alert" aria-label="close">
-                                    ×
-                                </a>
+                            <div class="alert alert-success alert-dismissible fade show text-center">
+                                <a class="close" data-dismiss="alert" aria-label="close">×</a>
                                 <strong>Success!</strong> Data submitted successfully.
                             </div>
                             <?php
-                        }
-                        else
-                        {
+                            // Redirect to PDF.php after successful submission
+                            header("Location: PDF.php");
+                            exit(); // Important to prevent further execution of the script
+                        } else {
                             ?>
-                            <div class=
-                                 "alert alert-danger alert-dismissible fade show text-center">
-                                <a class="close" data-dismiss="alert" aria-label="close">
-                                    ×
-                                </a>
+                            <div class="alert alert-danger alert-dismissible fade show text-center">
+                                <a class="close" data-dismiss="alert" aria-label="close">×</a>
                                 <strong>Failed!</strong> Try Again!
                             </div>
                             <?php
                         }
-                    }
-                    else
-                    {
+                    } else {
                         ?>
-                        <div class=
-                             "alert alert-danger alert-dismissible fade show text-center">
-                            <a class="close" data-dismiss="alert" aria-label="close">
-                                ×
-                            </a>
+                        <div class="alert alert-danger alert-dismissible fade show text-center">
+                            <a class="close" data-dismiss="alert" aria-label="close">×</a>
                             <strong>Failed!</strong> File must be uploaded in PDF format!
                         </div>
                         <?php
-                    }// end if
-                }// end if
+                    } // end if
+                } // end if
                 ?>
 
                 <div class="form-input py-2">
@@ -90,9 +75,9 @@
                         <input type="file" name="pdf_file"
                                class="form-control" accept=".pdf" required/>
                     </div>
+
                     <div class="form-group">
-                        <input type="submit"
-                               class="btnRegister" name="submit" value="Submit">
+                        <input type="submit" class="btnRegister" name="submit" value="Submit">
                     </div>
                 </div>
             </form>
@@ -133,6 +118,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </body>

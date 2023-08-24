@@ -63,9 +63,9 @@ mysqli_close($conn);
                 </a>
             </li>
             <li>
-                <a class="ui" href="About.php">
+                <a class="ui" href="PDF.php">
                     <img id="img" src="img/3.png" alt="" width="50" height="50">
-                    <span>About US</span>
+                    <span>PDF</span>
                 </a>
             </li>
             <li>
@@ -86,7 +86,7 @@ mysqli_close($conn);
 <div style="padding-left: 10%;">
     <main class="table">
         <section class="Table">
-            <h1>Admin</h1>
+            <h1>Person Information</h1>
             <div class="New-Data">
                 <form method="post">
                     <button type="button" onclick="window.location.href = 'create.php';">Add</button>

@@ -63,7 +63,7 @@ mysqli_close($conn);
                 </a>
             </li>
             <li>
-                <a class="ui" href="About.php">
+                <a class="ui" href="PDF.php">
                     <img id="img" src="img/3.png" alt="" width="50" height="50">
                     <span>PDF</span>
                 </a>
@@ -124,14 +124,14 @@ mysqli_close($conn);
 
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>
-               <td>{$row['p_id']}</td>
+        <td>{$row['p_id']}</td>
         <td>{$row['heading']}</td>
         <td>{$row['details']}</td>
         <td>{$row['p_time']}</td>
         <td>{$row['p_category']}</td>
         <td>{$row['p_user']}</td>
         <td>{$row['p_description']}</td>
-        <td>" . basename($row['p_img']) . PHP_EOL . "</td>
+        <td><img src='img/{$row['p_img']}' alt='Image' height='120px' width='130px'></td>
         <td>
             <a href='PEdit.php?p_id={$row['p_id']}' class='view'>Edit</a>
             <a href='PDelete.php?p_id={$row['p_id']}' class='delete' onclick=\"return confirm('Are you sure you want to delete this record?');\">Delete</a>
@@ -147,4 +147,3 @@ mysqli_close($conn);
 </body>
 
 </html>
-<td><img src='img/{$row['p_img']}?r=" . rand() . "' alt='Image' height='120px' width='130px'></td>

@@ -12,6 +12,25 @@
     background-color: #f9f9f9;
     /* Additional styling for each grid item */
 }
+.grid-item-2 {
+    border: 1px solid #ccc;
+    padding: 50px;
+    background-color: #f9f9f9;
+    /* Additional styling for each grid item */
+}
+.grid-item-3 {
+    border: 1px solid #ccc;
+    padding: 50px;
+    background-color: #f9f9f9;
+    /* Additional styling for each grid item */
+}
+
+.grid-item-4 {
+    border: 1px solid #ccc;
+    padding: 50px;
+    background-color: #f9f9f9;
+    /* Additional styling for each grid item */
+}
 
 body {
     font-family: Arial, sans-serif;

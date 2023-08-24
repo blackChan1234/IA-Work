@@ -50,9 +50,9 @@ if (!$conn) {
                 </a>
             </li>
             <li>
-                <a class="ui" href="About.php">
+                <a class="ui" href="PDF.php">
                     <img id="img" src="img/3.png" alt="" width="50" height="50">
-                    <span>About US</span>
+                    <span>PDF</span>
                 </a>
             </li>
             <li>
@@ -126,7 +126,7 @@ if (!$conn) {
 
                 </div>
 
-                <div class="grid-item">
+                <div class="grid-item-2">
                     <form>
                         <section class="Order">
                             <table class="Manager">
@@ -171,7 +171,7 @@ if (!$conn) {
                     <button type="button" onclick="window.location.href='Post.php';">View All</button>
 
                 </div>
-                <div class="grid-item">
+                <div class="grid-item-3">
                     <form>
                         <div id="cursor">
                             <div class="background">
@@ -209,10 +209,10 @@ if (!$conn) {
                                 </div>
                             </div>
                         </div>
-                        <button type="button" href ="";>View All</button>
+                        <button type="button" onclick="window.location.href='PDF.php';">View All</button>
                     </form>
                 </div>
-                <div class="grid-item">
+                <div class="grid-item-4">
                     <section class="Order">
                         <form class="Manager" method="post">
                             <?php
@@ -226,7 +226,7 @@ if (!$conn) {
                                         <td>Phone: <input type='text' name='phone' value='<?php echo $row['Phone']; ?>'></td>
                                         <td>Email: <input type='text' name='email' value='<?php echo $row['Email']; ?>'></td>
                                         <td>Address: <input type='text' name='address' value='<?php echo $row['Address']; ?>'></td>
-                                        <td><button type='submit'>Update</button></td>
+                                        <button type="button" onclick="window.location.href='Contact.php';">View All</button>
                                     </form>
                                 </tr>
                                 <?php

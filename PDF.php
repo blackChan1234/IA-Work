@@ -52,7 +52,7 @@ if (isset($_POST['clear'])) {
                 </a>
             </li>
             <li>
-                <a class="ui" href="About.php">
+                <a class="ui" href="PDF.php">
                     <img id="img" src="img/3.png" alt="" width="50" height="50">
                     <span>PDF</span>
                 </a>
@@ -64,7 +64,7 @@ if (isset($_POST['clear'])) {
                 </a>
             </li>
             <li>
-                <a class="ui" href="logout.php">
+                <a class="ui" href="AdminLogout.php">
                     <img id="img" src="img/5.png" alt="" width="50" height="50">
                     <span>Log Out</span>
                 </a>
@@ -74,8 +74,8 @@ if (isset($_POST['clear'])) {
 </div>
 <div id="cursor">
     <div class="background">
-        <h1>Upload Data</h1>
-        <form action="info.php" method="post" enctype="multipart/form-data" name="form">
+        <h1>PDF</h1>
+        <form action="PDF.php" method="post" enctype="multipart/form-data" name="form">
             <script language="javascript" type="text/javascript">
                 alertTest();
             </script>
@@ -110,7 +110,7 @@ if (isset($_POST['clear'])) {
                                         </td>
                                         <td><?php echo isset($result['pdfDescription']) ? $result['pdfDescription'] : ''; ?></td>
                                         <td>
-                                            <a href='Delete.php?pdfID=<?php echo $result['pdfID']; ?>' class='delete' onclick="return confirm('Are you sure you want to delete this record?');">Delete</a>
+                                            <a href='PdfDelete.php?pdfID=<?php echo $result['pdfID']; ?>' class='delete' onclick="return confirm('Are you sure you want to delete this record?');">Delete</a>
                                         </td>
                                     </tr>
                                     <?php
