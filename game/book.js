@@ -1,5 +1,5 @@
-allPageData;
-fetch('https://example.com/data.json')
+allPageData=[];
+fetch('pageData.json')
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -71,6 +71,7 @@ function getPageInfo(page) {
     try {
         if (!targetGameTimeIsEmpty(page)||!targetReadTimeIsEmpty(page)){   
             gData=readGameData();
+            bookData=readBookData().data;
             gT=0;
             rT=0;
             eachCategoryLength =10;
@@ -90,7 +91,8 @@ function getPageInfo(page) {
             if(gt==0 && rT==0){
                 seed+=40;
             }
-            setPageData(seed);
+            bookData[page]=seed;
+            setPageData(bookData);
         }
         const pageInfo = allPageData[readBookData().data[page]]; // 使用頁數索引獲取對應的數據
         if (pageInfo) {
