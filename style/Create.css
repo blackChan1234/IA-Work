@@ -1,53 +1,42 @@
 body {
-  background-color: #eaf2f8;
-
+  font-family: Arial, sans-serif;
 }
-
-.table {
+.edit-form {
+  width: 60%;
   margin: 0 auto;
-  max-width: 500px;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  margin-top: 100px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-.Table h1 {
-
-  text-align: center;
+.edit-form h1 {
+  font-size: 24px;
   margin-bottom: 20px;
-  color: #333;
 }
-
-.Order label {
-
+.form-group {
+  margin-bottom: 20px;
+}
+label {
   display: block;
-  margin-bottom: 20px;
-  color: #333;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
-
-.Order input[type="text"],
-.Order input[type="datetime-local"],
-.Order input[type="date"] {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.Order button[type="submit"] {
-
+input[type="text"], input[type="password"] {
   width: 100%;
   padding: 10px;
-  background-color: #4a90e2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
 }
-
-.Order button[type="submit"]:hover {
-  background-color: #2575c3;
+button[type="submit"]:hover {
+  background-color: #0056b3;
 }

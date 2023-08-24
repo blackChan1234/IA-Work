@@ -13,22 +13,23 @@ if (!$conn) {
 }
 
 // Get the current maximum No from the database
-$query = "SELECT MAX(No) as maxNo FROM admin";
+$query = "SELECT MAX(userID) as maxuserID FROM user";
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result);
-$currentMaxNo = $row['maxNo'];
+$currentMaxUserID = $row['maxuserID'];
 
 // Calculate the next No by incrementing the currentMaxNo by 1
-$nextNo = $currentMaxNo + 1;
+$nextNo = $currentMaxUserID + 1;
+$group = "admin";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Retrieve form data
-    $FullName = $_POST['FullName'];
-    $Description = $_POST['Description'];
-    $ContactInformation = $_POST['ContactInformation'];
+    $Name = $_POST['Name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
     // Insert the new data into the database
-    $query = "INSERT INTO admin (No, FullName, Description, ContactInformation) VALUES ('$nextNo','$FullName', '$Description', '$ContactInformation')";
+    $query = "INSERT INTO user (userID, Name, email, password, `group`) VALUES ($nextNo, '$Name', '$email', '$password', '$group')";
     $result = mysqli_query($conn, $query);
     sleep(1);
     header("Location: AdminIndex.php");
@@ -54,14 +55,14 @@ mysqli_close($conn);
     </section>
     <section class="Order">
         <form method="POST" enctype="multipart/form-data">
-            <label for="No">No:</label>
-            <input type="text" name="No" value="<?php echo $nextNo; ?>" readonly><br>
-            <label for="Full Name">Full Name:</label>
-            <input type="text" name="FullName" required><br>
-            <label for="Description">Description:</label>
-            <input type="text" name="Description" required><br>
-            <label for="ContactInformation">Contact:</label>
-            <input type="tel" name="ContactInformation" required pattern="[2-9]{1}[0-9]{7}" title="Please enter a valid 8-digit Hong Kong phone number (starting with 2-9)"><br>
+            <label for="userID">userID:</label>
+            <input type="text" name="userID" value="<?php echo $nextNo; ?>" readonly><br>
+            <label for="Name">Name:</label>
+            <input type="text" name="Name" required><br>
+            <label for="email">Email:</label>
+            <input type="text" name="email" required><br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required<br>
             <button type="submit">ADD</button>
         </form>
     </section>
