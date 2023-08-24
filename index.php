@@ -45,23 +45,27 @@
         <div id="sliderScroll" class="sliderScroll">
             <div id="sliderMain" class="sliderMain">
                 <?php
-        $imgPaths = [
-          "1.jpeg",
-          "2.jpg",
-          "3.webp",
-          "examplePic/image4.png",
-          "examplePic/image5.png",
-          "examplePic/image6.png"
-        ];
-        foreach ($imgPaths as $path) {
-          echo <<<HTML
-                    <div class="item"><a href="#">
-                        <img src="img/{$path}" alt="">
-                        </a></div>
-                HTML;
-        }
-        ?>
+                include 'dbcon.php';
+                // Assuming you've already established a connection to your database named $conn
+
+                $query = "SELECT p_img FROM post WHERE p_category = 'hot news'";
+                $result = mysqli_query($con, $query);
+
+                if (mysqli_num_rows($result) > 0) {
+                    while($row = mysqli_fetch_assoc($result)) {
+                        $imgPath = $row["p_img"];
+                        echo <<<HTML
+            <div class="item"><a href="#">
+                <img src="img/{$imgPath}" alt="">
+            </a></div>
+            HTML;
+                    }
+                } else {
+                    echo "No images found!";
+                }
+                ?>
             </div>
+
             <!-- prev&next cursor -->
             <span id="next" class="next">&#10095;</span>
             <span id="prev" class="prev">&#10094;</span>
