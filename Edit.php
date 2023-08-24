@@ -13,16 +13,16 @@ if (!$conn) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $newFullName = $_POST['newFullName'];
-    $newDescription = $_POST['newDescription'];
-    $newContact = $_POST['newContact'];
-    $recordNo = $_POST['recordNo'];
+    $Name = $_POST['Name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $userID = $_POST['userID'];
 
-    $updateQuery = "UPDATE admin SET FullName='$newFullName', Description='$newDescription', ContactInformation='$newContact' WHERE No=$recordNo";
+    $updateQuery = "UPDATE user SET Name='$Name', email='$email', password='$password' WHERE userID=$userID";
     $updateResult = mysqli_query($conn, $updateQuery);
 
     if ($updateResult) {
-        // Redirect to Index.php after update
+        // Redirect to AdminIndex.php after update
         header("Location: AdminIndex.php");
         exit(); // Ensure no further code is executed
     } else {
@@ -30,10 +30,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-if (isset($_GET['No'])) {
-    $recordNo = $_GET['No'];
+if (isset($_GET['userID'])) {
+    $userID = $_GET['userID']; // Fixed variable name
 
-    $selectQuery = "SELECT * FROM admin WHERE No=$recordNo";
+    $selectQuery = "SELECT * FROM user WHERE userID=$userID"; // Fixed variable name
     $selectResult = mysqli_query($conn, $selectQuery);
 
     if ($selectResult) {
@@ -61,18 +61,18 @@ mysqli_close($conn);
     <main class="edit-form">
         <h1>Edit Admin Data</h1>
         <form method="post">
-            <input type="hidden" name="recordNo" value="<?php echo $recordNo; ?>">
+            <input type="hidden" name="userID" value="<?php echo $userID; ?>">
             <div class="form-group">
-                <label for="newFullName">Full Name:</label>
-                <input type="text" id="newFullName" name="newFullName" value="<?php echo $row['FullName']; ?>" required>
+                <label for="Name">Name:</label>
+                <input type="text" id="Name" name="Name" value="<?php echo $row['Name']; ?>" required>
             </div>
             <div class="form-group">
-                <label for="newDescription">Description:</label>
-                <textarea id="newDescription" name="newDescription" required><?php echo $row['Description']; ?></textarea>
+                <label for="email">email:</label>
+                <input type="text" id="email" name="email" value="<?php echo $row['email']; ?>" required>
             </div>
             <div class="form-group">
-                <label for="newContact">Contact:</label>
-                <input type="text" id="newContact" name="newContact" value="<?php echo $row['ContactInformation']; ?>" required>
+                <label for="password">password:</label>
+                <input type="text" id="password" name="password" value="<?php echo $row['password']; ?>" required>
             </div>
             <button type="submit">Update</button>
         </form>
