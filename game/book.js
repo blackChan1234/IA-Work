@@ -187,6 +187,9 @@ function getPageInfo(page) {
 
         $("#flipbook").append(aPage());
         $("#flipbook").append(aPage());
+        if(pageLen%2==1){
+            $("#flipbook").append(aPage());
+        }
 
         // 根據頁面獲取背景顏色和文字
         $("#flipbook").turn({
