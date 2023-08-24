@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
     $details = $_POST['details'];
     $p_time = $_POST['p_time'];
     $p_category = $_POST['p_category'];
-    $p_user = $_POST['p_user'];
+    $p_user = $_SESSION['Name'];
     $p_description = $_POST['p_description'];
 
     // Upload image
@@ -28,16 +28,16 @@ if (isset($_POST['submit'])) {
     // Get the filename from the uploaded file
     $filename = basename($_FILES["p_img"]["name"]);
 
-    // Perform SQL query to insert new record
-    $insertQuery = "INSERT INTO post (heading, details, p_time, p_category, p_user, p_description, p_img) VALUES ('$heading', '$details', '$p_time', '$p_category', '$p_user', '$p_description', '$filename')";
-    $insertResult = mysqli_query($conn, $insertQuery);
+    // Use prepared statements to avoid SQL injections
+    $stmt = $conn->prepare("INSERT INTO post (heading, details, p_time, p_category, p_user, p_description, p_img) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssss", $heading, $details, $p_time, $p_category, $p_user, $p_description, $filename);
 
-    if ($insertResult) {
+    if ($stmt->execute()) {
         // Record inserted successfully
         echo "<script>alert('Record inserted successfully.')</script>";
         // Redirect to post.php
         header("Location: Post.php");
-        exit(); // Important to prevent further execution of the script
+        exit();
     } else {
         // Error inserting record
         echo "<script>alert('Error inserting record.')</script>";
@@ -48,7 +48,7 @@ mysqli_close($conn);
 ?>
 
 
-<!-- Your HTML form for adding a new record -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,8 +68,13 @@ mysqli_close($conn);
                     <input type="text" name="heading" placeholder="Heading" required>
                     <textarea name="details" placeholder="Details" required></textarea>
                     <input type="datetime-local" name="p_time" required>
-                    <input type="text" name="p_category" placeholder="Category" required>
-                    <input type="text" name="p_user" placeholder="User" required>
+                    <!-- Category dropdown -->
+                    <select name="p_category" required>
+                        <option value="" disabled selected>Select a category</option>
+                        <option value="hot news">Hot News</option>
+                        <option value="Positive view">Positive View</option>
+                        <option value="negative view">Negative View</option>
+                    </select>
                     <textarea name="p_description" placeholder="Description" required></textarea>
                     <input type="file" name="p_img" accept="image/*" required>
                     <button type="submit" name="submit">ADD</button>

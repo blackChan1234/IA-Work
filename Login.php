@@ -74,7 +74,7 @@
         $email = mysqli_real_escape_string($conn, $_POST['email']);
 
         // Use prepared statement
-        $stmt = $conn->prepare("SELECT email, password, `group`, Name FROM user WHERE email = ?");
+        $stmt = $conn->prepare("SELECT email, password, `group`, Name ,userID FROM user WHERE email = ?");
         $stmt->bind_param("s", $email);
 
         $stmt->execute();
@@ -86,6 +86,7 @@
                 $_SESSION['group'] = $row['group'];
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['Name'] = $row['Name'];
+                $_SESSION['userID']=$row['userID'];
 
                 setcookie("user_logged_in", "true", time() + (5 * 60));
                 header("Location: index.php"); // redirect to dashboard
