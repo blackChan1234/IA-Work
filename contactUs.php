@@ -3,6 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen and (min-width: 990px)" href="style\indexDesign.css">
+    <link rel="stylesheet" media="screen and (max-width: 990px)" href="style\indexDesignSmall.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="style/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="style\news.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="./js/jquery.dataTables.min.js"></script>
+    <script src="./js/dataTables.bootstrap5.min.js"></script>
+    <script src="script/functions.js"></script>
+    <script src="script/scrollToTop.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+    <link rel="stylesheet" href="style\menu.css">
+    <link rel="stylesheet" href="style\logo.css">
+    <link rel="stylesheet" href="style\avatar.css">
+
     <title>聯絡我們</title>
     <style>
         body {
@@ -29,7 +50,11 @@
     </style>
 </head>
 <body>
+
+    <?php include 'menu.php'; ?>
     
+    <p><br></p><br><br>
+
     <div>
         <section id="contact-info">
             <h1>樹仁大學聯絡資訊</h1>
