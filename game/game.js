@@ -45,7 +45,7 @@ function saveAndNewData(gameHour, readHour) {
 
 function startGame() {
     // 防止表單提交
-    event.preventDefault();
+    // event.preventDefault();
 
     // 獲取 game_time 和 read_time 輸入元素
     const gameInput = document.getElementById('game_time');
@@ -61,12 +61,8 @@ function startGame() {
 
     // 在這裡執行遊戲邏輯
 
-  if (checkCookie("game_data")) {
-    var data = readGameData();
-    $("#flipbook").turn("page", numOfdays(data));
-  }
+
   saveAndNewData(gameValue,readValue);
-  location.reload();
 }
 
 function calculateArraySum(array) {
