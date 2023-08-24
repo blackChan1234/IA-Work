@@ -1,22 +1,26 @@
-function getPageInfo(page) {
-    try {
-        const pageInfo = pageData[page]; // 使用頁數索引獲取對應的數據
-        if (pageInfo) {
-            return pageInfo;
-        }
+allPageData;
+fetch('https://example.com/data.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
     }
-    finally {
-        return { text: `page ${page + 1}` }; // 默認顏色和空文字
-    }
-}
+    return response.json();
+  })
+  .then(jsonData => {
+    // Now you can work with the jsonData
+    allPageData = (jsonData);
+  })
+  .catch(error => {
+    console.error('Error fetching JSON:', error);
+  });
 
-function setPageData(page, date) {
+
+function setPageData(data) {
     if (!checkCookie("Book")) {
         // create new game data
         var expirationDate = new Date();
         var Book = {
-            pages: page,
-            date: date
+            data: data
         };
 
         var jsonData = JSON.stringify(Book);
@@ -56,6 +60,48 @@ function addNewElement(elementOfParent, text,type) {
     elementOfParent.append(div);
 }
 
+function targetGameTimeIsEmpty(num){
+    return readGameData().gameTime.length<num;
+}
+function targetReadTimeIsEmpty(num){
+    return readGameData().readTime.length<num;
+}
+
+function getPageInfo(page) {
+    try {
+        if (!targetGameTimeIsEmpty(page)||!targetReadTimeIsEmpty(page)){   
+            gData=readGameData();
+            gT=0;
+            rT=0;
+            eachCategoryLength =10;
+            seed=Math.floor(Math.random() * eachCategoryLength);
+            if (!targetGameTimeIsEmpty(page)){
+                gt=gData.gameTime[page];
+            }
+            if (!targetReadTimeIsEmpty(page)){
+                rt=gData.readTime[page];
+            }
+            if(gt<rT){
+                seed+=10;
+            }
+            if(gt>rT){
+                seed+=20;
+            }
+            if(gt==0 && rT==0){
+                seed+=40;
+            }
+            setPageData(seed);
+        }
+        const pageInfo = allPageData[readBookData().data[page]]; // 使用頁數索引獲取對應的數據
+        if (pageInfo) {
+            return pageInfo;
+        }
+    }
+    finally {
+        return { text: `page ${page + 1}` }; // 默認顏色和空文字
+    }
+}
+
 $(document.getElementById("flipbook")).ready
     (function () {
         day = 0;
@@ -64,6 +110,9 @@ $(document.getElementById("flipbook")).ready
             data = readGameData();
             printGameCookie();
             day = numOfdays(data);
+            if(day>=30){
+                day = 30;
+            }
         }
 
 
