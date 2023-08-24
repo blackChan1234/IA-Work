@@ -8,7 +8,7 @@ require 'dbcon.php';
 function addNews($id, $img, $header, $summary) {
     $html = <<<HTML
         <article class="news-item">
-            <a href="read-post.php?id={$id}"><img src="img/post/{$img}" alt="News Image"></a>
+            <a href="read-post.php?id={$id}"><img src="img/{$img}" alt="News Image"></a>
             <a href="read-post.php?id={$id}"><h2>{$header}</h2></a>
             <a href="read-post.php?id={$id}"><p>{$summary}</p></a>
         </article>
