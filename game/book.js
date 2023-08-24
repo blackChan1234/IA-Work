@@ -172,6 +172,7 @@ function getPageInfo(page) {
             const pageDiv = document.createElement('div');
             pageDiv.className = 'page';
             addNewElement(pageDiv, "day" + (i + 1),"h3");
+            if (checkCookie("game_data")) {
             if (data.gameTime.length > i) {
                 if (data.gameTime!=null||data.gameTime!=0) {
                 newLine(pageDiv, "game time:"+data.gameTime[i]+" hours");
@@ -181,6 +182,7 @@ function getPageInfo(page) {
                 if (data.readTime!=null||data.readTime!=0) {
                 newLine(pageDiv, "read time:"+data.readTime[i]+" hours");
             }
+        }
         }
         addNewElement(pageDiv, "","br");
             pI=getPageInfo(i);

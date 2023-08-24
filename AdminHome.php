@@ -215,20 +215,18 @@ if (!$conn) {
                 </div>
                 <div class="grid-item">
                     <section class="Order">
-                        <form class="Manager" method="post">
+                    <form class="Manager" method="post">
                             <?php
                             $sql = "SELECT * FROM contact";
                             $result = mysqli_query($conn, $sql);
                             while ($row = mysqli_fetch_assoc($result)) {
                                 ?>
                                 <tr>
-                                    <form method='post'>
-                                        <td>Name: <input type='text' name='name' value='<?php echo $row['Name']; ?>' readonly></td>
-                                        <td>Phone: <input type='text' name='phone' value='<?php echo $row['Phone']; ?>'></td>
-                                        <td>Email: <input type='text' name='email' value='<?php echo $row['Email']; ?>'></td>
-                                        <td>Address: <input type='text' name='address' value='<?php echo $row['Address']; ?>'></td>
-                                        <button type="button" onclick="window.location.href='Contact.php';">View All</button>
-                                    </form>
+                                    <td><div>Name: <input type='text' name='name' value='<?php echo $row['Name']; ?>' readonly></div></td>
+                                    <td><div>Phone: <input type='text' name='phone' value='<?php echo $row['Phone']; ?>'></div></td>
+                                    <td><div>Email: <input type='text' name='email' value='<?php echo $row['Email']; ?>'></div></td>
+                                    <td><div>Address: <input type='text' name='address' value='<?php echo $row['Address']; ?>'></div></td>
+                                    <button type="button" onclick="window.location.href='Contact.php';">View All</button>
                                 </tr>
                                 <?php
                             }
