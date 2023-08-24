@@ -11,8 +11,8 @@ session_start(); // Make sure to start the session if it's not started already
         </button>
         <a class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold" href="index.php">Game Addiction Database</a>
         <button class="btn btn-outline-light borderless">POST</button>
-        <button class="btn btn-outline-light borderless">CONTACT</button>
-        <button class="btn btn-outline-light borderless">ABOUT</button>
+        <button class="btn btn-outline-light borderless"><a href="contactUs.html">CONTACT</a></button>
+        <button class="btn btn-outline-light borderless"><a href="aboutUs.html">ABOUT</a></button>
         <div class="change-fontsize btn-outline-light borderless">
             <span class="fontSizebtn" title="Font Size: Smaller" onclick="changeFontSize(1);">A</span>
             <span class="fontSizebtn vivid" title="Font Size: Normal" onclick="changeFontSize(2);">A</span>
@@ -80,13 +80,13 @@ session_start(); // Make sure to start the session if it's not started already
                         </a>
                 </li>
                 <li>
-                        <a href="Supplier.php" class="nav-link px-3" id="CONTRACT">
+                        <a href="contactUs.html" class="nav-link px-3" id="CONTACT">
                             <span class="me-2"><i class="bi bi-telephone-fill"></i></span>
                             <span>CONTACT</span>
                         </a>
                 </li>
                 <li>
-                        <a href="Supplier.php" class="nav-link px-3" id="ABOUT">
+                        <a href="aboutUs.html" class="nav-link px-3" id="ABOUT">
                             <span class="me-2"><i class="bi bi-question-circle"></i></span>
                             <span>ABOUT</span>
                         </a>

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="stylesheet" media="screen and (min-width: 990px)" href="style\indexDesign.css">
+    <link rel="stylesheet" media="screen and (max-width: 990px)" href="style\indexDesignSmall.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style/bootstrap.min.css" />
 
@@ -29,7 +31,6 @@
 
     <link rel="stylesheet" href="style\menu.css">
     <link rel="stylesheet" href="style\btnGroup.css">
-    <link rel="stylesheet" href="style\indexDesigin.css">
 
     <link rel="stylesheet" href="style\logo.css">
     <link rel="stylesheet" href="style\avatar.css">
@@ -124,7 +125,7 @@
 
         </div>
         <div class="index-column-right">
-            <h1>影片播放器</h1>
+            <h1 class="index-header" name="title">影片播放器</h1>
             <div class="video-player" >
                 <iframe width="auto" height="auto" src="https://www.youtube.com/embed/9kNYFzAjSzQ" title="[毒不添下]網路成癮教學動畫" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <iframe width="auto" height="auto" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
