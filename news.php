@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="style\news.css">
+<link rel="stylesheet" media="screen and (min-width: 990px)" href="style\news.css">
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>

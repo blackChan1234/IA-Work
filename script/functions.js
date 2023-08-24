@@ -59,6 +59,6 @@ window.onload = function() {
 };
 
 // window.addEventListener('resize', checkWidth);
-window.addEventListener('resize', generateButtons);
+//window.addEventListener('resize', generateButtons);
 // window.addEventListener('load', checkWidth);
-window.addEventListener('load', generateButtons);
+// window.addEventListener('load', generateButtons);
