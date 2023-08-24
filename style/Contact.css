@@ -1,56 +1,52 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
     margin: 0;
     padding: 0;
+    background-color: #f2f2f2;
 }
 
-.content {
+.container {
+    padding-left: 10%;
+}
+
+.table {
+    background-color: #fff;
     padding: 20px;
-    margin-left: 250px; /* Sidebar width */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-table.contact-table {
+.table h1 {
+    margin-bottom: 20px;
+}
+
+.Contact {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-table.contact-table th, table.contact-table td {
+.Contact th, .Contact td {
+    border: 1px solid #ccc;
     padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+    text-align: center;
 }
 
-table.contact-table th {
-    background-color: #f5f5f5;
+.Contact th {
+    background-color: #f0f0f0;
 }
 
-.Contact h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+.Contact input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: none;
 }
 
 .Contact button {
     background-color: #007bff;
-    color: white;
+    color: #fff;
     border: none;
-    padding: 8px 16px;
+    padding: 8px 15px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.Contact button:hover {
-    background-color: #0056b3;
-}
-
-.sidebar {
-    /* ... your existing sidebar styling ... */
-}
-
-/* Media query for responsiveness */
-@media (max-width: 768px) {
-    .content {
-        margin-left: 0;
-    }
 }
