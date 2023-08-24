@@ -140,6 +140,7 @@ function getPageInfo(page) {
         <div class="hard"></div>
         
         */
+       
         pageLen = day;
         pageLen++;
         bookTitle = "Diary";
@@ -147,9 +148,13 @@ function getPageInfo(page) {
         eggDiv.className = 'egg';
         eggContainerDiv = document.createElement('div');
         eggContainerDiv.className = 'egg-animation-container';
-
+        if(day == 30){
+            totalGameTime=calculateArraySum(data.gameTime)/(7)+0.5;
+            totalReadTime=calculateArraySum(data.readTime)/(7)+0.5;
+            eggDiv.className = 'otherPic';
+            eggDiv.style.backgroundImage = `url('${rule(totalReadTime,totalGameTime)}}')`;
+        }
         
-
         pageFirstTitle = document.createElement("h2");
         pageFirstTitle.textContent = bookTitle;
         

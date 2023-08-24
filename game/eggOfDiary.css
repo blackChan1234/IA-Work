@@ -21,5 +21,15 @@
         transform: rotate(5deg);
     }
 }
+
+
+
+.otherPic {
+    width: 100px;
+    height: 130px;
+    background-image: url('img/egg.png');
+    background-size: cover;
+    transform-origin: bottom center;
+}
 /* <div class="egg-animation-container">
         <div class="egg"></div> */

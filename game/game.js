@@ -125,9 +125,11 @@ function updateBar(){
 }
 
 function rule(readTime,gameTime){
+  img = ["img/1.png","img/2.png","img/3.png","img/4.png","img/5.png"
+  ,"img/6.png","img/7.png","img/8.png","img/9.png","img/10.png","img/11.png","img/12.png"];
   if (readTime+gameTime==0){
     // 悠閒人生
-
+    return img[11];
   }
   else if(gameTime+readTime>=24*30){
     //別騙了
