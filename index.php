@@ -123,6 +123,10 @@
                     <img src="img/game2.png" alt="storybook">
                     <p>Storybook</p>
                 </a>
+                <a class="games-box" href="game/1.html">
+                    <img src="img/game3.png" alt="training game">
+                    <p>training game</p>
+                </a>
             </div>
 
 
