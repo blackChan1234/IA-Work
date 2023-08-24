@@ -1,32 +1,32 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- 主機： 127.0.0.1
--- 產生時間： 2023-08-23 20:36:32
--- 伺服器版本： 10.4.28-MariaDB
--- PHP 版本： 8.2.4
+-- 主机： 127.0.0.1
+-- 生成日期： 2023-08-24 14:54:39
+-- 服务器版本： 10.4.27-MariaDB
+-- PHP 版本： 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-DROP DATABASE iadb;
-CREATE DATABASE IF NOT EXISTS `iadb`;
-USE `iadb`;
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 資料庫： `iadb`
+-- 数据库： `iadb`
 --
-
+DROP DATABASE iadb;
+CREATE DATABASE IF NOT EXISTS `iadb`;
+USE `iadb`;
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `admin`
+-- 表的结构 `admin`
 --
 
 CREATE TABLE `admin` (
@@ -37,17 +37,18 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- 傾印資料表的資料 `admin`
+-- 转存表中的数据 `admin`
 --
 
 INSERT INTO `admin` (`No`, `FullName`, `Description`, `ContactInformation`) VALUES
 (1, 'Mark Chan', 'The survey results show that students most often watch videos, play games', '55441124'),
-(2, 'Jack Chau', 'Students will go online immediately after .', '95641127');
+(2, 'Jack Chau', 'Students will go online immediately after .', '95641127'),
+(3, 'srsdf', 'sdfsdf', '34343434');
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `contact`
+-- 表的结构 `contact`
 --
 
 CREATE TABLE `contact` (
@@ -58,7 +59,7 @@ CREATE TABLE `contact` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- 傾印資料表的資料 `contact`
+-- 转存表中的数据 `contact`
 --
 
 INSERT INTO `contact` (`Name`, `Phone`, `Email`, `Address`) VALUES
@@ -67,7 +68,7 @@ INSERT INTO `contact` (`Name`, `Phone`, `Email`, `Address`) VALUES
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `password_reset_requests`
+-- 表的结构 `password_reset_requests`
 --
 
 CREATE TABLE `password_reset_requests` (
@@ -80,7 +81,7 @@ CREATE TABLE `password_reset_requests` (
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `pdf`
+-- 表的结构 `pdf`
 --
 
 CREATE TABLE `pdf` (
@@ -92,21 +93,10 @@ CREATE TABLE `pdf` (
   `type` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- 傾印資料表的資料 `pdf`
---
-
-INSERT INTO `pdf` (`pdfID`, `fileName`, `userName`, `pdfDescription`, `uploadDate`, `type`) VALUES
-(1, 'IA04-proposal.pdf', 'sea', 'IA04 proposal', '2023-08-23', 'proposal'),
-(2, 'IA04-program.pdf', 'nam', 'IA04-program', '2023-08-24', 'program'),
-(3, 'IA04-report.pdf', 'mars', 'IA04-report', '2023-08-25', 'report'),
-(4, 'IA04-minutes.pdf', 'owl', 'IA04-minutes', '2020-12-01', 'minutes'),
-(5, 'IA04-data.pdf', 'sea', 'IA04-data', '2023-08-15', 'data');
-
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `post`
+-- 表的结构 `post`
 --
 
 CREATE TABLE `post` (
@@ -121,16 +111,18 @@ CREATE TABLE `post` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- 傾印資料表的資料 `post`
+-- 转存表中的数据 `post`
 --
 
 INSERT INTO `post` (`p_id`, `heading`, `details`, `p_time`, `p_img`, `p_description`, `p_category`, `p_user`) VALUES
-(1, 'abc', '<p>sadbasjd</p>', '1625989309', '1.jpeg', 'asdasdasdasdasd', 'asdsd', 'chan');
+(1, 'abc', '<p>sadbasjd</p>', '1625989309', '1.jpeg', 'asdasdasdasdasd', 'hot news', 'chan'),
+(5, 'd', 'asasd', '2023-08-24T19:25', '2.jpg', 'asdsad', 'hot news', 'asd'),
+(7, 'asd', 'asd', '2023-08-25T19:59', 'question.png', 'asd', 'hot news', 'asd');
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `user`
+-- 表的结构 `user`
 --
 
 CREATE TABLE `user` (
@@ -142,7 +134,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- 傾印資料表的資料 `user`
+-- 转存表中的数据 `user`
 --
 
 INSERT INTO `user` (`userID`, `Name`, `email`, `password`, `group`) VALUES
@@ -156,57 +148,57 @@ INSERT INTO `user` (`userID`, `Name`, `email`, `password`, `group`) VALUES
 (18, 'asd', 'sad@gmail.com', '$2y$10$Hs8q6y7oO4tm8iOy7TtY5OhdBbu7jEcp1GSvtxfJ168Bd/k29n6h.', 'member');
 
 --
--- 已傾印資料表的索引
+-- 转储表的索引
 --
 
 --
--- 資料表索引 `password_reset_requests`
+-- 表的索引 `password_reset_requests`
 --
 ALTER TABLE `password_reset_requests`
   ADD PRIMARY KEY (`id`);
 
 --
--- 資料表索引 `pdf`
+-- 表的索引 `pdf`
 --
 ALTER TABLE `pdf`
   ADD PRIMARY KEY (`pdfID`);
 
 --
--- 資料表索引 `post`
+-- 表的索引 `post`
 --
 ALTER TABLE `post`
   ADD PRIMARY KEY (`p_id`);
 
 --
--- 資料表索引 `user`
+-- 表的索引 `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`userID`);
 
 --
--- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
+-- 在导出的表使用AUTO_INCREMENT
 --
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `password_reset_requests`
+-- 使用表AUTO_INCREMENT `password_reset_requests`
 --
 ALTER TABLE `password_reset_requests`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `pdf`
+-- 使用表AUTO_INCREMENT `pdf`
 --
 ALTER TABLE `pdf`
-  MODIFY `pdfID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `pdfID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `post`
+-- 使用表AUTO_INCREMENT `post`
 --
 ALTER TABLE `post`
-  MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `user`
+-- 使用表AUTO_INCREMENT `user`
 --
 ALTER TABLE `user`
   MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
