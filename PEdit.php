@@ -61,7 +61,7 @@ mysqli_close($conn);
 <head>
     <meta charset="UTF-8">
     <title>Edit Post</title>
-    <link rel="stylesheet" href="Add_Post.css" type="text/css">
+    <link rel="stylesheet" href="style/Add_Post.css" type="text/css">
 </head>
 
 <body>

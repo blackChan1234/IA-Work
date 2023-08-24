@@ -21,8 +21,8 @@ if (!$conn) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-    <link rel="stylesheet" href="AdminHome.css" type="text/css">
-    <link rel="stylesheet" href="Admin.css" type="text/css">
+    <link rel="stylesheet" href="style/AdminHome.css" type="text/css">
+    <link rel="stylesheet" href="style/Admin.css" type="text/css">
 </head>
 <body>
 <div class="sidebar">

@@ -31,8 +31,8 @@ mysqli_close($conn);
 <head>
     <meta charset="UTF-8">
     <title>Admin</title>
-    <link rel="stylesheet" href="Admin.css" type="text/css">
-    <link rel="stylesheet" href="Contact.css" type="text/css">
+    <link rel="stylesheet" href="style/Admin.css" type="text/css">
+    <link rel="stylesheet" href="style/Contact.css" type="text/css">
 </head>
 
 <body>

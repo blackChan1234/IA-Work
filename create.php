@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $query = "INSERT INTO admin (No, FullName, Description, ContactInformation) VALUES ('$nextNo','$FullName', '$Description', '$ContactInformation')";
     $result = mysqli_query($conn, $query);
     sleep(1);
-    header("Location: Order.php");
+    header("Location: AdminIndex.php");
     exit();
 }
 
@@ -44,7 +44,7 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="Create.css" type="text/css">
+    <link rel="stylesheet" href="style/Create.css" type="text/css">
     <title>Create Data</title>
 </head>
 <body>

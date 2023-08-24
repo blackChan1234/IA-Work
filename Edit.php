@@ -53,7 +53,7 @@ mysqli_close($conn);
 <head>
     <meta charset="UTF-8">
     <title>Edit Admin Data</title>
-    <link rel="stylesheet" href="Create.css" type="text/css">
+    <link rel="stylesheet" href="style/Create.css" type="text/css">
 </head>
 
 <body>
