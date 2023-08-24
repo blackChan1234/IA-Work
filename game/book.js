@@ -9,6 +9,7 @@ fetch('pageData.json')
   .then(jsonData => {
     // Now you can work with the jsonData
     allPageData = (jsonData);
+    showBook();
   })
   .catch(error => {
     console.error('Error fetching JSON:', error);
@@ -75,9 +76,13 @@ function getPageInfo(page) {
         if (!targetGameTimeIsEmpty(page)||!targetReadTimeIsEmpty(page)){   
             gData=readGameData();
             bookData=[];
+            notBreak=true;
             if(checkCookie("Book")){ 
                 bookData=readBookData().data;
+                if(bookData.length>page)
+                notBreak=false;
             }
+            if(notBreak){
             gT=0;
             rT=0;
             eachCategoryLength =10;
@@ -99,9 +104,11 @@ function getPageInfo(page) {
             // }
             bookData[page]=seed;
             setPageData(bookData);
+            console.log(bookData);
         }
-        const pageInfo = allPageData[readBookData().data[page]]; // 使用頁數索引獲取對應的數據
-        
+        }
+        pageInfo = allPageData[readBookData().data[page]]; // 使用頁數索引獲取對應的數據
+        console.log(pageInfo);
             return pageInfo;
         
     }
@@ -109,9 +116,7 @@ function getPageInfo(page) {
         return  `page ${page + 1}` ; // 默認顏色和空文字
     }
 }
-
-$(document.getElementById("flipbook")).ready
-    (function () {
+ function showBook() {
         day = 0;
         var data;
         if (checkCookie("game_data")) {
@@ -173,12 +178,18 @@ $(document.getElementById("flipbook")).ready
             }
         }
         addNewElement(pageDiv, "","br");
-            newLine(pageDiv, getPageInfo(i));
+            pI=getPageInfo(i);
+            console.log(pI);
+            console.log(allPageData);
+            newLine(pageDiv, pI);
             $("#flipbook").append(pageDiv);
         }
 
         $("#flipbook").append(aPage());
         $("#flipbook").append(aPage());
+        if(pageLen%2==1){
+            $("#flipbook").append(aPage());
+        }
 
         // 根據頁面獲取背景顏色和文字
         $("#flipbook").turn({
@@ -187,4 +198,4 @@ $(document.getElementById("flipbook")).ready
             autoCenter: true
         });
         updateBar();
-    });
+    }
