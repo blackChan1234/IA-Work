@@ -29,7 +29,7 @@ include "dbcon.php";
         <div class="left_content">
           <div class="single_page">
             <h1> <?php echo $heading; ?> </h1>
-            <div class="post_commentbox"> <a href="#"><i class="bi bi-person"></i><?php echo $user; ?></a> <span><i class="fa fa-calendar"></i> <?php echo date('d-M-Y ' , $time); ?> </span> <a href="#"><i class="bi bi-tags"></i><?php echo $category; ?></a> </div>
+            <div class="post_commentbox"> <a href="#"><i class="bi bi-person"></i><?php echo $user; ?></a> <span><i class="fa fa-calendar"></i> <?php echo $time; ?> </span> <a href="#"><i class="bi bi-tags"></i><?php echo $category; ?></a> </div>
             <div class="single_page_content"> <img class="img-center" style="width:85%; height:300px" src="img/post/<?php echo $img; ?>" alt="">
               <blockquote> <?php echo $details; ?> </blockquote>
               
