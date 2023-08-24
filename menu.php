@@ -40,7 +40,18 @@ session_start(); // Make sure to start the session if it's not started already
                             <i class="bi bi-person-fill"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <?php
+                                switch($_SESSION['group']){
+                                    case 'teacher':
+                                        echo "<li><a class='dropdown-item' href='Teacher_Home.php'>Profile</a></li>";
+                                        break;
+                                    case 'admin':
+                                        echo "<li><a class='dropdown-item' href='AdminHome.php'>Profile</a></li>";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            ?>
                             <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                         </ul>
                     </li>

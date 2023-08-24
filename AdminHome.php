@@ -23,6 +23,7 @@ if (!$conn) {
     <title>Admin</title>
     <link rel="stylesheet" href="style/AdminHome.css" type="text/css">
     <link rel="stylesheet" href="style/Admin.css" type="text/css">
+    <link rel="stylesheet" href="style/Contact.css" type="text/css">
 </head>
 <body>
 <div class="sidebar">
@@ -126,7 +127,7 @@ if (!$conn) {
 
                 </div>
 
-                <div class="grid-item-2">
+                <div class="grid-item">
                     <form>
                         <section class="Order">
                             <table class="Manager">
@@ -171,7 +172,7 @@ if (!$conn) {
                     <button type="button" onclick="window.location.href='Post.php';">View All</button>
 
                 </div>
-                <div class="grid-item-3">
+                <div class="grid-item">
                     <form>
                         <div id="cursor">
                             <div class="background">
@@ -212,7 +213,7 @@ if (!$conn) {
                         <button type="button" onclick="window.location.href='PDF.php';">View All</button>
                     </form>
                 </div>
-                <div class="grid-item-4">
+                <div class="grid-item">
                     <section class="Order">
                         <form class="Manager" method="post">
                             <?php

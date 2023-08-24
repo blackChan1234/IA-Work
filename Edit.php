@@ -54,10 +54,12 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <title>Edit Admin Data</title>
     <link rel="stylesheet" href="style/Create.css" type="text/css">
+    <link rel="stylesheet" href="style/Add_Post.css" type="text/css">
 </head>
 
 <body>
 <div style="padding-left: 10%;">
+    <div class="New-Data">
     <main class="edit-form">
         <h1>Edit Admin Data</h1>
         <form method="post">
@@ -77,6 +79,7 @@ mysqli_close($conn);
             <button type="submit">Update</button>
         </form>
     </main>
+</div>
 </div>
 </body>
 
