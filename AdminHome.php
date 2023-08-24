@@ -72,7 +72,7 @@ if (!$conn) {
     </div>
 </div>
 
-<div style="padding-left: 10%;">
+<div id="mainTable">
     <main class="table">
         <section class="Table">
             <h1>Home</h1>
