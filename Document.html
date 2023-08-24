@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" media="screen and (min-width: 990px)" href="style\indexDesign.css">
+    <link rel="stylesheet" media="screen and (max-width: 990px)" href="style\indexDesignSmall.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="style\menuPicFrame.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="style/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="style\news.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="./js/jquery.dataTables.min.js"></script>
+    <script src="./js/dataTables.bootstrap5.min.js"></script>
+    <script src="script/functions.js"></script>
+    <script src="script/scrollToTop.js"></script>
+
+    <link rel="stylesheet" href="style\social_media_button.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+
+    <link rel="stylesheet" href="style\menu.css">
+    <link rel="stylesheet" href="style\btnGroup.css">
+
+    <link rel="stylesheet" href="style\logo.css">
+    <link rel="stylesheet" href="style\avatar.css">
+</head>
+
+<body onresize="checkWidth()">
+
+        <script src="js/jquery-3.5.1.js"></script>
+<script src="./js/jquery.dataTables.min.js"></script>
+<script src="./js/dataTables.bootstrap5.min.js"></script>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="offcanvasExample">
+            <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
+        </button>
+        <a class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold" href="index.php">Game Addiction Database</a>
+        <button class="btn btn-outline-light borderless">POST</button>
+        <button class="btn btn-outline-light borderless"><a href="contactUs.html">CONTACT</a></button>
+        <button class="btn btn-outline-light borderless"><a href="aboutUs.html">ABOUT</a></button>
+        <div class="change-fontsize btn-outline-light borderless">
+            <span class="fontSizebtn" title="Font Size: Smaller" onclick="changeFontSize(1);">A</span>
+            <span class="fontSizebtn vivid" title="Font Size: Normal" onclick="changeFontSize(2);">A</span>
+            <span class="fontSizebtn" title="Font Size: Larger" onclick="changeFontSize(3);">A</span>
+        </div>
+
+
+
+            <ul class="navbar-nav" id="top">
+                                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary mr-2" href="SingUp.php">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-secondary" href="Login.php">Login</a>
+                    </li>
+                            </ul>
+
+
+        </div>
+    </div>
+</nav>
+<!-- top navigation bar -->
+<!-- offcanvas -->
+<div class="offcanvas offcanvas-start sidebar-nav bg-dark" tabindex="-1" id="sidebar">
+    <div class="offcanvas-body p-0">
+        <nav class="navbar-dark">
+            <ul class="navbar-nav" >
+
+                <li>
+                    <a href="index.php" class="nav-link px-3 active">
+                        <span class="me-2"><i class="bi bi-house"></i></span>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="my-4">
+                    <hr class="dropdown-divider bg-light" />
+                </li>
+
+                <li>
+                        <a href="PurchaseSystem.php" class="nav-link px-3" >
+                            <span class="me-2"><i class="bi bi-newspaper"></i></span>
+                            <span>POST</span>
+                        </a>
+                </li>
+                <li>
+                        <a href="contactUs.html" class="nav-link px-3" id="CONTACT">
+                            <span class="me-2"><i class="bi bi-telephone-fill"></i></span>
+                            <span>CONTACT</span>
+                        </a>
+                </li>
+                <li>
+                        <a href="aboutUs.html" class="nav-link px-3" id="ABOUT">
+                            <span class="me-2"><i class="bi bi-question-circle"></i></span>
+                            <span>ABOUT</span>
+                        </a>
+                </li>
+                <li>
+                    <div class="change-fontsize">
+                        <span class="fontSizebtn" title="Font Size: Smaller" onclick="changeFontSize(1);">A</span>
+                        <span class="fontSizebtn vivid" title="Font Size: Normal" onclick="changeFontSize(2);">A</span>
+                        <span class="fontSizebtn" title="Font Size: Larger" onclick="changeFontSize(3);">A</span>
+                    </div>
+                </li>
+                <li class="my-4">
+                                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary mr-2" href="SingUp.php">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-secondary" href="Login.php">Login</a>
+                    </li>
+                                </li>
+                <li class="my-4">
+                    <hr class="dropdown-divider bg-light" />
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+    <!-- photoframe -->
+    <div id="slider" class="slider">
+        <div id="sliderScroll" class="sliderScroll">
+            <div id="sliderMain" class="sliderMain">
+                    <div class="item"><a href="#">
+        <img src="img/1.jpeg" alt="">
+        </a></div>    <div class="item"><a href="#">
+        <img src="img/2.jpg" alt="">
+        </a></div>    <div class="item"><a href="#">
+        <img src="img/3.webp" alt="">
+        </a></div>    <div class="item"><a href="#">
+        <img src="img/examplePic/image4.png" alt="">
+        </a></div>    <div class="item"><a href="#">
+        <img src="img/examplePic/image5.png" alt="">
+        </a></div>    <div class="item"><a href="#">
+        <img src="img/examplePic/image6.png" alt="">
+        </a></div>            </div>
+            <!-- prev&next cursor -->
+            <span id="next" class="next">&#10095;</span>
+            <span id="prev" class="prev">&#10094;</span>
+        </div>
+
+        <!-- photo index pointer -->
+        <div id="sliderIndex" class="sliderIndex"></div>
+    </div>
+    <script src="script\script.js"></script>
+
+    <!-- left and right column style -->
+    <div class="index-column-container">
+        <div class="index-column-left">
+            <!-- button indicator -->
+            <script src="script\button.js"></script>
+            <div class="button-block" id="button-block">
+            </div>
+            
+
+            <!-- introduction -->
+            <h2 class="index-header" name="title" >網路成癮介紹</h2>
+            <div class='intro-container'><img class='intro-img' src='img/addiction1.jpg' alt='網絡成癮探索'><h3 class='intro-title'>網絡成癮探索：解開網絡世界的迷失之旅</h3><p class='intro-paragraph'>現代科技的迅速發展已經將我們帶入了一個充滿無限可能性的數字時代，然而，隨之而來的是一種新型態的成癮現象——網絡成癮。本網站旨在向您介紹什麼是網絡成癮、其可能的影響，以及如何達到網絡使用的平衡。</p></div><div class='intro-container'><img class='intro-img' src='img/addiction2.jpg' alt='網絡成癮解析'><h3 class='intro-title'>網絡成癮：解析新時代的心理陷阱</h3><p class='intro-paragraph'>網絡成癮是一種對互聯網和數位設備的過度依賴，導致個體無法有效地控制自己的上網行為，進而影響到日常生活和職業等多個方面。這種成癮不僅僅是對某個具體的網站或應用程序的依賴，更是對於網絡上無限信息、社交媒體、遊戲等虛擬世界的無法自拔的渴望。</p></div><div class='intro-container'><img class='intro-img' src='img/addiction3.jpg' alt='健康的網絡使用習慣'><h3 class='intro-title'>建立健康的網絡使用習慣</h3><p class='intro-paragraph'>我們深信，網絡在現代生活中扮演著極其重要的角色，然而，過度使用網絡也可能對我們造成不利影響。在這一部分，我們將提供一些實用的建議，幫助您建立健康的網絡使用習慣，包括：<br>&nbsp;&nbsp;&nbsp;時間管理： 如何有效地管理上網的時間，避免過度使用？<br>&nbsp;&nbsp;&nbsp;目標設定： 如何在網絡上設定明確的目標，避免無目的地漫遊？<br>&nbsp;&nbsp;&nbsp;社交均衡： 如何在虛擬世界和現實生活之間保持良好的社交平衡？<br>我們相信通過培養健康的網絡使用習慣，您將能夠更好地享受數字時代帶來的便利，同時保持心理和身體的健康。</p></div>
+            <!-- news -->
+            <link rel="stylesheet" href="style\indexContent.css">
+            <h2 class="index-header" name="title" >相關新聞</h2>
+            <section class="news-list">
+                <link rel="stylesheet" href="style\news.css">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+
+    <article class="news-item">
+        <a href="read-post.php?id=1"><img src="img/post/1.jpeg" alt="News Image"></a>
+        <a href="read-post.php?id=1"><h2>abc</h2></a>
+        <a href="read-post.php?id=1"><p>asdasdasdasdasd</p></a>
+    </article>
+
+            </section>
+            <p><a href="#" class="expand" onclick="expandNews(event)">展開更多</a></p>
+
+            <!-- Games -->
+            <h2 class="index-header" name="title" >主題小遊戲</h2>
+            <div class="games">
+                <a class="games-box" href="quizGame.html">
+                    <img src="img/game1.png" alt="quiz game">
+                    <p>Demon Quiz</p>
+                </a>
+                <a class="games-box" href="game/game.html">
+                    <img src="img/game2.png" alt="storybook">
+                    <p>Storybook</p>
+                </a>
+            </div>
+
+
+        </div>
+        <div class="index-column-right">
+            <h1>影片播放器</h1>
+            <script>
+                window.addEventListener("resize", checkWidth);
+                checkWidth();
+                function checkWidth() {
+                    if (window.innerWidth < 990) {
+                        var h1Element = document.querySelector(".index-column-right h1");
+                        h1Element.classList.add("index-header");
+                        h1Element.setAttribute("name", "title");
+                    }else if (window.innerWidth > 990){
+                        var h1Element = document.querySelector(".index-column-right h1");
+                        h1Element.classList.remove("index-header");
+                        h1Element.removeAttribute("name");            
+                    }
+                }
+            </script>
+            <div class="video-player" >
+                <iframe width="auto" height="auto" src="https://www.youtube.com/embed/9kNYFzAjSzQ" title="[毒不添下]網路成癮教學動畫" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="auto" height="auto" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="auto" height="auto" src="https://www.youtube.com/embed/n6GAreWxq5I" title="就是要&quot;滑&quot;! 中小學生網路遊戲成癮│中視新聞20170117" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="auto" height="auto" src="https://www.youtube.com/embed/La4qVvfMqAg" title="小偉的故事_那段網路成癮的歲月" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+        
+    <footer>
+        <p>&copy; 2023 Website. All rights reserved.</p>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-instagram"></a>
+    </footer>
+
+    <script src="./script/fontSize.js"></script>
+</body>
+
+</html>
