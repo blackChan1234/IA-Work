@@ -61,9 +61,9 @@ mysqli_close($conn);
                 </a>
             </li>
             <li>
-                <a class="ui" href="About.php">
+                <a class="ui" href="PDF.php">
                     <img id="img" src="img/3.png" alt="" width="50" height="50">
-                    <span>About US</span>
+                    <span>PDF</span>
                 </a>
             </li>
             <li>
@@ -90,23 +90,30 @@ mysqli_close($conn);
         </section>
         <section class="Order">
             <form class="Contact" method="post" action="updateContact.php">
-                <?php
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<tr>
-                        <form method='post'>
-                           Name: <td><input type='text' name='name' value='{$row['Name']}' readonly></td>
-                           
-                           Phone: <td><input type='text' name='phone' value='{$row['Phone']}'></td>
-                           
-                            Email:<td><input type='text' name='email' value='{$row['Email']}'></td>
-                            
-                           Address: <td><input type='text' name='address' value='{$row['Address']}'></td>
-                           
-                           <button type='submit'>Update</button>
-                        </form>
-                    </tr>";
-                }
-                ?>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<tr>
+                                    <td><input type='text' name='name' value='{$row['Name']}' readonly></td>
+                                    <td><input type='text' name='phone' value='{$row['Phone']}'></td>
+                                    <td><input type='text' name='email' value='{$row['Email']}'></td>
+                                    <td><input type='text' name='address' value='{$row['Address']}'></td>
+                                    <td><button type='submit'>Update</button></td>
+                                </tr>";
+                    }
+                    ?>
+                    </tbody>
+                </table>
             </form>
         </section>
     </main>
