@@ -1,16 +1,19 @@
-@media (max-width: 767px) {
-    /* Hide the three buttons */
-    /* Hide font size buttons */
-    .btn-outline-light.borderless {
+@media (max-width: 1010px) {
+    #top{
         display: none;
     }
-
-    #top{
+}
+@media (max-width: 820px) {
+    /* Hide the three buttons */
+    /* Hide font size buttons */
+    .btn-outline-light.borderless,
+    .fontSizebtn,
+    .fontSizebtn.vivid {
         display: none;
     }
 
     #small-search:focus {
-            width: 150px; /* Width after focus */
+        width: 150px; /* Width after focus */
     }
     
     /* Adjust navbar brand for better fit */
@@ -82,7 +85,7 @@ button {
 }
 
 .container {
-    max-width: 960px;
+    max-width: 1010px;
     margin: 0 auto;
     padding-top: 2em;
 }
