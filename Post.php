@@ -101,9 +101,9 @@ mysqli_close($conn);
                     <th>heading</th>
                     <th>details</th>
                     <th>time </th>
+                    <th>category</th>
                     <th>user</th>
                     <th>description</th>
-                    <th>category</th>
                     <th>img</th>
                     <th>Action</th>
                 </tr>
