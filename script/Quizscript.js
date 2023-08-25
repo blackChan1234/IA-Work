@@ -152,6 +152,7 @@ function calculateResult() {
         document.getElementById('game-over').style.display = 'block';
     } else {
         // 如果分數低於5，則顯示 "You Win" 的訊息
+
         document.getElementById('reason').textContent = "You Win! 您目前沒有網路遊戲成癮的跡象。";
         document.getElementById('game-over').style.display = 'block';
     }
