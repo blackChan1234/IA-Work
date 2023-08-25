@@ -121,7 +121,7 @@ mysqli_close($conn);
         <td>{$row['p_description']}</td>
         <td><img src='img/{$row['p_img']}' alt='Image' height='120px' width='130px'></td>
         <td>
-            <a href='PEdit.php?p_id={$row['p_id']}' class='view'>Edit</a>
+            <a href='Teacher_PEdit.php?p_id={$row['p_id']}' class='view'>Edit</a>
             <a href='PDelete.php?p_id={$row['p_id']}' class='delete' onclick=\"return confirm('Are you sure you want to delete this record?');\">Delete</a>
         </td>
     </tr>";
